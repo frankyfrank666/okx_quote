@@ -80,7 +80,7 @@ void run(int n, int tick)
 
 
 int main() {
-    mCommand = 1;
+    mCommand = TcpCommand::Connect;;
     run(500,0); //Send SYN 1
     replayPcap("/root/okx/src/Tcp/Test/pcaps/packet_2.pcap");
     run(500,300); //Send Ack 3 Send GET 4
@@ -100,7 +100,7 @@ int main() {
     run(500,0); //Reply Ack to Keep Alive 19
     replayPcap("/root/okx/src/Tcp/Test/pcaps/packet_20.pcap"); 
     run(500,0); //Reply Ack to Keep Alive 21
-    mCommand = 2;
+    mCommand = TcpCommand::Close;
     run(500,0); //Close 22
     replayPcap("/root/okx/src/Tcp/Test/pcaps/packet_23.pcap"); 
     run(500,0); //Ack to FinAck

@@ -10,6 +10,11 @@
 #include <fstream>
 #include <iostream>
 
+
+#include "ap_int.h"
+#include "ap_axi_sdata.h"
+#include "hls_stream.h"
+
 #include <CL/cl2.hpp>
 #include <algorithm>
 #include <cstring>
@@ -79,11 +84,11 @@ public:
         devices.resize(1);
         mProgram = cl::Program(mContext, devices, bins);
         
-        m_krnl_vector_add = cl::Kernel(mProgram, "VaddTop");
-        // mKernelEthOutTop = cl::Kernel(mProgram, "EthOutTop");
+        mKernelEthInTop = cl::Kernel(mProgram, "EthInTop");
+        mKernelEthOutTop = cl::Kernel(mProgram, "EthOutTop");
     }
 
-    cl::Kernel m_krnl_vector_add ;
+    cl::Kernel mKernelEthInTop;
     cl::Kernel mKernelEthOutTop;
 
     void wait()

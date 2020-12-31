@@ -5,6 +5,8 @@
 #include "ap_axi_sdata.h"
 #include "hls_stream.h"
 
+using EthernetAxi64 = ap_axiu<64,0,0,0>;
+
 template <int N>
 ap_uint<N> byte_reverse(ap_uint<N> value) {
     constexpr int bytes = N / 8;

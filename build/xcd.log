@@ -1,0 +1,10 @@
+Fri Jan  1 00:00:03 2021: Server was asked to start on port: '40007'
+Fri Jan  1 00:00:03 2021: Server is using token UUID: 'df0f04e5-a25b-446f-8002-7a598be084d0'
+Fri Jan  1 00:00:03 2021: SESSION_MGR: creating session with session uuid: '6d04a3e9-ade5-4ab9-8d63-1f78fcd2ec76' and name 'default'
+Fri Jan  1 00:00:03 2021: Attempting to start server on port '40007'
+Fri Jan  1 00:00:03 2021: XCD main fifo: created main fifo '/tmp/xcdmaindf0f04e5-a25b-446f-8002-7a598be084d0', fd read = 12
+Fri Jan  1 00:00:03 2021: Running Dispatch Server
+Fri Jan  1 00:00:03 2021: Version 2.0.0
+Fri Jan  1 00:00:12 2021: Dispatch Server: Accepted socket connection from client
+Fri Jan  1 00:00:12 2021: EXCHANGE_TOKEN received, server token: 0b41fddc-9026-4614-ac39-8ed26a3cb39a, passed token: 0b41fddc-9026-4614-ac39-8ed26a3cb39a
+Fri Jan  1 00:00:12 2021: SESSION_MGR: creating session with session uuid: 'a1b02a98-5236-4e10-b74d-980e747e14e8' and name 'v++_compile_EthOutTop'FFri Jan  1 00:00:51 2021: SESSION_MGR: closing session for UUID 'a1b02a98-5236-4e10-b74d-980e747e14e8' with name 'v++_compile_EthOutTop'

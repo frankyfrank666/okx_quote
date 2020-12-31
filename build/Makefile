@@ -22,7 +22,7 @@ VPP_LINK 	:= --platform $(PLATFORM) --target $(TARGET) --link -g -s --optimize 0
 
 
 
-TARGETS := Vadd EthIn EthOut 
+TARGETS :=  EthIn EthOut 
 xo: $(TARGETS)
 $(TARGETS): %:
 	/root/okx/build/hls_bug_workaround.sh && $(VPP) $(VPP_COMPILE) -k $@Top -o"build/$@Top.xo" "../src/$@/$@Top.cpp"
@@ -33,7 +33,7 @@ Tcp:
 	/root/okx/build/hls_bug_workaround_rev.sh
 
 
-kernel += Tcp
+kernel += EthIn EthOut 
 
 $(foreach kk,$(kernel),$(eval KERNELS += build/$(basename $(kk))Top.xo))
 kernel: $(kernel)

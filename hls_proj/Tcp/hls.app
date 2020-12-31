@@ -7,6 +7,7 @@
         <file name="/root/okx/src/Tcp/TcpManager.h" sc="0" tb="false" cflags="" csimflags="" blackbox="false"/>
         <file name="/root/okx/src/Tcp/TcpPayloadParsor.h" sc="0" tb="false" cflags="" csimflags="" blackbox="false"/>
         <file name="/root/okx/src/Tcp/TcpInputProcessor.h" sc="0" tb="false" cflags="" csimflags="" blackbox="false"/>
+        <file name="/root/okx/src/Tcp/TcpSend.h" sc="0" tb="false" cflags="" csimflags="" blackbox="false"/>
         <file name="/root/okx/src/Tcp/TcpTop.cpp" sc="0" tb="false" cflags="" csimflags="" blackbox="false"/>
         <file name="/root/okx/src/Tcp/TcpPayloadParsor.cpp" sc="0" tb="false" cflags="" csimflags="" blackbox="false"/>
         <file name="/root/okx/src/Tcp/TcpSend.cpp" sc="0" tb="false" cflags="" csimflags="" blackbox="false"/>

@@ -1,5 +1,5 @@
 obj/TcpSend.o: ../../../../../src/Tcp/TcpSend.cpp \
- ../../../../../src/Tcp/TcpManager.h \
+ ../../../../../src/Tcp/TcpSend.h ../../../../../src/Tcp/TcpTop.h \
  ../../../../../src/Tcp/../common/utils.h \
  /opt/Xilinx/Vitis/2020.1/include/ap_int.h \
  /opt/Xilinx/Vitis/2020.1/include/ap_common.h \
@@ -24,5 +24,4 @@ obj/TcpSend.o: ../../../../../src/Tcp/TcpSend.cpp \
  /opt/Xilinx/Vitis/2020.1/include/ap_fixed_special.h \
  /opt/Xilinx/Vitis/2020.1/include/ap_axi_sdata.h \
  /opt/Xilinx/Vitis/2020.1/include/ap_int.h \
- /opt/Xilinx/Vitis/2020.1/include/hls_stream.h \
- ../../../../../src/Tcp/TcpTop.h
+ /opt/Xilinx/Vitis/2020.1/include/hls_stream.h

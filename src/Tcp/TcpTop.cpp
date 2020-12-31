@@ -37,6 +37,7 @@ extern "C" {
 #pragma hls interface ap_ctrl_none port=return
 
 #pragma hls dataflow
+
         TcpConfig tcpConfig;
         tcpConfig.mDelayCycle = mDelayCycle;
         tcpConfig.mMyIp = mMyIp;

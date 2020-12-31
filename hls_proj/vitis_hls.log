@@ -6,7 +6,7 @@
 
 source /opt/Xilinx/Vitis/2020.1/scripts/vitis_hls/hls.tcl -notrace
 INFO: [HLS 200-10] Running '/opt/Xilinx/Vitis/2020.1/bin/unwrapped/lnx64.o/vitis_hls'
-INFO: [HLS 200-10] For user 'root' on host 'iz2zec7rvst3rc975nctwoz' (Linux_x86_64 version 3.10.0-1160.15.2.el7.x86_64) on Fri Feb 02 03:49:08 CST 2024
+INFO: [HLS 200-10] For user 'root' on host 'iz2zec7rvst3rc975nctwoz' (Linux_x86_64 version 3.10.0-1160.15.2.el7.x86_64) on Fri Jan 01 00:05:16 CST 2021
 INFO: [HLS 200-10] On os "CentOS Linux release 7.4.1708 (Core) "
 INFO: [HLS 200-10] In directory '/root/okx/hls_proj'
 Sourcing Tcl script '/root/okx/hls_proj/csim.tcl'
@@ -18,6 +18,7 @@ INFO: [HLS 200-10] Adding design file '/root/okx/src/Tcp/TcpManager.cpp' to the 
 INFO: [HLS 200-10] Adding design file '/root/okx/src/Tcp/TcpSend.cpp' to the project
 INFO: [HLS 200-10] Adding design file '/root/okx/src/Tcp/TcpPayloadParsor.cpp' to the project
 INFO: [HLS 200-10] Adding design file '/root/okx/src/Tcp/TcpTop.cpp' to the project
+INFO: [HLS 200-10] Adding design file '/root/okx/src/Tcp/TcpSend.h' to the project
 INFO: [HLS 200-10] Adding design file '/root/okx/src/Tcp/TcpInputProcessor.h' to the project
 INFO: [HLS 200-10] Adding design file '/root/okx/src/Tcp/TcpPayloadParsor.h' to the project
 INFO: [HLS 200-10] Adding design file '/root/okx/src/Tcp/TcpManager.h' to the project
@@ -45,6 +46,8 @@ make[1]: Entering directory `/root/okx/hls_proj/Tcp/solution1/csim/build'
    Compiling ../../../../../src/Tcp/Counter.cpp in debug mode
    Generating csim.exe
 make[1]: Leaving directory `/root/okx/hls_proj/Tcp/solution1/csim/build'
+make[1]: Warning: File `/dev/null' has modification time 97374023 s in the future
+make[1]: warning:  Clock skew detected.  Your build may be incomplete.
 0xac8fa9a9ec215c87
 0x9c50640508004500
 0x28260a40008006
@@ -188,7 +191,6 @@ Recv 20
 0xbe7e35719c0d5010
 0xffff000000000000
 ^Sent 21
-CLOSE
 0xac8fa9a9ec215c87
 0x9c50640508004500
 0x28261540008006
@@ -208,4 +210,4 @@ Recv 23
 ^Sent 24
 INFO: [SIM 211-1] CSim done with 0 errors.
 INFO: [SIM 211-3] *************** CSIM finish ***************
-INFO: [Common 17-206] Exiting vitis_hls at Fri Feb  2 03:49:20 2024...
+INFO: [Common 17-206] Exiting vitis_hls at Fri Jan  1 00:05:28 2021...

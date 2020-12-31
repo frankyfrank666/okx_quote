@@ -1,0 +1,4 @@
+EthInTop_control_s_axi
+EthInTop_gmem_m_axi
+regslice_core
+EthInTop

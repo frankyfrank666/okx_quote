@@ -3,8 +3,6 @@
 
 #include "../common/utils.h"
 
-using EthernetAxi64 = ap_axiu<64,0,0,0>;
-
 struct TcpConfig
 {
     ap_uint<32> mDelayCycle; // 3s
@@ -23,19 +21,6 @@ public:
     static constexpr int Connect = 1;
     static constexpr int Close = 2;
     static constexpr int Reset = 3;
-};
-
-enum class TcpState
-{
-    Closed,
-    SynSent,
-    Establsihed,
-
-    FinSent, //wait for finack and send ack and close
-    FinSentWaitAck, //no need wait for their ack, send ack and close
-    FinSentWaitFin, //wait for their fin and send ack and close
-
-    FinAckSent, //they close, we finack and wait for thier ack
 };
 
 struct TcpMeta

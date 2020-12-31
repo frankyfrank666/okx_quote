@@ -1,0 +1,82 @@
+Begin Function 'EthOutTop'
+
+RTL state condition: (1'b1 == ap_CS_fsm_pp0_stage0)
+# ST_2
+local empty <> <integer> <Phi> 'phi' <>
+add_ln695 /opt/Xilinx/Vitis/2020.1/common/technology/autopilot/ap_int_base.h:695
+reg: empty_reg_194[31:0] lv
+
+local icmp_ln882 <> <integer> <Comparator> 'icmp' <>
+icmp_ln882 /opt/Xilinx/Vitis/2020.1/common/technology/autopilot/ap_int_base.h:882
+reg: icmp_ln882_reg_456[0:0] lv
+
+local add_ln695 <> <integer> <Arithmetic> 'add' <>
+add_ln695 /opt/Xilinx/Vitis/2020.1/common/technology/autopilot/ap_int_base.h:695
+reg: add_ln695_reg_460[31:0] lv
+
+local tmp <> <integer> <> 'nbreadreq' <>
+tmp /opt/Xilinx/Vitis/2020.1/common/technology/autopilot/ap_axi_sdata.h:497
+reg: tmp_reg_465[0:0] lv
+
+local add_ln324 <> <integer> <Arithmetic> 'add' <>
+add_ln324 /opt/Xilinx/Vitis/2020.1/common/technology/autopilot/ap_int.h:324
+reg: add_ln324_reg_469[63:0] lv
+
+local trunc_ln324_2 <> <integer> <> 'partselect' <>
+trunc_ln324_2 /opt/Xilinx/Vitis/2020.1/common/technology/autopilot/ap_int.h:324
+reg: trunc_ln324_2_reg_475[59:0] lv
+
+
+RTL state condition: (1'b1 == ap_CS_fsm_pp0_stage1)
+# ST_3
+local tmp_data_V <> <integer> <> 'extractvalue' <>
+tmp.data.V /opt/Xilinx/Vitis/2020.1/common/technology/autopilot/ap_axi_sdata.h:521
+reg: tmp_data_V_reg_485[63:0] lv
+
+local shl_ln324_3 <> <integer> <Shift> 'shl' <>
+shl_ln324_3 /opt/Xilinx/Vitis/2020.1/common/technology/autopilot/ap_int.h:324
+reg: shl_ln324_3_reg_496[127:0] lv
+
+local trunc_ln <> <integer> <> 'partselect' <>
+trunc_ln /opt/Xilinx/Vitis/2020.1/common/technology/autopilot/ap_int.h:324
+reg: trunc_ln_reg_501[59:0] lv
+
+local trunc_ln324_3 <> <integer> <> 'partselect' <>
+trunc_ln324_3 /opt/Xilinx/Vitis/2020.1/common/technology/autopilot/ap_int.h:324
+reg: trunc_ln324_3_reg_506[59:0] lv
+
+
+RTL state condition: (1'b1 == ap_CS_fsm_pp0_stage2)
+# ST_4
+local shl_ln324 <> <integer> <Shift> 'shl' <>
+shl_ln324 /opt/Xilinx/Vitis/2020.1/common/technology/autopilot/ap_int.h:324
+reg: shl_ln324_reg_517[120:0] lv
+
+
+RTL state condition: (1'b1 == ap_CS_fsm_state1)
+# ST_1
+local out_read <> <integer> <> 'read' <>
+reg: out_read_reg_426[63:0] lv
+
+local sub_i_i <> <integer> <Arithmetic> 'add' <>
+reg: sub_i_i_reg_431[32:0] lv
+
+local shl_ln324_1 <> <integer> <Shift> 'shl' <>
+shl_ln324_1 /opt/Xilinx/Vitis/2020.1/common/technology/autopilot/ap_int.h:324
+reg: shl_ln324_1_reg_436[15:0] lv
+
+local zext_ln324_3 <> <integer> <> 'zext' <>
+zext_ln324_3 /opt/Xilinx/Vitis/2020.1/common/technology/autopilot/ap_int.h:324
+reg: zext_ln324_3_reg_441[127:0] lv
+
+local shl_ln324_4 <> <integer> <Shift> 'shl' <>
+shl_ln324_4 /opt/Xilinx/Vitis/2020.1/common/technology/autopilot/ap_int.h:324
+reg: shl_ln324_4_reg_446[15:0] lv
+
+local zext_ln18 <zext_18> <integer> <> 'zext' </root/okx/src/EthOut/EthOutTop.cpp:18>
+zext_ln18 /root/okx/src/EthOut/EthOutTop.cpp:18
+reg: zext_ln18_reg_451[120:0] lv
+
+
+End Function 'EthOutTop'
+

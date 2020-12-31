@@ -1,9 +1,10 @@
 #include "TcpManager.h"
 
-ap_uint<32> BASE_SEQ = 0x06f6bd27;
 
 void Manager(TcpConfig& tcpConfig, hls::stream<ap_uint<1>>& tick_stream_in, hls::stream<TcpMeta>& tcp_recv_stream_in, hls::stream<TcpMeta>& tcp_send_stream_out)
 {   
+#pragma hls pipeline ii=1
+
     static bool pendingRequest = false;
     static TcpMeta recvTcp;
     static TcpState connectionState = TcpState::Closed;
@@ -128,7 +129,7 @@ void Manager(TcpConfig& tcpConfig, hls::stream<ap_uint<1>>& tick_stream_in, hls:
             }
             else if (tcpConfig.mCommand == TcpCommand::Close)
             {
-                std::cout << "CLOSE" << std::endl;
+                // std::cout << "CLOSE" << std::endl;
                 //Build Packet
                 toSend.mSeqNum = ourPrevSeq + ourPrevPayload;
                 toSend.mAckNum = ourPrevAck;
@@ -168,8 +169,8 @@ void Manager(TcpConfig& tcpConfig, hls::stream<ap_uint<1>>& tick_stream_in, hls:
                 else
                     reset=true;
             }
-            else if (tick_stream_in.read_nb(tick))
-                reset=true;
+            // else if (tick_stream_in.read_nb(tick))
+            //     reset=true;
         }
         default:
             break;

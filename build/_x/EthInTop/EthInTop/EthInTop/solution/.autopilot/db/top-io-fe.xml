@@ -1,0 +1,11 @@
+<root versionMajor = "1" versionMinor = "5">
+  <kernel src_name="EthInTop" language="c" hwCtrl="ap_ctrl_hs" mem_layout="fpga64-xilinx-none">
+    <args>
+      <arg id="0" access_type="r" src_name="in" src_type="ap_axiu&lt;64, 0, 0, 0&gt;*" src_isptr="1" src_bitwidth="128" src_size_or_depth="1" hw_interface="MAXI" hw_name="gmem" hw_bitwidth="128" hw_size_or_depth="0" offset_bundle_interface="S_AXILite" offset_bundle_interface_name="control" offset="0x10"/>
+      <arg id="1" access_type="r" src_name="buffSize" src_type="ap_uint&lt;32&gt;" src_isptr="0" src_bitwidth="32" src_size_or_depth="1" hw_interface="S_AXILite" hw_name="control" hw_bitwidth="32" hw_size_or_depth="1"/>
+      <arg id="2" access_type="r" src_name="keep" src_type="ap_uint&lt;32&gt;" src_isptr="0" src_bitwidth="32" src_size_or_depth="1" hw_interface="S_AXILite" hw_name="control" hw_bitwidth="32" hw_size_or_depth="1"/>
+      <arg id="3" access_type="w" src_name="ethernet_stream_out" src_type="stream&lt;ap_axiu&lt;64, 0, 0, 0&gt;, 0&gt;&amp;" src_isptr="1" src_bitwidth="128" src_size_or_depth="1" hw_interface="AXI-Stream" hw_name="ethernet_stream_out" hw_bitwidth="128" hw_size_or_depth="1"/>
+    </args>
+    <return src_type="void" src_bitwidth="0" hw_interface="" hw_name="" hw_bitwidth="0" offset="0x0"/>
+  </kernel>
+</root>

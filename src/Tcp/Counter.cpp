@@ -3,6 +3,7 @@
 void Counter(TcpConfig& tcpConfig, hls::stream<ap_uint<1>>& tick_stream_out)
 {
 #pragma hls latency max=1
+#pragma hls pipeline ii=1
 
     static ap_uint<32> counter = 1;
 

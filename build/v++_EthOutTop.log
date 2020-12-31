@@ -1,0 +1,28 @@
+INFO: [v++ 60-1306] Additional information associated with this v++ compile can be found at:
+	Reports: /root/okx/build/_x/reports/EthOutTop
+	Log files: /root/okx/build/_x/logs/EthOutTop
+INFO: [v++ 60-1657] Initializing dispatch client.
+INFO: [v++ 60-1548] Creating build summary session with primary output /root/okx/build/build/EthOutTop.xo.compile_summary, at Fri Jan  1 00:00:12 2021
+INFO: [v++ 60-1316] Initiating connection to rulecheck server, at Fri Jan  1 00:00:12 2021
+INFO: [v++ 60-1315] Creating rulecheck session with output '/root/okx/build/_x/reports/EthOutTop/v++_compile_EthOutTop_guidance.html', at Fri Jan  1 00:00:13 2021
+INFO: [v++ 60-895]   Target platform: /opt/xilinx/platforms/xilinx_aliyun-f3_dynamic_5_0/xilinx_aliyun-f3_dynamic_5_0.xpfm
+INFO: [v++ 60-1578]   This platform contains Xilinx Shell Archive '/opt/xilinx/platforms/xilinx_aliyun-f3_dynamic_5_0/hw/xilinx_aliyun-f3_dynamic_5_0.xsa'
+INFO: [v++ 60-585] Compiling for hardware emulation target
+INFO: [v++ 60-423]   Target device: xilinx_aliyun-f3_dynamic_5_0
+INFO: [v++ 60-242] Creating kernel: 'EthOutTop'
+
+===>The following messages were generated while  performing high-level synthesis for kernel: EthOutTop Log file: /root/okx/build/_x/EthOutTop/EthOutTop/vitis_hls.log :
+INFO: [v++ 204-61] Pipelining loop 'VITIS_LOOP_18_1'.
+WARNING: [v++ 200-885] Unable to schedule bus request on port 'gmem' due to limited memory ports. Please consider using a memory core with more ports or partitioning the array.
+Resolution: For help on HLS 200-885 see www.xilinx.com/html_docs/xilinx2020_1/hls-guidance/200-885.html
+INFO: [v++ 200-1470] Pipelining result : Target II = 1, Final II = 3, Depth = 73.
+INFO: [v++ 200-790] **** Loop Constraint Status: All loop constraints were NOT satisfied.
+INFO: [v++ 200-789] **** Estimated Fmax: 411.02 MHz
+INFO: [v++ 60-594] Finished kernel compilation
+INFO: [v++ 60-244] Generating system estimate report...
+INFO: [v++ 60-1092] Generated system estimate report: /root/okx/build/_x/reports/EthOutTop/system_estimate_EthOutTop.xtxt
+INFO: [v++ 60-586] Created build/EthOutTop.xo
+INFO: [v++ 60-2343] Use the vitis_analyzer tool to visualize and navigate the relevant reports. Run the following command. 
+    vitis_analyzer /root/okx/build/build/EthOutTop.xo.compile_summary 
+INFO: [v++ 60-791] Total elapsed time: 0h 0m 49s
+INFO: [v++ 60-1653] Closing dispatch client.

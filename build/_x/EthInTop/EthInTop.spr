@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="EthInTop" dir="">
+  <FileSets>
+    <FileSet Name="kernel_EthInTop" Type="DesignSrcs">
+      <File Path="/root/okx/src/EthIn/EthInTop.cpp"/>
+      <Config/>
+    </FileSet>
+  </FileSets>
+  <Runs/>
+</project>

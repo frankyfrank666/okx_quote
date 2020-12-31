@@ -1,0 +1,19 @@
+INFO: [v++ 60-1306] Additional information associated with this v++ compile can be found at:
+	Reports: /root/okx/build/_x/reports/EthInTop
+	Log files: /root/okx/build/_x/logs/EthInTop
+INFO: [v++ 60-1657] Initializing dispatch client.
+INFO: [v++ 60-1548] Creating build summary session with primary output /root/okx/build/build/EthInTop.xo.compile_summary, at Fri Jan  1 00:00:12 2021
+INFO: [v++ 60-1316] Initiating connection to rulecheck server, at Fri Jan  1 00:00:12 2021
+INFO: [v++ 60-1315] Creating rulecheck session with output '/root/okx/build/_x/reports/EthInTop/v++_compile_EthInTop_guidance.html', at Fri Jan  1 00:00:13 2021
+INFO: [v++ 60-895]   Target platform: /opt/xilinx/platforms/xilinx_aliyun-f3_dynamic_5_0/xilinx_aliyun-f3_dynamic_5_0.xpfm
+INFO: [v++ 60-1578]   This platform contains Xilinx Shell Archive '/opt/xilinx/platforms/xilinx_aliyun-f3_dynamic_5_0/hw/xilinx_aliyun-f3_dynamic_5_0.xsa'
+INFO: [v++ 60-585] Compiling for hardware emulation target
+INFO: [v++ 60-423]   Target device: xilinx_aliyun-f3_dynamic_5_0
+INFO: [v++ 60-242] Creating kernel: 'EthInTop'
+
+===>The following messages were generated while  performing high-level synthesis for kernel: EthInTop Log file: /root/okx/build/_x/EthInTop/EthInTop/vitis_hls.log :
+ERROR: [v++ 207-812] '../include/utils.h' file not found: /root/okx/src/EthIn/EthInTop.cpp:1:10
+ERROR: [v++ 60-300] Failed to build kernel(ip) EthInTop, see log for details: /root/okx/build/_x/EthInTop/EthInTop/vitis_hls.log
+ERROR: [v++ 60-599] Kernel compilation failed to complete
+ERROR: [v++ 60-592] Failed to finish compilation
+INFO: [v++ 60-1653] Closing dispatch client.

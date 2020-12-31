@@ -1,0 +1,98 @@
+
+*** Running vitis_hls
+    with args -f EthOutTop.tcl -messageDb vitis_hls.pb
+
+
+****** Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.1 (64-bit)
+  **** SW Build 2902540 on Wed May 27 19:54:35 MDT 2020
+  **** IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+source /opt/Xilinx/Vitis/2020.1/scripts/vitis_hls/hls.tcl -notrace
+INFO: [HLS 200-10] Running '/opt/Xilinx/Vitis/2020.1/bin/unwrapped/lnx64.o/vitis_hls'
+INFO: [HLS 200-10] For user 'root' on host 'iz2zec7rvst3rc975nctwoz' (Linux_x86_64 version 3.10.0-1160.15.2.el7.x86_64) on Fri Jan 01 00:00:21 CST 2021
+INFO: [HLS 200-10] On os "CentOS Linux release 7.4.1708 (Core) "
+INFO: [HLS 200-10] In directory '/root/okx/build/_x/EthOutTop/EthOutTop'
+Sourcing Tcl script 'EthOutTop.tcl'
+INFO: [HLS 200-10] Creating and opening project '/root/okx/build/_x/EthOutTop/EthOutTop/EthOutTop'.
+INFO: [HLS 200-10] Adding design file '/root/okx/src/EthOut/EthOutTop.cpp' to the project
+INFO: [HLS 200-10] Creating and opening solution '/root/okx/build/_x/EthOutTop/EthOutTop/EthOutTop/solution'.
+INFO: [HLS 200-1505] Using flow_target 'vitis'
+Resolution: For help on HLS 200-1505 see www.xilinx.com/html_docs/xilinx2020_1/hls-guidance/200-1505.html
+INFO: [HLS 200-435] Setting 'config_flow -target' configuration: config_interface -m_axi_latency=64
+INFO: [HLS 200-435] Setting 'config_flow -target' configuration: config_interface -m_axi_alignment_byte_size=64
+INFO: [HLS 200-435] Setting 'config_flow -target' configuration: config_interface -m_axi_max_widen_bitwidth=512
+INFO: [HLS 200-435] Setting 'config_flow -target' configuration: config_interface -default_slave_interface=s_axilite
+INFO: [HLS 200-435] Setting 'config_flow -target' configuration: config_rtl -register_reset_num=3
+INFO: [HLS 200-10] Setting target device to 'xcvu9p-flgb2104-2L-e'
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 3.333ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 0.9ns.
+INFO: [HLS 200-10] Analyzing design file '/root/okx/src/EthOut/EthOutTop.cpp' ... 
+INFO: [HLS 200-777] Using interface defaults for 'Vitis' target.
+INFO: [HLS 214-131] Inlining function 'hls::stream<ap_axiu<64, 0, 0, 0>, 0>::read()' into 'EthOutTop' (/root/okx/src/EthOut/EthOutTop.cpp:22:45)
+INFO: [HLS 214-131] Inlining function 'hls::stream<ap_axiu<64, 0, 0, 0>, 0>::empty() const' into 'EthOutTop' (/root/okx/src/EthOut/EthOutTop.cpp:20:36)
+INFO: [HLS 214-178] Inlining function 'ap_axiu<64, 0, 0, 0>::operator=(ap_axiu<64, 0, 0, 0>&&)' into 'EthOutTop' (/root/okx/src/EthOut/EthOutTop.cpp:13:0)
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1774.027 ; gain = 1250.719 ; free physical = 25353 ; free virtual = 28776
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1774.027 ; gain = 1250.719 ; free physical = 25353 ; free virtual = 28776
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1774.027 ; gain = 1250.719 ; free physical = 25335 ; free virtual = 28758
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1774.027 ; gain = 1250.719 ; free physical = 25332 ; free virtual = 28756
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_18_1' in function 'EthOutTop' automatically.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1774.027 ; gain = 1250.719 ; free physical = 25302 ; free virtual = 28730
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1774.027 ; gain = 1250.719 ; free physical = 25298 ; free virtual = 28726
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'EthOutTop' ...
+WARNING: [SYN 201-107] Renaming port name 'EthOutTop/out' to 'EthOutTop/out_r' to avoid the conflict with HDL keywords or other object names.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'EthOutTop' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_18_1'.
+WARNING: [HLS 200-885] Unable to schedule bus request on port 'gmem' due to limited memory ports. Please consider using a memory core with more ports or partitioning the array.
+Resolution: For help on HLS 200-885 see www.xilinx.com/html_docs/xilinx2020_1/hls-guidance/200-885.html
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 3, Depth = 73.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 12.8 seconds; current allocated memory: 172.093 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.14 seconds; current allocated memory: 172.882 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'EthOutTop' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low.
+INFO: [RTGEN 206-500] Setting interface mode on port 'EthOutTop/gmem' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'EthOutTop/out_r' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'EthOutTop/buffSize' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'EthOutTop/ethernet_stream_in_V_data_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'EthOutTop/ethernet_stream_in_V_keep_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'EthOutTop/ethernet_stream_in_V_strb_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'EthOutTop/ethernet_stream_in_V_last_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on function 'EthOutTop' to 's_axilite & ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Bundling port 'out_r', 'buffSize' and 'return' to AXI-Lite port control.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'EthOutTop'.
+INFO: [HLS 200-111]  Elapsed time: 0.19 seconds; current allocated memory: 174.419 MB.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1774.027 ; gain = 1250.719 ; free physical = 25279 ; free virtual = 28715
+INFO: [VHDL 208-304] Generating VHDL RTL for EthOutTop.
+INFO: [VLOG 209-307] Generating Verilog RTL for EthOutTop.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were NOT satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 411.02 MHz
+INFO: [IMPL 213-8] Exporting RTL as a Vivado IP.
+
+****** Vivado v2020.1 (64-bit)
+  **** SW Build 2902540 on Wed May 27 19:54:35 MDT 2020
+  **** IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+source run_ippack.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2020.1/data/ip'.
+INFO: [Common 17-206] Exiting Vivado at Fri Jan  1 00:00:49 2021...
+INFO: [HLS 200-802] Generated output file EthOutTop/solution/impl/export.zip
+HLS completed successfully
+INFO: [HLS 200-112] Total elapsed time: 30.01 seconds; peak allocated memory: 174.419 MB.
+INFO: [Common 17-206] Exiting vitis_hls at Fri Jan  1 00:00:51 2021...

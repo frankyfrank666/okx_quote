@@ -3,6 +3,8 @@
 void InputProcessor(TcpConfig& tcpConfig, ap_uint<32>& askPxInt, ap_uint<32>& askPxDec, ap_uint<32>& askSz, ap_uint<32>& outputCount, 
 hls::stream<EthernetAxi64>& ethernet_stream_in, hls::stream<TcpMeta>& tcp_recv_stream_out)
 {
+#pragma hls pipeline ii=1
+
     static TcpHeaderProcessor tcpHeaderProcessor;
     static HttpProcessingState inputProcState = HttpProcessingState::IpTcpHeader;
     EthernetAxi64 packetIn;

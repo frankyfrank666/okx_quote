@@ -1,34 +1,8 @@
-#include "TcpManager.h"
-
-const ap_uint<32> iPv4Dscp = 0x08004500;
-const ap_uint<16> totalLen = 0x0028;
-const ap_uint<16> totalLenGET = 0x009a;  
-const ap_uint<32> doNotFragTtlTcp = 0x40008006;
-const ap_uint<8> headerLen = 0x50;
-const ap_uint<8> flagsAck = 0b00010000;
-const ap_uint<8> flagsPsh = 0b00001000;
-const ap_uint<8> flagsRst = 0b00000100;
-const ap_uint<8> flagsSyn = 0b00000010;
-const ap_uint<8> flagsFin = 0b00000001;
-const ap_uint<16> window = 0xffff;
-const ap_uint<16> urgent = 0;
-
-enum class TcpSendState
-{
-    DestMac,
-    SrcMac,
-    TotalLenDSCPTcp,
-    HeaderChecksumAndDestIp,
-    SeqNumber,
-    AckNumber,
-    TcpChecksum,
-    Request,
-};
-
-ap_uint<16> BASE_ID = 0x260a;
+#include "TcpSend.h"
 
 void Sender(TcpConfig& tcpConfig, hls::stream<TcpMeta>& tcp_send_stream_in, hls::stream<EthernetAxi64>& ethernet_stream_out)
 {
+#pragma hls pipeline ii=1
     static bool busy = false;
     static TcpSendState sendState = TcpSendState::DestMac;
     static TcpMeta replyConfig;

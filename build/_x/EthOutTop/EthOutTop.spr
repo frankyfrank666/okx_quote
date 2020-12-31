@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="EthOutTop" dir="">
+  <FileSets>
+    <FileSet Name="kernel_EthOutTop" Type="DesignSrcs">
+      <File Path="/root/okx/src/EthOut/EthOutTop.cpp"/>
+      <Config/>
+    </FileSet>
+  </FileSets>
+  <Runs/>
+</project>

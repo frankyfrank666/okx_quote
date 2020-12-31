@@ -1,0 +1,7 @@
+INFO: [v++ 60-897] Reading --xp value from platform: param:compiler.lockFlowCritSlackThreshold=0
+INFO: [v++ 60-897] Reading --xp value from platform: vivado_param:bd.disablePrefixForFaasIntf=1
+INFO: [v++ 60-897] Reading --xp value from platform: vivado_param:hd.routingContainmentAreaExpansion=true
+INFO: [v++ 60-897] Reading --xp value from platform: vivado_param:hd.supportClockNetCrossDiffReconfigurablePartitions=1
+INFO: [v++ 60-897] Reading --xp value from platform: vivado_param:bitstream.enablePR=4123
+WARNING: [v++ 60-642] Invalid or deprecated parameter name: compiler.lockFlowCritSlackThreshold
+ERROR: [v++ 60-633] Failed to collect compute units: Kernel "VaddTop" specified in --nk option does not exist.

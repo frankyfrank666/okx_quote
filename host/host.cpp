@@ -1,62 +1,54 @@
 #include "host.h"
 
-static const int DATA_SIZE = 4096;
+struct EthernetAxi64
+{
+ap_uint<62> data;
+ap_uint<1> last;
+ap_uint<89> keep;
+};
 
 int main(int argc, char* argv[]) {
     if(argc != 2) {
         std::cout << "Usage: " << argv[0] <<" <xclbin>" << std::endl;
         return EXIT_FAILURE;
     }
-
     char* xclbinFilename = argv[1];
     FPGA fpga(xclbinFilename);
     
-    size_t size_in_bytes = DATA_SIZE * sizeof(int);
+    int buff_size = 20;
 
+    std::vector<EthernetAxi64, aligned_allocator<EthernetAxi64>> input(buff_size);
+    std::vector<EthernetAxi64, aligned_allocator<EthernetAxi64>> output(buff_size);
 
-    ReadFromFpgaBuffer<ap_uint<90>> buffer_result(fpga.mQueue,fpga.mContext, size_in_bytes);
-    WriteToFpgaBuffer<ap_uint<90>> buffer_a(fpga.mQueue,fpga.mContext, size_in_bytes);
-    WriteToFpgaBuffer<ap_uint<90>> buffer_b(fpga.mQueue,fpga.mContext, size_in_bytes);
-    
-    // int *buffer_a.mPtr = buffer_a.mPtr; 
-    // int *buffer_b.mPtr = buffer_b.mPtr; 
-
-    //setting input data
-    for(int i = 0 ; i< DATA_SIZE; i++){
-	    buffer_a.mPtr[i] = 10;
-	    buffer_b.mPtr[i] = 20;
+    for(int i = 0; i < 10; ++i)
+    {
+        EthernetAxi64 x;
+        x.data = 2*i;
+        input[i] = x;
     }
 
-    // Data will be migrated to kernel space
-    buffer_a.syncBuffer();
-    buffer_b.syncBuffer();
+    // Allocate Buffer in Global Memory
+    cl::Buffer in_buf(fpga.mContext, CL_MEM_READ_ONLY | CL_MEM_USE_HOST_PTR, 10 * sizeof(EthernetAxi64),input.data());
+    cl::Buffer out_buf(fpga.mContext, CL_MEM_WRITE_ONLY | CL_MEM_USE_HOST_PTR, 10 * sizeof(EthernetAxi64),output.data());
 
-    //Launch the Kernel
-    //set the kernel Arguments
-    int narg=0;
-    fpga.m_krnl_vector_add.setArg(narg++,buffer_a.mBuffer);
-    fpga.m_krnl_vector_add.setArg(narg++,buffer_b.mBuffer);
-    fpga.m_krnl_vector_add.setArg(narg++,buffer_result.mBuffer);
-    fpga.m_krnl_vector_add.setArg(narg++,DATA_SIZE);
-    fpga.mQueue.enqueueTask(fpga.m_krnl_vector_add);
 
-    // The result of the previous kernel execution will need to be retrieved in
-    // order to view the results. This call will transfer the data from FPGA to
-    // source_results vector
+    fpga.mKernelEthInTop.setArg(0, in_buf);
+    fpga.mKernelEthInTop.setArg(1, 10);
+    fpga.mKernelEthOutTop.setArg(0, out_buf);
+    fpga.mKernelEthOutTop.setArg(1, 10);
 
-    buffer_result.syncBuffer();
+    fpga.mQueue.enqueueMigrateMemObjects({in_buf}, 0 /* 0 means from host*/);
+    fpga.mQueue.enqueueTask(fpga.mKernelEthInTop);
     fpga.mQueue.finish();
 
-    //Verify the result
-    int match = 0;
-    for (int i = 0; i < DATA_SIZE; i++) {
-        int host_result = buffer_a.mPtr[i] + buffer_b.mPtr[i];
-        if (buffer_result.mPtr[i] != host_result) {
-            printf(error_message.c_str(), i, host_result, buffer_result.mPtr[i]);
-            match = 1;
-            break;
-        }
-    }
+    fpga.mQueue.enqueueTask(fpga.mKernelEthOutTop);
+    fpga.mQueue.enqueueMigrateMemObjects({out_buf}, CL_MIGRATE_MEM_OBJECT_HOST);
+    fpga.mQueue.finish();
 
-    std::cout << "TEST " << (match ? "FAILED" : "PASSED") << std::endl; 
+
+    for(int i = 0; i < 10; i++)
+    {
+        std::cout << input[i].data << ' ';
+        std::cout << output[i].data << '\n';
+    }
 }

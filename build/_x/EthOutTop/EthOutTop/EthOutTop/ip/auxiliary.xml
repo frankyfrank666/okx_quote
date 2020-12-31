@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xd:acceleratorMap xmlns:xd="http://www.xilinx.com/xidane" xd:functionName="EthOutTop" xd:componentRef="EthOutTop" xd:initiationInterval="x" xd:clockPeriod="3.333" xd:sequential="true" xd:hostMachine="64" xd:reset="control">
+  <xd:controlReg xd:name="control" xd:interfaceRef="s_axi_control" xd:busTypeRef="axilite" xd:type="generic_axi_lite" xd:offset="0x0"/>
+  <xd:arg xd:name="*(out)" xd:originalName="out" xd:direction="inout" xd:interfaceRef="m_axi_gmem" xd:busTypeRef="aximm" xd:dataWidth="128" xd:bufferDirection="out"/>
+  <xd:arg xd:name="ethernet_stream_in.data" xd:originalName="ethernet_stream_in" xd:direction="in" xd:interfaceRef="ethernet_stream_in" xd:busTypeRef="axis" xd:arraySize="2" xd:dataWidth="64"/>
+  <xd:arg xd:name="ethernet_stream_in.keep" xd:originalName="ethernet_stream_in" xd:direction="in" xd:interfaceRef="ethernet_stream_in" xd:busTypeRef="axis" xd:arraySize="2" xd:dataWidth="8"/>
+  <xd:arg xd:name="ethernet_stream_in.strb" xd:originalName="ethernet_stream_in" xd:direction="in" xd:interfaceRef="ethernet_stream_in" xd:busTypeRef="axis" xd:arraySize="2" xd:dataWidth="8"/>
+  <xd:arg xd:name="ethernet_stream_in.last" xd:originalName="ethernet_stream_in" xd:direction="in" xd:interfaceRef="ethernet_stream_in" xd:busTypeRef="axis" xd:arraySize="2" xd:dataWidth="1"/>
+  <xd:latencyEstimates xd:best-case="undef" xd:worst-case="undef" xd:average-case="undef"/>
+  <xd:resourceEstimates xd:LUT="2475" xd:FF="1617" xd:BRAM="8" xd:DSP="0"/>
+</xd:acceleratorMap>
