@@ -1,7 +1,6 @@
 obj/TcpInputProcessor.o: ../../../../../src/Tcp/TcpInputProcessor.cpp \
  ../../../../../src/Tcp/TcpInputProcessor.h \
- ../../../../../src/Tcp/TcpTop.h \
- ../../../../../src/Tcp/../include/utils.h \
+ ../../../../../src/Tcp/TcpTop.h ../../../../../src/Tcp/../common/utils.h \
  /opt/Xilinx/Vitis/2020.1/include/ap_int.h \
  /opt/Xilinx/Vitis/2020.1/include/ap_common.h \
  /opt/Xilinx/Vitis/2020.1/include/ap_decl.h \
@@ -27,4 +26,4 @@ obj/TcpInputProcessor.o: ../../../../../src/Tcp/TcpInputProcessor.cpp \
  /opt/Xilinx/Vitis/2020.1/include/ap_int.h \
  /opt/Xilinx/Vitis/2020.1/include/hls_stream.h \
  ../../../../../src/Tcp/../Configurator/ConfiguratorTop.h \
- ../../../../../src/Tcp/../Configurator/../include/utils.h
+ ../../../../../src/Tcp/../Configurator/../common/utils.h
