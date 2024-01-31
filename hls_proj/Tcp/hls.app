@@ -1,4 +1,4 @@
-<AutoPilot:project xmlns:AutoPilot="com.autoesl.autopilot.project" projectType="C/C++" top="TcpTop" name="Tcp">
+<AutoPilot:project xmlns:AutoPilot="com.autoesl.autopilot.project" top="TcpTop" name="Tcp">
     <includePaths/>
     <libraryFlag/>
     <files>
