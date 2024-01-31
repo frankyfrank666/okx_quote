@@ -1,0 +1,43 @@
+
+****** Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.1 (64-bit)
+  **** SW Build 2902540 on Wed May 27 19:54:35 MDT 2020
+  **** IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+source /opt/Xilinx/Vitis/2020.1/scripts/vitis_hls/hls.tcl -notrace
+INFO: [HLS 200-10] Running '/opt/Xilinx/Vitis/2020.1/bin/unwrapped/lnx64.o/vitis_hls'
+INFO: [HLS 200-10] For user 'root' on host 'iz2zec7rvst3rc975nctwoz' (Linux_x86_64 version 3.10.0-1160.15.2.el7.x86_64) on Wed Jan 31 22:09:42 CST 2024
+INFO: [HLS 200-10] On os "CentOS Linux release 7.4.1708 (Core) "
+INFO: [HLS 200-10] In directory '/root/okx/hls_proj'
+Sourcing Tcl script '/root/okx/hls_proj/csim.tcl'
+INFO: [HLS 200-10] Creating and opening project '/root/okx/hls_proj/Tcp'.
+INFO: [HLS 200-10] Adding design file '/root/okx/src/Tcp/TcpInputProcessor.cpp' to the project
+INFO: [HLS 200-10] Adding design file '/root/okx/src/Tcp/TcpPayloadParsor.cpp' to the project
+INFO: [HLS 200-10] Adding design file '/root/okx/src/Tcp/TcpTop.cpp' to the project
+INFO: [HLS 200-10] Adding design file '/root/okx/src/Tcp/TcpInputProcessor.h' to the project
+INFO: [HLS 200-10] Adding design file '/root/okx/src/Tcp/TcpPayloadParsor.h' to the project
+INFO: [HLS 200-10] Adding design file '/root/okx/src/Tcp/TcpTop.h' to the project
+INFO: [HLS 200-10] Adding test bench file '/root/okx/src/Tcp/Test/TcpTest.cpp' to the project
+INFO: [HLS 200-10] Creating and opening solution '/root/okx/hls_proj/Tcp/solution1'.
+INFO: [HLS 200-1505] Using flow_target 'vitis'
+Resolution: For help on HLS 200-1505 see www.xilinx.com/html_docs/xilinx2020_1/hls-guidance/200-1505.html
+INFO: [HLS 200-435] Setting 'config_flow -target' configuration: config_interface -m_axi_latency=64
+INFO: [HLS 200-435] Setting 'config_flow -target' configuration: config_interface -m_axi_alignment_byte_size=64
+INFO: [HLS 200-435] Setting 'config_flow -target' configuration: config_interface -m_axi_max_widen_bitwidth=512
+INFO: [HLS 200-435] Setting 'config_flow -target' configuration: config_interface -default_slave_interface=s_axilite
+INFO: [HLS 200-435] Setting 'config_flow -target' configuration: config_rtl -register_reset_num=3
+INFO: [HLS 200-10] Setting target device to 'xqvu9p-fsqd2104-2LV-e'
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 3ns.
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+make[1]: Entering directory `/root/okx/hls_proj/Tcp/solution1/csim/build'
+   Compiling ../../../../../src/Tcp/Test/TcpTest.cpp in debug mode
+   Compiling ../../../../../src/Tcp/TcpTop.cpp in debug mode
+   Compiling ../../../../../src/Tcp/TcpPayloadParsor.cpp in debug mode
+   Compiling ../../../../../src/Tcp/TcpInputProcessor.cpp in debug mode
+   Generating csim.exe
+make[1]: Leaving directory `/root/okx/hls_proj/Tcp/solution1/csim/build'
+Packet 1:
+43409.3 453INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [Common 17-206] Exiting vitis_hls at Wed Jan 31 22:09:51 2024...

@@ -1,0 +1,112 @@
+INFO-FLOW: Workspace /root/okx/hls_proj/Tcp/solution1 opened at Wed Jan 31 22:09:42 CST 2024
+Execute     send_msg_by_id INFO @200-1505@%s%s  vitis 
+INFO: [HLS 200-1505] Using flow_target 'vitis'
+Execute     get_config_interface -m_axi_latency 
+Execute     send_msg_by_id INFO @200-435@%s%s 'config_flow -target' config_interface -m_axi_latency=64 
+INFO: [HLS 200-435] Setting 'config_flow -target' configuration: config_interface -m_axi_latency=64
+Execute     config_interface -m_axi_latency=64 
+Execute     get_config_interface -m_axi_alignment_byte_size 
+Execute     send_msg_by_id INFO @200-435@%s%s 'config_flow -target' config_interface -m_axi_alignment_byte_size=64 
+INFO: [HLS 200-435] Setting 'config_flow -target' configuration: config_interface -m_axi_alignment_byte_size=64
+Execute     config_interface -m_axi_alignment_byte_size=64 
+Execute     get_config_interface -m_axi_max_widen_bitwidth 
+Execute     send_msg_by_id INFO @200-435@%s%s 'config_flow -target' config_interface -m_axi_max_widen_bitwidth=512 
+INFO: [HLS 200-435] Setting 'config_flow -target' configuration: config_interface -m_axi_max_widen_bitwidth=512
+Execute     config_interface -m_axi_max_widen_bitwidth=512 
+Execute     get_config_interface -default_interface 
+INFO-FLOW: Setting macro_cmd 'config_flow -target' configuration: config_interface -default_interface=kernel
+Execute     config_interface -default_interface=kernel 
+Execute     get_config_interface -default_slave_interface 
+Execute     send_msg_by_id INFO @200-435@%s%s 'config_flow -target' config_interface -default_slave_interface=s_axilite 
+INFO: [HLS 200-435] Setting 'config_flow -target' configuration: config_interface -default_slave_interface=s_axilite
+Execute     config_interface -default_slave_interface=s_axilite 
+Execute     get_config_rtl -register_reset_num 
+Execute     send_msg_by_id INFO @200-435@%s%s 'config_flow -target' config_rtl -register_reset_num=3 
+INFO: [HLS 200-435] Setting 'config_flow -target' configuration: config_rtl -register_reset_num=3
+Execute     config_rtl -register_reset_num=3 
+Execute   set_part xqvu9p-fsqd2104-2LV-e 
+INFO-FLOW: DBG:set_part: XILINX_VIVADO=/opt/Xilinx/Vivado/2020.1
+INFO-FLOW: DBG:set_part: RDI_DATADIR=/opt/Xilinx/Vivado/2020.1/data:/opt/Xilinx/Vitis/2020.1/data
+Execute     ap_part_info -name xqvu9p-fsqd2104-2LV-e -data single -quiet 
+DBG:HLSDevice: Trying to load device library: /opt/Xilinx/Vitis/2020.1/lib/lnx64.o/librdi_hlsvwrap.so
+DBG:HLSDevice: first parts/arch.xml in RDI_DATADIR: /opt/Xilinx/Vivado/2020.1/data/parts/arch.xml
+Command     ap_part_info done; 2.26 sec.
+Execute     ap_part_info -name xqvu9p-fsqd2104-2LV-e -data info 
+Execute     ap_family_info -name qvirtexuplus -data info 
+Execute     add_library xilinx/virtexuplus/virtexuplus:xqvu9p:-fsqd2104:-2LV-e 
+Execute       get_default_platform 
+Execute       open_platform DefaultPlatform 
+Execute       import_lib /opt/Xilinx/Vitis/2020.1/common/technology/xilinx/virtexuplus/virtexuplus 
+Execute         source /opt/Xilinx/Vitis/2020.1/common/technology/xilinx/common/xilinx.lib 
+Execute           source /opt/Xilinx/Vitis/2020.1/common/technology/xilinx/common/dsp48.lib 
+Execute         source /opt/Xilinx/Vitis/2020.1/common/technology/xilinx/common/xilinx.hlp 
+Execute           source /opt/Xilinx/Vitis/2020.1/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute             source /opt/Xilinx/Vitis/2020.1/common/technology/xilinx/interface/maxi.hlp 
+Execute             source /opt/Xilinx/Vitis/2020.1/common/technology/xilinx/interface/saxilite.hlp 
+Execute           source /opt/Xilinx/Vitis/2020.1/common/technology/xilinx/common/dsp48.hlp 
+Execute         source /opt/Xilinx/Vitis/2020.1/common/technology/xilinx/virtexuplus/dsp48e2.hlp 
+Execute       source /opt/Xilinx/Vitis/2020.1/common/technology/xilinx/virtexuplus/virtexuplus.gen 
+Execute         source /opt/Xilinx/Vitis/2020.1/common/technology/xilinx/common/xilinx.gen 
+Execute           source /opt/Xilinx/Vitis/2020.1/common/technology/xilinx/interface/plb46.gen 
+Execute           source /opt/Xilinx/Vitis/2020.1/common/technology/xilinx/interface/axi4.gen 
+Execute           source /opt/Xilinx/Vitis/2020.1/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute             source /opt/Xilinx/Vitis/2020.1/common/technology/xilinx/interface/saxilite.gen 
+Execute             source /opt/Xilinx/Vitis/2020.1/common/technology/xilinx/interface/maxi.gen 
+Execute           source /opt/Xilinx/Vitis/2020.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute           source /opt/Xilinx/Vitis/2020.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute           source /opt/Xilinx/Vitis/2020.1/common/technology/xilinx/ip/dds_compiler.gen 
+Execute           source /opt/Xilinx/Vitis/2020.1/common/technology/xilinx/ip/util.gen 
+Execute           source /opt/Xilinx/Vitis/2020.1/common/technology/xilinx/ip/xfft.gen 
+Execute           source /opt/Xilinx/Vitis/2020.1/common/technology/xilinx/ip/xfir.gen 
+Execute           source /opt/Xilinx/Vitis/2020.1/common/technology/xilinx/common/dsp48.gen 
+Command         ap_source done; 0.12 sec.
+Command       ap_source done; 0.12 sec.
+Execute       ap_part_info -data single -name xqvu9p-fsqd2104-2LV-e 
+Execute       ap_part_info -name xqvu9p-fsqd2104-2LV-e -data resources 
+Execute       config_chip_info -resource {SLICE 147780} {LUT 1182240} {FF 2364480} {DSP 6840} {BRAM 4320} {URAM 960} {SLR 3} 
+Execute       ap_part_info -name xqvu9p-fsqd2104-2LV-e -data info 
+Execute       config_chip_info -speed medium 
+Command     add_library done; 0.15 sec.
+Execute     add_library xilinx/virtexuplus/virtexuplus_fpv7 
+Execute       get_default_platform 
+Execute       open_platform DefaultPlatform 
+Execute       import_lib /opt/Xilinx/Vitis/2020.1/common/technology/xilinx/virtexuplus/virtexuplus_fpv7 
+Execute         source /opt/Xilinx/Vitis/2020.1/common/technology/xilinx/common/xilinx_fp.lib 
+Execute         source /opt/Xilinx/Vitis/2020.1/common/technology/xilinx/common/xilinx_fp.hlp 
+Execute           source /opt/Xilinx/Vitis/2020.1/common/technology/xilinx/common/xilinx.hlp 
+Execute             source /opt/Xilinx/Vitis/2020.1/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute               source /opt/Xilinx/Vitis/2020.1/common/technology/xilinx/interface/maxi.hlp 
+Execute               source /opt/Xilinx/Vitis/2020.1/common/technology/xilinx/interface/saxilite.hlp 
+Execute             source /opt/Xilinx/Vitis/2020.1/common/technology/xilinx/common/dsp48.hlp 
+Execute       source /opt/Xilinx/Vitis/2020.1/common/technology/xilinx/virtexuplus/virtexuplus_fpv7.gen 
+Execute         source /opt/Xilinx/Vitis/2020.1/common/technology/xilinx/common/xilinx_fp.gen 
+INFO: [HLS 200-10] Setting target device to 'xqvu9p-fsqd2104-2LV-e'
+Execute     ap_part_info -name xqvu9p-fsqd2104-2LV-e -data info 
+Execute     get_default_platform 
+Command   set_part done; 2.46 sec.
+Execute   create_clock -period 3 
+Execute     ap_set_clock -name default -period 3 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 3ns.
+Execute   csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+Execute     is_encrypted /root/okx/src/Tcp/Test/TcpTest.cpp 
+Execute     is_xip /root/okx/src/Tcp/Test/TcpTest.cpp 
+Execute     is_encrypted /root/okx/src/Tcp/TcpTop.h 
+Execute     is_xip /root/okx/src/Tcp/TcpTop.h 
+Execute     is_encrypted /root/okx/src/Tcp/TcpPayloadParsor.h 
+Execute     is_xip /root/okx/src/Tcp/TcpPayloadParsor.h 
+Execute     is_encrypted /root/okx/src/Tcp/TcpInputProcessor.h 
+Execute     is_xip /root/okx/src/Tcp/TcpInputProcessor.h 
+Execute     is_encrypted /root/okx/src/Tcp/TcpTop.cpp 
+Execute     is_xip /root/okx/src/Tcp/TcpTop.cpp 
+Execute     is_encrypted /root/okx/src/Tcp/TcpPayloadParsor.cpp 
+Execute     is_xip /root/okx/src/Tcp/TcpPayloadParsor.cpp 
+Execute     is_encrypted /root/okx/src/Tcp/TcpInputProcessor.cpp 
+Execute     is_xip /root/okx/src/Tcp/TcpInputProcessor.cpp 
+Execute     ap_part_info -name xqvu9p-fsqd2104-2LV-e -data info 
+Execute     source run_sim.tcl 
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+Command   csim_design done; 6.45 sec.
+Execute   cleanup_all 

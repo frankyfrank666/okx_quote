@@ -1,0 +1,13 @@
+INFO: [SIM 2] *************** CSIM start ***************
+INFO: [SIM 4] CSIM will launch GCC as the compiler.
+make[1]: Entering directory `/root/okx/hls_proj/Tcp/solution1/csim/build'
+   Compiling ../../../../../src/Tcp/Test/TcpTest.cpp in debug mode
+   Compiling ../../../../../src/Tcp/TcpTop.cpp in debug mode
+   Compiling ../../../../../src/Tcp/TcpPayloadParsor.cpp in debug mode
+   Compiling ../../../../../src/Tcp/TcpInputProcessor.cpp in debug mode
+   Generating csim.exe
+make[1]: Leaving directory `/root/okx/hls_proj/Tcp/solution1/csim/build'
+Packet 1:
+43409.3 453
+INFO: [SIM 1] CSim done with 0 errors.
+INFO: [SIM 3] *************** CSIM finish ***************
