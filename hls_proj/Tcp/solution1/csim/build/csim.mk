@@ -18,7 +18,7 @@ __SIM_DDS__ = 1
 
 ObjDir = obj
 
-HLS_SOURCES = ../../../../../src/Tcp/Test/TcpTest.cpp ../../../../../src/Tcp/TcpTop.cpp ../../../../../src/Tcp/TcpPayloadParsor.cpp ../../../../../src/Tcp/TcpInputProcessor.cpp
+HLS_SOURCES = ../../../../../src/Tcp/Test/TcpTest.cpp ../../../../../src/Tcp/TcpTop.cpp ../../../../../src/Tcp/TcpPayloadParsor.cpp ../../../../../src/Tcp/TcpSend.cpp ../../../../../src/Tcp/TcpManager.cpp ../../../../../src/Tcp/TcpInputProcessor.cpp ../../../../../src/Tcp/Counter.cpp
 
 override TARGET := csim.exe
 
@@ -88,8 +88,26 @@ $(ObjDir)/TcpPayloadParsor.o: ../../../../../src/Tcp/TcpPayloadParsor.cpp $(ObjD
 
 -include $(ObjDir)/TcpPayloadParsor.d
 
+$(ObjDir)/TcpSend.o: ../../../../../src/Tcp/TcpSend.cpp $(ObjDir)/.dir
+	$(Echo) "   Compiling ../../../../../src/Tcp/TcpSend.cpp in $(BuildMode) mode" $(AVE_DIR_DLOG)
+	$(Verb)  $(CC) ${CCFLAG} -c -MMD  $(IFLAG) $(DFLAG) $< -o $@ ; \
+
+-include $(ObjDir)/TcpSend.d
+
+$(ObjDir)/TcpManager.o: ../../../../../src/Tcp/TcpManager.cpp $(ObjDir)/.dir
+	$(Echo) "   Compiling ../../../../../src/Tcp/TcpManager.cpp in $(BuildMode) mode" $(AVE_DIR_DLOG)
+	$(Verb)  $(CC) ${CCFLAG} -c -MMD  $(IFLAG) $(DFLAG) $< -o $@ ; \
+
+-include $(ObjDir)/TcpManager.d
+
 $(ObjDir)/TcpInputProcessor.o: ../../../../../src/Tcp/TcpInputProcessor.cpp $(ObjDir)/.dir
 	$(Echo) "   Compiling ../../../../../src/Tcp/TcpInputProcessor.cpp in $(BuildMode) mode" $(AVE_DIR_DLOG)
 	$(Verb)  $(CC) ${CCFLAG} -c -MMD  $(IFLAG) $(DFLAG) $< -o $@ ; \
 
 -include $(ObjDir)/TcpInputProcessor.d
+
+$(ObjDir)/Counter.o: ../../../../../src/Tcp/Counter.cpp $(ObjDir)/.dir
+	$(Echo) "   Compiling ../../../../../src/Tcp/Counter.cpp in $(BuildMode) mode" $(AVE_DIR_DLOG)
+	$(Verb)  $(CC) ${CCFLAG} -c -MMD  $(IFLAG) $(DFLAG) $< -o $@ ; \
+
+-include $(ObjDir)/Counter.d

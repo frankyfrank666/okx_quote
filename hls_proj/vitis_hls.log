@@ -6,17 +6,21 @@
 
 source /opt/Xilinx/Vitis/2020.1/scripts/vitis_hls/hls.tcl -notrace
 INFO: [HLS 200-10] Running '/opt/Xilinx/Vitis/2020.1/bin/unwrapped/lnx64.o/vitis_hls'
-INFO: [HLS 200-10] For user 'root' on host 'iz2zec7rvst3rc975nctwoz' (Linux_x86_64 version 3.10.0-1160.15.2.el7.x86_64) on Wed Jan 31 23:14:30 CST 2024
+INFO: [HLS 200-10] For user 'root' on host 'iz2zec7rvst3rc975nctwoz' (Linux_x86_64 version 3.10.0-1160.15.2.el7.x86_64) on Thu Feb 01 17:43:40 CST 2024
 INFO: [HLS 200-10] On os "CentOS Linux release 7.4.1708 (Core) "
 INFO: [HLS 200-10] In directory '/root/okx/hls_proj'
 Sourcing Tcl script '/root/okx/hls_proj/csim.tcl'
 INFO: [HLS 200-10] Opening and resetting project '/root/okx/hls_proj/Tcp'.
 WARNING: [HLS 200-40] No /root/okx/hls_proj/Tcp/solution1/solution1.aps file found.
+INFO: [HLS 200-10] Adding design file '/root/okx/src/Tcp/Counter.cpp' to the project
 INFO: [HLS 200-10] Adding design file '/root/okx/src/Tcp/TcpInputProcessor.cpp' to the project
+INFO: [HLS 200-10] Adding design file '/root/okx/src/Tcp/TcpManager.cpp' to the project
+INFO: [HLS 200-10] Adding design file '/root/okx/src/Tcp/TcpSend.cpp' to the project
 INFO: [HLS 200-10] Adding design file '/root/okx/src/Tcp/TcpPayloadParsor.cpp' to the project
 INFO: [HLS 200-10] Adding design file '/root/okx/src/Tcp/TcpTop.cpp' to the project
 INFO: [HLS 200-10] Adding design file '/root/okx/src/Tcp/TcpInputProcessor.h' to the project
 INFO: [HLS 200-10] Adding design file '/root/okx/src/Tcp/TcpPayloadParsor.h' to the project
+INFO: [HLS 200-10] Adding design file '/root/okx/src/Tcp/TcpManager.h' to the project
 INFO: [HLS 200-10] Adding design file '/root/okx/src/Tcp/TcpTop.h' to the project
 INFO: [HLS 200-10] Adding test bench file '/root/okx/src/Tcp/Test/TcpTest.cpp' to the project
 INFO: [HLS 200-10] Creating and opening solution '/root/okx/hls_proj/Tcp/solution1'.
@@ -35,10 +39,117 @@ make[1]: Entering directory `/root/okx/hls_proj/Tcp/solution1/csim/build'
    Compiling ../../../../../src/Tcp/Test/TcpTest.cpp in debug mode
    Compiling ../../../../../src/Tcp/TcpTop.cpp in debug mode
    Compiling ../../../../../src/Tcp/TcpPayloadParsor.cpp in debug mode
+   Compiling ../../../../../src/Tcp/TcpSend.cpp in debug mode
+   Compiling ../../../../../src/Tcp/TcpManager.cpp in debug mode
    Compiling ../../../../../src/Tcp/TcpInputProcessor.cpp in debug mode
+   Compiling ../../../../../src/Tcp/Counter.cpp in debug mode
    Generating csim.exe
 make[1]: Leaving directory `/root/okx/hls_proj/Tcp/solution1/csim/build'
-Packet 1:
-43409.3 453INFO: [SIM 211-1] CSim done with 0 errors.
+Valid 2846485537 1990516640.1040 1990516608
+1
+0xac8fa9a9ec215c87
+0x9c50640508004500
+0x28260a40008006
+0x0c0a8120312b5
+0x9708de1b17c906f6
+0xbd27000000005002
+0xffff000000000000
+
+2
+Tick Generated
+Got Tick 
+3
+0xac8fa9a9ec215c87
+0x9c50640508004500
+0x28260b40008006
+0x0c0a8120312b5
+0x9708de1b17c906f6
+0xbd2835718e5f5010
+0xffff000000000000
+
+4
+0xac8fa9a9ec215c87
+0x9c50640508004500
+0x09a260c40008006
+0x0c0a8120312b5
+0x9708de1b17c906f6
+0xbd2835718e5f5018
+0xffff000000004745
+0x54202f6170692f76
+0x352f6d61726b6574
+0x2f7469636b657273
+0x3f696e7374547970
+0x653d535741502675
+0x6c793d4254432d55
+0x534420485454502f
+0x312e310d0a486f73
+0x743a2031382e3138
+0x312e3135312e383a
+0x363038390d0a436f
+0x6e6e656374696f6e
+0x3a206b6565702d61
+0x6c6976650d0a0d0a
+
+5
+6
+Valid 1 42033.4 378
+7
+0xac8fa9a9ec215c87
+0x9c50640508004500
+0x28260d40008006
+0x0c0a8120312b5
+0x9708de1b17c906f6
+0xbd9a357192ee5010
+0xffff000000000000
+
+Tick Generated
+Got Tick 
+8
+0xac8fa9a9ec215c87
+0x9c50640508004500
+0x09a260e40008006
+0x0c0a8120312b5
+0x9708de1b17c906f6
+0xbd9a357192ee5018
+0xffff000000004745
+0x54202f6170692f76
+0x352f6d61726b6574
+0x2f7469636b657273
+0x3f696e7374547970
+0x653d535741502675
+0x6c793d4254432d55
+0x534420485454502f
+0x312e310d0a486f73
+0x743a2031382e3138
+0x312e3135312e383a
+0x363038390d0a436f
+0x6e6e656374696f6e
+0x3a206b6565702d61
+0x6c6976650d0a0d0a
+
+9
+10
+Valid 1 42033.4 287
+11
+0xac8fa9a9ec215c87
+0x9c50640508004500
+0x28260f40008006
+0x0c0a8120312b5
+0x9708de1b17c906f6
+0xbe0c3571977d5010
+0xffff000000000000
+
+12
+WARNING: Hls::stream 'hls::stream<TcpMeta, 0>.2590' contains leftover data, which may result in RTL simulation hanging.
+13
+0xac8fa9a9ec215c87
+0x9c50640508004500
+0x28261040008006
+0x0c0a8120312b5
+0x9708de1b17c9977c
+0x6f60000dfff5004
+0xffff000000000000
+
+INFO: [SIM 211-1] CSim done with 0 errors.
 INFO: [SIM 211-3] *************** CSIM finish ***************
-INFO: [Common 17-206] Exiting vitis_hls at Wed Jan 31 23:14:40 2024...
+INFO: [Common 17-206] Exiting vitis_hls at Thu Feb  1 17:43:52 2024...

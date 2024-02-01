@@ -1,6 +1,7 @@
 obj/TcpPayloadParsor.o: ../../../../../src/Tcp/TcpPayloadParsor.cpp \
  ../../../../../src/Tcp/TcpPayloadParsor.h \
- ../../../../../src/Tcp/TcpTop.h ../../../../../src/Tcp/../common/utils.h \
+ ../../../../../src/Tcp/TcpTop.h \
+ ../../../../../src/Tcp/../include/utils.h \
  /opt/Xilinx/Vitis/2020.1/include/ap_int.h \
  /opt/Xilinx/Vitis/2020.1/include/ap_common.h \
  /opt/Xilinx/Vitis/2020.1/include/ap_decl.h \
@@ -26,4 +27,5 @@ obj/TcpPayloadParsor.o: ../../../../../src/Tcp/TcpPayloadParsor.cpp \
  /opt/Xilinx/Vitis/2020.1/include/ap_int.h \
  /opt/Xilinx/Vitis/2020.1/include/hls_stream.h \
  ../../../../../src/Tcp/../Configurator/ConfiguratorTop.h \
- ../../../../../src/Tcp/../Configurator/../common/utils.h
+ ../../../../../src/Tcp/../Configurator/../include/utils.h \
+ ../../../../../src/Tcp/TcpManager.h

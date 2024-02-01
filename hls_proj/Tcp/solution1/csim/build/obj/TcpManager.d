@@ -1,5 +1,4 @@
-obj/TcpInputProcessor.o: ../../../../../src/Tcp/TcpInputProcessor.cpp \
- ../../../../../src/Tcp/TcpInputProcessor.h \
+obj/TcpManager.o: ../../../../../src/Tcp/TcpManager.cpp \
  ../../../../../src/Tcp/TcpTop.h \
  ../../../../../src/Tcp/../include/utils.h \
  /opt/Xilinx/Vitis/2020.1/include/ap_int.h \
