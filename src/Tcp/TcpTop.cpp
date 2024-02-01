@@ -3,7 +3,7 @@
 extern "C" {
     
     void TcpTop(
-        ap_uint<32> mDelayCycles, // 3s
+        ap_uint<32> mDelayCycle, // 3s
         ap_uint<32> mMyIp, //FPGA IP and MAC
         ap_uint<48> mMyMac, 
         ap_uint<48> mMyPort,
@@ -15,10 +15,12 @@ extern "C" {
         ap_uint<32>& mAskPriceInt,
         ap_uint<32>& mAskPriceDec,
         ap_uint<32>& mAskVol,
-        hls::stream<ethernetAxi64>& eth_in
+        ap_uint<32>& mOutputCount,
+        hls::stream<EthernetAxi64>& ethernet_stream_in,
+        hls::stream<EthernetAxi64>& ethernet_stream_out
     )
     {
-#pragma hls interface s_axilite port=mDelayCycles
+#pragma hls interface s_axilite port=mDelayCycle
 #pragma hls interface s_axilite port=mMyIp
 #pragma hls interface s_axilite port=mMyMac
 #pragma hls interface s_axilite port=mMyPort
@@ -29,13 +31,14 @@ extern "C" {
 #pragma hls interface s_axilite port=mAskPriceInt
 #pragma hls interface s_axilite port=mAskPriceDec
 #pragma hls interface s_axilite port=mAskVol
-#pragma hls interface axis port=eth_in
+#pragma hls interface s_axilite port=mOutputCount
+#pragma hls interface axis port=ethernet_stream_in
+#pragma hls interface axis port=ethernet_stream_out
 #pragma hls interface ap_ctrl_none port=return
 
 #pragma hls dataflow
-
-        Configuration tcpConfig;
-        tcpConfig.mDelayCycles = mDelayCycles;
+        TcpConfig tcpConfig;
+        tcpConfig.mDelayCycle = mDelayCycle;
         tcpConfig.mMyIp = mMyIp;
         tcpConfig.mMyMac = mMyMac;
         tcpConfig.mMyPort = mMyPort;
@@ -43,11 +46,18 @@ extern "C" {
         tcpConfig.mTargetMac = mTargetMac;
         tcpConfig.mTargetPort = mTargetPort;
         tcpConfig.mCommand = mCommand;
+        
+        hls::stream<ap_uint<1>> tick_stream;
+        hls::stream<TcpMeta> tcp_recv_stream;
+        hls::stream<TcpMeta> tcp_send_stream;
 
-        hls::stream<ethernetAxi64> toPayloadParser;
-        InputProcessor(tcpConfig, mAskPriceInt, mAskPriceDec, mAskVol, eth_in);
-        // , toPayloadParser);
-        // PayloadParser(mAskPriceInt, mAskPriceDec, mAskVol, toPayloadParser);
+        Counter(tcpConfig, tick_stream);
+        
+        InputProcessor(tcpConfig, mAskPriceInt, mAskPriceDec, mAskVol, mOutputCount, ethernet_stream_in, tcp_recv_stream);
+        
+        Manager(tcpConfig, tick_stream,  tcp_recv_stream, tcp_send_stream);
+        
+        Sender(tcpConfig, tcp_send_stream, ethernet_stream_out);
     }
 }
 

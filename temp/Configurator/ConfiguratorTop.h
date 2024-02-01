@@ -5,7 +5,7 @@
 
 struct Configuration
 {
-    ap_uint<32> mDelayCycles; // 3s
+    ap_uint<32> mDelayCycle; // 3s
     ap_uint<32> mMyIp; //FPGA IP and MAC
     ap_uint<48> mMyMac; 
     ap_uint<48> mMyPort;
@@ -17,7 +17,7 @@ struct Configuration
 
 extern "C" {
     void ConfiguratorTop (
-        ap_uint<32> mDelayCycles, // 3s
+        ap_uint<32> mDelayCycle, // 3s
         ap_uint<32> mMyIp, //FPGA IP and MAC
         ap_uint<48> mMyMac, 
         ap_uint<48> mMyPort,

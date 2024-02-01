@@ -1,3 +1,6 @@
+#ifndef TCPPAYLOAD_H
+#define TCPPAYLOAD_H
+
 #include "TcpTop.h"
 
 const ap_uint<8> a = 0x61;
@@ -30,15 +33,4 @@ enum class payloadState
     askSzqcq,
 };
 
-// void PayloadParser(ap_uint<32>& askPxInt, ap_uint<32>& askPxDec, ap_uint<32>& askSz, hls::stream<ethernetAxi64>& payloadStreamIn)
-// {
-//     static ethernetAxi64 packet_in;
-//     if(payloadStreamIn.read_nb(packet_in))
-//     {
-//         for (int i = 63; i > 0; i = i-8 )
-//         {
-//     #pragma hls unroll 
-//             PayloadParserHelper(askPxInt, askPxDec, askSz, packet_in.last, packet_in.data(i, i - 7)); //Try make this single cycle.
-//         }
-//     }
-// }
+#endif

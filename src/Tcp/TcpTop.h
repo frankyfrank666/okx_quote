@@ -1,45 +1,65 @@
-#ifndef COUNTER_H
-#define COUNTER_H
-#include "../include/utils.h"
-#include "../Configurator/ConfiguratorTop.h"
+#ifndef TCP_H
+#define TCP_H
 
-/// @brief Processes ethernet input streams
-/// @param tcpConfig Tcp configurations
-/// @param askPxInt Integer part of Ask Price (passed to host via register)
-/// @param askPxDec Decimal part of Ask Price (passed to host via register)
-/// @param askSz Ask Volume of Ask Price (passed to host via register)
-/// @param eth_in 64-bit ethernet stream
-void InputProcessor(Configuration& tcpConfig, ap_uint<32>& askPxInt, ap_uint<32>& askPxDec, ap_uint<32>& askSz, hls::stream<ethernetAxi64>& eth_in);//, hls::stream<ethernetAxi64>& toPayloadParser_out)
-// void InputProcessor(Configuration& tcpConfig, hls::stream<ethernetAxi64>& eth_in, hls::stream<ethernetAxi64>& payloadStreamOut);
+#include "../common/utils.h"
 
-/// @brief A that examines and parse the http body and obtain askPx and askSz 
-/// (this should have been a separate module and obtain ethernet body stream but somehow this way it sucks at synthesis)
-/// @param askPxInt Integer part of Ask Price
-/// @param askPxDec Decimal part of Ask Price
-/// @param askSz Ask Volume
-/// @param last Last segment (last = 1 for all 1 ~ 8 bytes but we don't expect any wanted data there right now)
-/// @param character 8-bit char
-void PayloadParserHelper(ap_uint<32>& askPxInt, ap_uint<32>& askPxDec, ap_uint<32>& askSz, ap_uint<1> last, ap_uint<8> character); //too many adders to parse ASCII to num, no way to meet 3ns timing
-// void PayloadParser(ap_uint<32>& askPxInt, ap_uint<32>& askPxDec, ap_uint<32>& askSz, hls::stream<ethernetAxi64>& payloadStreamIn);
+using EthernetAxi64 = ap_axiu<64,0,0,0>;
+
+struct TcpConfig
+{
+    ap_uint<32> mDelayCycle; // 3s
+    ap_uint<32> mMyIp; //FPGA IP and MAC
+    ap_uint<48> mMyMac; 
+    ap_uint<48> mMyPort;
+    ap_uint<32> mTargetIp;
+    ap_uint<48> mTargetMac; //Of course, it is the router, not the actual okx server, need ARP or static router in production. 
+    ap_uint<48> mTargetPort;
+    ap_uint<32> mCommand; 
+};
+
+class TcpCommand
+{
+public:
+    static constexpr int Connect = 1;
+    static constexpr int Close = 2;
+    static constexpr int Reset = 3;
+};
+
+enum class TcpState
+{
+    Closed,
+    SynSent,
+    Establsihed,
+
+    FinSent, //wait for finack and send ack and close
+    FinSentWaitAck, //no need wait for their ack, send ack and close
+    FinSentWaitFin, //wait for their fin and send ack and close
+
+    FinAckSent, //they close, we finack and wait for thier ack
+};
+
+struct TcpMeta
+{
+    ap_uint<32> mTcpPayloadLength = 0;
+    ap_uint<32> mSeqNum = 0;
+    ap_uint<32> mAckNum = 0;
+    ap_uint<1>  mSyn = 0;
+    ap_uint<1>  mAck = 0;
+    ap_uint<1>  mFin = 0;
+    ap_uint<1>  mPsh = 0;
+    ap_uint<1>  mRst = 0;
+    ap_uint<1>  mIsRequest = 0;
+};
+
+void InputProcessor(TcpConfig& tcpConfig, ap_uint<32>& askPxInt, ap_uint<32>& askPxDec, ap_uint<32>& askSz, ap_uint<32>& outputCount, hls::stream<EthernetAxi64>& ethernet_stream_in, hls::stream<TcpMeta>& tcp_recv_stream_out);
+void PayloadParserHelper(ap_uint<32>& askPxInt, ap_uint<32>& askPxDec, ap_uint<32>& askSz, ap_uint<32>& outputCount, ap_uint<1> last, ap_uint<8> character);
+void Manager(TcpConfig& tcpConfig, hls::stream<ap_uint<1>>& tick_stream_in, hls::stream<TcpMeta>& tcp_recv_stream_in, hls::stream<TcpMeta>& tcp_send_stream_out);
+void Sender(TcpConfig& tcpConfig, hls::stream<TcpMeta>& tcp_send_stream_in, hls::stream<EthernetAxi64>& ethernet_stream_out);
+void Counter(TcpConfig& tcpConfig, hls::stream<ap_uint<1>>& tick_stream_out);
 
 extern "C" {
-    /// @brief Tcp kernel, handles Tcp Connection and Response. With sub-modules communicating via internal streams. 
-    /// (Config and Status Registers are used instead of configuration stream from other one-time kernels)
-    /// @param mDelayCycles Input Register for counter period // Counter not included yet
-    /// @param mMyIp Input Register Tcp Connection information
-    /// @param mMyMac Input Register 
-    /// @param mMyPort Input Register 
-    /// @param mTargetIp Input Register 
-    /// @param mTargetMac Input Register 
-    /// @param mTargetPort Input Register 
-    /// @param mCommand Input Register - command from host for connection / disconnection
-    /// @param mAskPriceInt Output Register
-    /// @param mAskPriceDec Output Register
-    /// @param mAskVol Output Register
-    /// @param eth_in Ethernet Input
-    /// @param eth_out Ethernet Output // not implemented yet
     void TcpTop(
-        ap_uint<32> mDelayCycles, // 3s
+        ap_uint<32> mDelayCycle, // 3s
         ap_uint<32> mMyIp, //FPGA IP and MAC
         ap_uint<48> mMyMac, 
         ap_uint<48> mMyPort,
@@ -51,11 +71,11 @@ extern "C" {
         ap_uint<32>& mAskPriceInt,
         ap_uint<32>& mAskPriceDec,
         ap_uint<32>& mAskVol, 
+        ap_uint<32>& mOutputCount, 
         
-        hls::stream<ethernetAxi64>& eth_in
-        // hls::stream<ethernetAxi64>& eth_out,
+        hls::stream<EthernetAxi64>& ethernet_stream_in,
+        hls::stream<EthernetAxi64>& ethernet_stream_out
     );
 }
-
 
 #endif

@@ -1,6 +1,6 @@
 #include "TcpPayloadParsor.h"
 
-void PayloadParserHelper(ap_uint<32>& askPxInt, ap_uint<32>& askPxDec, ap_uint<32>& askSz, ap_uint<1> last, ap_uint<8> character) //too many adders, no way to meet timing
+void PayloadParserHelper(ap_uint<32>& askPxInt, ap_uint<32>& askPxDec, ap_uint<32>& askSz, ap_uint<32>& outputCount, ap_uint<1> last, ap_uint<8> character) //too many adders, no way to meet timing
 {
 #pragma hls inline
 
@@ -8,39 +8,45 @@ void PayloadParserHelper(ap_uint<32>& askPxInt, ap_uint<32>& askPxDec, ap_uint<3
     static ap_uint<32> tempAskPxInt;
     static ap_uint<32> tempAskPxDec;
     static ap_uint<32> tempAskSz;
+    static ap_uint<32> tempOutputCount = 0;
 
     switch (state)
     {
         case payloadState::NA:
         {
             if (character == a) state = payloadState::a;
+            else state = payloadState::NA;
             break;
         }
         case payloadState::a:
         {
             if (character == s) state = payloadState::as;
+            else state = payloadState::NA;
             break;
         }
         case payloadState::as:
         {
             if (character == k) state = payloadState::ask;
+            else state = payloadState::NA;
             break;
         }
         case payloadState::ask:
         {
             if (character == P) state = payloadState::askP;
             else if (character == S) state = payloadState::askS;
-
+            else state = payloadState::NA;
             break;
         }
         case payloadState::askP:
         {
             if (character == x) state = payloadState::askPx;
+            else state = payloadState::NA;
             break;
         }
         case payloadState::askS:
         {
             if (character == z) state = payloadState::askSz;
+            else state = payloadState::NA;
             break;
         }
         case payloadState::askPx:
@@ -48,7 +54,6 @@ void PayloadParserHelper(ap_uint<32>& askPxInt, ap_uint<32>& askPxDec, ap_uint<3
             tempAskPxInt = 0;
             tempAskPxDec = 0;
             tempAskSz = 0;
-
             if (character == quote) state = payloadState::askPxq;
             else state = payloadState::NA;
             break;
@@ -83,7 +88,7 @@ void PayloadParserHelper(ap_uint<32>& askPxInt, ap_uint<32>& askPxDec, ap_uint<3
             else state = payloadState::NA;
             break;
         }
-        case payloadState::askPxqcqInt:
+        case payloadState::askPxqcqInt: // Assume no Malformed Json String
         {
             if (character == quote) 
             {
@@ -112,6 +117,8 @@ void PayloadParserHelper(ap_uint<32>& askPxInt, ap_uint<32>& askPxDec, ap_uint<3
                 askPxInt(31,0) = tempAskPxInt(31,0) ;
                 askPxDec(31,0) = tempAskPxDec(31,0) ;
                 askSz(31,0) = tempAskSz(31,0) ;
+                outputCount = tempOutputCount;
+                ++tempOutputCount;
                 state = payloadState::NA;
             } 
             else tempAskSz = (tempAskSz << 3) + (tempAskSz << 1) + (character - 0x30);

@@ -1,4 +1,4 @@
-INFO-FLOW: Workspace /root/okx/hls_proj/Tcp/solution1 opened at Thu Feb 01 18:02:28 CST 2024
+INFO-FLOW: Workspace /root/okx/hls_proj/Tcp/solution1 opened at Fri Feb 02 03:26:14 CST 2024
 Execute     send_msg_by_id INFO @200-1505@%s%s  vitis 
 INFO: [HLS 200-1505] Using flow_target 'vitis'
 Execute     get_config_interface -m_axi_latency 
@@ -30,7 +30,7 @@ INFO-FLOW: DBG:set_part: RDI_DATADIR=/opt/Xilinx/Vivado/2020.1/data:/opt/Xilinx/
 Execute     ap_part_info -name xqvu9p-fsqd2104-2LV-e -data single -quiet 
 DBG:HLSDevice: Trying to load device library: /opt/Xilinx/Vitis/2020.1/lib/lnx64.o/librdi_hlsvwrap.so
 DBG:HLSDevice: first parts/arch.xml in RDI_DATADIR: /opt/Xilinx/Vivado/2020.1/data/parts/arch.xml
-Command     ap_part_info done; 2.13 sec.
+Command     ap_part_info done; 1.92 sec.
 Execute     ap_part_info -name xqvu9p-fsqd2104-2LV-e -data info 
 Execute     ap_family_info -name qvirtexuplus -data info 
 Execute     add_library xilinx/virtexuplus/virtexuplus:xqvu9p:-fsqd2104:-2LV-e 
@@ -59,12 +59,14 @@ Execute           source /opt/Xilinx/Vitis/2020.1/common/technology/xilinx/ip/ut
 Execute           source /opt/Xilinx/Vitis/2020.1/common/technology/xilinx/ip/xfft.gen 
 Execute           source /opt/Xilinx/Vitis/2020.1/common/technology/xilinx/ip/xfir.gen 
 Execute           source /opt/Xilinx/Vitis/2020.1/common/technology/xilinx/common/dsp48.gen 
+Command         ap_source done; 0.11 sec.
+Command       ap_source done; 0.11 sec.
 Execute       ap_part_info -data single -name xqvu9p-fsqd2104-2LV-e 
 Execute       ap_part_info -name xqvu9p-fsqd2104-2LV-e -data resources 
 Execute       config_chip_info -resource {SLICE 147780} {LUT 1182240} {FF 2364480} {DSP 6840} {BRAM 4320} {URAM 960} {SLR 3} 
 Execute       ap_part_info -name xqvu9p-fsqd2104-2LV-e -data info 
 Execute       config_chip_info -speed medium 
-Command     add_library done; 0.12 sec.
+Command     add_library done; 0.13 sec.
 Execute     add_library xilinx/virtexuplus/virtexuplus_fpv7 
 Execute       get_default_platform 
 Execute       open_platform DefaultPlatform 
@@ -81,7 +83,7 @@ Execute         source /opt/Xilinx/Vitis/2020.1/common/technology/xilinx/common/
 INFO: [HLS 200-10] Setting target device to 'xqvu9p-fsqd2104-2LV-e'
 Execute     ap_part_info -name xqvu9p-fsqd2104-2LV-e -data info 
 Execute     get_default_platform 
-Command   set_part done; 2.31 sec.
+Command   set_part done; 2.1 sec.
 Execute   create_clock -period 3 
 Execute     ap_set_clock -name default -period 3 -default=false 
 INFO: [SYN 201-201] Setting up clock 'default' with a period of 3ns.
@@ -114,5 +116,5 @@ Execute     ap_part_info -name xqvu9p-fsqd2104-2LV-e -data info
 Execute     source run_sim.tcl 
 INFO: [SIM 211-1] CSim done with 0 errors.
 INFO: [SIM 211-3] *************** CSIM finish ***************
-Command   csim_design done; 11.18 sec.
+Command   csim_design done; 9.92 sec.
 Execute   cleanup_all 

@@ -6,7 +6,7 @@
 
 source /opt/Xilinx/Vitis/2020.1/scripts/vitis_hls/hls.tcl -notrace
 INFO: [HLS 200-10] Running '/opt/Xilinx/Vitis/2020.1/bin/unwrapped/lnx64.o/vitis_hls'
-INFO: [HLS 200-10] For user 'root' on host 'iz2zec7rvst3rc975nctwoz' (Linux_x86_64 version 3.10.0-1160.15.2.el7.x86_64) on Thu Feb 01 18:02:28 CST 2024
+INFO: [HLS 200-10] For user 'root' on host 'iz2zec7rvst3rc975nctwoz' (Linux_x86_64 version 3.10.0-1160.15.2.el7.x86_64) on Fri Feb 02 03:26:14 CST 2024
 INFO: [HLS 200-10] On os "CentOS Linux release 7.4.1708 (Core) "
 INFO: [HLS 200-10] In directory '/root/okx/hls_proj'
 Sourcing Tcl script '/root/okx/hls_proj/csim.tcl'
@@ -45,8 +45,6 @@ make[1]: Entering directory `/root/okx/hls_proj/Tcp/solution1/csim/build'
    Compiling ../../../../../src/Tcp/Counter.cpp in debug mode
    Generating csim.exe
 make[1]: Leaving directory `/root/okx/hls_proj/Tcp/solution1/csim/build'
-Valid 2846485537 2252570688.1040 2252570656
-1
 0xac8fa9a9ec215c87
 0x9c50640508004500
 0x28260a40008006
@@ -54,11 +52,8 @@ Valid 2846485537 2252570688.1040 2252570656
 0x9708de1b17c906f6
 0xbd27000000005002
 0xffff000000000000
-
-2
-Tick Generated
-Got Tick 
-3
+^Sent 1
+Recv 2
 0xac8fa9a9ec215c87
 0x9c50640508004500
 0x28260b40008006
@@ -66,8 +61,7 @@ Got Tick
 0x9708de1b17c906f6
 0xbd2835718e5f5010
 0xffff000000000000
-
-4
+^Sent 3
 0xac8fa9a9ec215c87
 0x9c50640508004500
 0x09a260c40008006
@@ -89,11 +83,9 @@ Got Tick
 0x6e6e656374696f6e
 0x3a206b6565702d61
 0x6c6976650d0a0d0a
-
-5
-6
-Valid 1 42033.4 378
-7
+^Sent 4
+Recv 5
+Recv 6
 0xac8fa9a9ec215c87
 0x9c50640508004500
 0x28260d40008006
@@ -101,10 +93,8 @@ Valid 1 42033.4 378
 0x9708de1b17c906f6
 0xbd9a357192ee5010
 0xffff000000000000
-
-Tick Generated
-Got Tick 
-8
+^Sent 7
+New Quote 0 42033.4 378
 0xac8fa9a9ec215c87
 0x9c50640508004500
 0x09a260e40008006
@@ -126,11 +116,9 @@ Got Tick
 0x6e6e656374696f6e
 0x3a206b6565702d61
 0x6c6976650d0a0d0a
-
-9
-10
-Valid 1 42033.4 287
-11
+^Sent 8
+Recv 9
+Recv 10
 0xac8fa9a9ec215c87
 0x9c50640508004500
 0x28260f40008006
@@ -138,17 +126,86 @@ Valid 1 42033.4 287
 0x9708de1b17c906f6
 0xbe0c3571977d5010
 0xffff000000000000
-
-12
-13
+^Sent 11
+New Quote 1 42033.4 287
+Recv 12
 0xac8fa9a9ec215c87
 0x9c50640508004500
 0x28261040008006
 0x0c0a8120312b5
 0x9708de1b17c906f6
-0xbe0c3571977d5012
+0xbe0c3571977d5010
 0xffff000000000000
-
+^Sent 13
+0xac8fa9a9ec215c87
+0x9c50640508004500
+0x09a261140008006
+0x0c0a8120312b5
+0x9708de1b17c906f6
+0xbe0c3571977d5018
+0xffff000000004745
+0x54202f6170692f76
+0x352f6d61726b6574
+0x2f7469636b657273
+0x3f696e7374547970
+0x653d535741502675
+0x6c793d4254432d55
+0x534420485454502f
+0x312e310d0a486f73
+0x743a2031382e3138
+0x312e3135312e383a
+0x363038390d0a436f
+0x6e6e656374696f6e
+0x3a206b6565702d61
+0x6c6976650d0a0d0a
+^Sent 14
+Recv 15
+Recv 16
+0xac8fa9a9ec215c87
+0x9c50640508004500
+0x28261240008006
+0x0c0a8120312b5
+0x9708de1b17c906f6
+0xbe7e35719c0d5010
+0xffff000000000000
+^Sent 17
+New Quote 2 42029.5 121
+Recv 18
+0xac8fa9a9ec215c87
+0x9c50640508004500
+0x28261340008006
+0x0c0a8120312b5
+0x9708de1b17c906f6
+0xbe7e35719c0d5010
+0xffff000000000000
+^Sent 19
+Recv 20
+0xac8fa9a9ec215c87
+0x9c50640508004500
+0x28261440008006
+0x0c0a8120312b5
+0x9708de1b17c906f6
+0xbe7e35719c0d5010
+0xffff000000000000
+^Sent 21
+CLOSE
+0xac8fa9a9ec215c87
+0x9c50640508004500
+0x28261540008006
+0x0c0a8120312b5
+0x9708de1b17c906f6
+0xbe7e35719c0d5011
+0xffff000000000000
+^Sent 22
+Recv 23
+0xac8fa9a9ec215c87
+0x9c50640508004500
+0x28261640008006
+0x0c0a8120312b5
+0x9708de1b17c906f6
+0xbe7f35719c0e5010
+0xffff000000000000
+^Sent 24
 INFO: [SIM 211-1] CSim done with 0 errors.
 INFO: [SIM 211-3] *************** CSIM finish ***************
-INFO: [Common 17-206] Exiting vitis_hls at Thu Feb  1 18:02:42 2024...
+INFO: [Common 17-206] Exiting vitis_hls at Fri Feb  2 03:26:26 2024...

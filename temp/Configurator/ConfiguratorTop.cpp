@@ -2,7 +2,7 @@
 
 extern "C" {
     /// @brief Send configurations in a stream. Not used here.
-    /// @param mDelayCycles 
+    /// @param mDelayCycle 
     /// @param mMyIp 
     /// @param mMyMac 
     /// @param mMyPort 
@@ -13,7 +13,7 @@ extern "C" {
     /// @param delay_config_stream_out 
     /// @param tcp_config_stream_out 
     void ConfiguratorTop(
-        ap_uint<32> mDelayCycles, // 3s
+        ap_uint<32> mDelayCycle, // 3s
         ap_uint<32> mMyIp, //FPGA IP and MAC
         ap_uint<48> mMyMac, 
         ap_uint<48> mMyPort,
@@ -29,9 +29,9 @@ extern "C" {
 #pragma hls interface axis port=delay_config_stream_out
 #pragma HLS INTERFACE mode=ap_ctrl_hs port=return
         
-        delay_config_stream_out.write(config.mDelayCycles);
+        delay_config_stream_out.write(config.mDelayCycle);
         Configuration config_in;
-        config_in.mDelayCycles = mDelayCycles; 
+        config_in.mDelayCycle = mDelayCycle; 
         config_in.mMyIp = mMyIp; 
         config_in.mMyMac = mMyMac; 
         config_in.mMyPort = mMyPort; 

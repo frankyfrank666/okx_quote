@@ -1,5 +1,7 @@
 obj/TcpTest.o: ../../../../../src/Tcp/Test/TcpTest.cpp \
- /root/okx/src/include/utils.h /opt/Xilinx/Vitis/2020.1/include/ap_int.h \
+ ../../../../../src/Tcp/Test/../TcpTop.h \
+ ../../../../../src/Tcp/Test/../../common/utils.h \
+ /opt/Xilinx/Vitis/2020.1/include/ap_int.h \
  /opt/Xilinx/Vitis/2020.1/include/ap_common.h \
  /opt/Xilinx/Vitis/2020.1/include/ap_decl.h \
  /opt/Xilinx/Vitis/2020.1/include/etc/ap_private.h \
@@ -22,10 +24,4 @@ obj/TcpTest.o: ../../../../../src/Tcp/Test/TcpTest.cpp \
  /opt/Xilinx/Vitis/2020.1/include/ap_fixed_special.h \
  /opt/Xilinx/Vitis/2020.1/include/ap_axi_sdata.h \
  /opt/Xilinx/Vitis/2020.1/include/ap_int.h \
- /opt/Xilinx/Vitis/2020.1/include/hls_stream.h \
- ../../../../../src/Tcp/Test/../TcpTop.h \
- ../../../../../src/Tcp/Test/../../include/utils.h \
- ../../../../../src/Tcp/Test/../../Configurator/ConfiguratorTop.h \
- ../../../../../src/Tcp/Test/../../Configurator/../include/utils.h \
- ../../../../../src/Tcp/Test/../TcpManager.h \
- ../../../../../src/Tcp/Test/../TcpTop.h
+ /opt/Xilinx/Vitis/2020.1/include/hls_stream.h

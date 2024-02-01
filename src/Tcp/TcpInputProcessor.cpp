@@ -1,47 +1,59 @@
 #include "TcpInputProcessor.h"
 
-void InputProcessor(Configuration& tcpConfig, ap_uint<32>& askPxInt, ap_uint<32>& askPxDec, ap_uint<32>& askSz, hls::stream<ethernetAxi64>& eth_in)//, hls::stream<ethernetAxi64>& toPayloadParser_out)
+void InputProcessor(TcpConfig& tcpConfig, ap_uint<32>& askPxInt, ap_uint<32>& askPxDec, ap_uint<32>& askSz, ap_uint<32>& outputCount, 
+hls::stream<EthernetAxi64>& ethernet_stream_in, hls::stream<TcpMeta>& tcp_recv_stream_out)
 {
-    static TcpHeaderProcessor TcpHeaderProcessor;
+    static TcpHeaderProcessor tcpHeaderProcessor;
     static HttpProcessingState inputProcState = HttpProcessingState::IpTcpHeader;
-    ethernetAxi64 packet_in;
+    EthernetAxi64 packetIn;
 
-    if(eth_in.read_nb(packet_in))
+    if(ethernet_stream_in.read_nb(packetIn))
     {
         switch (inputProcState)
         {
             case HttpProcessingState::IpTcpHeader:
             {
             //std::cout << "case HttpProcessingState::IpTcpHeader:\n";
-                if(TcpHeaderProcessor.processSegment(packet_in))
+                if(tcpHeaderProcessor.processSegment(packetIn))
                 {
-                    //std::cout << std::hex << "\n" <<TcpHeaderProcessor.mDestMac;
-                    //std::cout << std::hex << "\n" <<tcpConfig.mMyMac ;
+                    // std::cout << std::hex << "\n" <<tcpHeaderProcessor.mDestMac;
+                    // std::cout << std::hex << "\n" <<tcpConfig.mMyMac ;
 
-                    //std::cout << std::hex << "\n" <<TcpHeaderProcessor.mDestIp ;
-                    //std::cout << std::hex << "\n" <<tcpConfig.mMyIp ;
+                    // std::cout << std::hex << "\n" <<tcpHeaderProcessor.mDestIp ;
+                    // std::cout << std::hex << "\n" <<tcpConfig.mMyIp ;
 
-                    //std::cout << std::hex << "\n" <<TcpHeaderProcessor.mSrcIp ;
-                    //std::cout << std::hex << "\n" <<tcpConfig.mTargetIp;
-                    //std::cout << std::hex << "\n";
+                    // std::cout << std::hex << "\n" <<tcpHeaderProcessor.mSrcIp ;
+                    // std::cout << std::hex << "\n" <<tcpConfig.mTargetIp;
+                    // std::cout << std::hex << "\n";
                     
                     if (
-                        TcpHeaderProcessor.mDestMac != tcpConfig.mMyMac ||
-                        TcpHeaderProcessor.mDestIp != tcpConfig.mMyIp ||
-                        TcpHeaderProcessor.mDestPort != tcpConfig.mMyPort ||
+                        tcpHeaderProcessor.mDestMac != tcpConfig.mMyMac ||
+                        tcpHeaderProcessor.mDestIp != tcpConfig.mMyIp ||
+                        tcpHeaderProcessor.mDestPort != tcpConfig.mMyPort ||
 
-                        TcpHeaderProcessor.mSrcIp != tcpConfig.mTargetIp ||
-                        TcpHeaderProcessor.mSrcPort != tcpConfig.mTargetPort ||
+                        tcpHeaderProcessor.mSrcIp != tcpConfig.mTargetIp ||
+                        tcpHeaderProcessor.mSrcPort != tcpConfig.mTargetPort ||
 
-                        TcpHeaderProcessor.mProtocol != 0x06 || //TCP
-                        TcpHeaderProcessor.mType != 0x0800 || //IPv4
-                        TcpHeaderProcessor.mVersionAndHeaderLenDSCP != 0x4500 //TCP
+                        tcpHeaderProcessor.mProtocol != 0x06 || //TCP
+                        tcpHeaderProcessor.mType != 0x0800 || //IPv4
+                        tcpHeaderProcessor.mVersionAndHeaderLenDSCP != 0x4500 //TCP
                     )
                     {
                         inputProcState = HttpProcessingState::Discard;
                     }
                     else
                     {
+                        TcpMeta meta;
+                        meta.mTcpPayloadLength = tcpHeaderProcessor.mTcpFlag(1,1) + tcpHeaderProcessor.mTcpFlag(0,0) +
+                                                 tcpHeaderProcessor.mIpTotalLength - tcpHeaderProcessor.mEthHeaderLen * 4
+                                                 - tcpHeaderProcessor.mTcpHeaderLen * 4;
+                        meta.mSeqNum = tcpHeaderProcessor.mSeqNum;
+                        meta.mAckNum = tcpHeaderProcessor.mAckNum;
+                        meta.mAck = tcpHeaderProcessor.mTcpFlag(3,3);
+                        meta.mRst = tcpHeaderProcessor.mTcpFlag(2,2);
+                        meta.mSyn = tcpHeaderProcessor.mTcpFlag(1,1);
+                        meta.mFin = tcpHeaderProcessor.mTcpFlag(0,0);
+                        tcp_recv_stream_out.write(meta);
                         inputProcState = HttpProcessingState::HttpHeader;
                     }
                 }
@@ -50,7 +62,7 @@ void InputProcessor(Configuration& tcpConfig, ap_uint<32>& askPxInt, ap_uint<32>
             case HttpProcessingState::HttpHeader:
             {
             //std::cout << "case HttpProcessingState::HttpHeader:\n";
-                if (packet_in.data(15, 0) != 0x4854 ) //"HT"
+                if (packetIn.data(15, 0) != 0x4854 ) //"HT"
                     inputProcState = HttpProcessingState::Discard;
                 else
                     inputProcState = HttpProcessingState::HttpHeader2;
@@ -59,7 +71,7 @@ void InputProcessor(Configuration& tcpConfig, ap_uint<32>& askPxInt, ap_uint<32>
             case HttpProcessingState::HttpHeader2:
             {
             //std::cout << "case HttpProcessingState::HttpHeader2:\n";
-                if (packet_in.data(63, 0) != 0x54502f312e312032) //"TP/1.1 2")
+                if (packetIn.data(63, 0) != 0x54502f312e312032) //"TP/1.1 2")
                     inputProcState = HttpProcessingState::Discard;
                 else
                     inputProcState = HttpProcessingState::HttpHeader3;
@@ -68,7 +80,7 @@ void InputProcessor(Configuration& tcpConfig, ap_uint<32>& askPxInt, ap_uint<32>
             case HttpProcessingState::HttpHeader3:
             {
             //std::cout << "case HttpProcessingState::HttpHeader3:\n";
-                if (packet_in.data(63, 24) != 0x3030204f4b) //"00 OK\r\n")
+                if (packetIn.data(63, 24) != 0x3030204f4b) //"00 OK\r\n")
                     inputProcState = HttpProcessingState::Discard;
                 else
                     inputProcState = HttpProcessingState::Payload;
@@ -77,22 +89,21 @@ void InputProcessor(Configuration& tcpConfig, ap_uint<32>& askPxInt, ap_uint<32>
             case HttpProcessingState::Payload:
             {
                 //std::cout << "case HttpProcessingState::Payload:\n";
-                // toPayloadParser_out.write(packet_in);
                 for (int i = 63; i > 0; i = i-8 )
                 {
             #pragma hls unroll 
-                    PayloadParserHelper(askPxInt, askPxDec, askSz, packet_in.last, packet_in.data(i, i - 7)); //Try make this single cycle.
+                    PayloadParserHelper(askPxInt, askPxDec, askSz, outputCount, packetIn.last, packetIn.data(i, i - 7)); //Try make this single cycle.
                 }
                 break;
             }
             case HttpProcessingState::Discard:
             {
-            //std::cout << "case HttpProcessingState::Discard:\n";
+            // std::cout << "case HttpProcessingState::Discard:\n";
                 break;
             }
         }
 
-        if (packet_in.last)
+        if (packetIn.last)
             inputProcState = HttpProcessingState::IpTcpHeader;
     }
 }

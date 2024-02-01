@@ -1,3 +1,5 @@
+#ifndef TCPPROCE_H
+#define TCPPROCE_H
 #include "TcpTop.h"
 
 enum class TcpProcState
@@ -31,6 +33,7 @@ public:
 
     ap_uint<16> mType;
     ap_uint<16> mVersionAndHeaderLenDSCP;
+    ap_uint<16> mEthHeaderLen;
     ap_uint<16> mIpTotalLength;
     ap_uint<16> mId;
     ap_uint<16> mFlags;
@@ -44,7 +47,7 @@ public:
     ap_uint<8> mTcpHeaderLen;
     ap_uint<4> mTcpFlag;
 
-    bool processSegment(ethernetAxi64 in)
+    bool processSegment(EthernetAxi64 in)
     {
 #pragma hls inline
         static TcpProcState state = TcpProcState::MacDest;
@@ -64,6 +67,7 @@ public:
                 mSrcMac(31, 0) = in.data(63, 32);
                 mType = in.data(31, 16); //0x0800 == ipv4
                 mVersionAndHeaderLenDSCP = in.data(15, 0); //0x4500
+                mEthHeaderLen = in.data(11, 8); //0x5
                 state = TcpProcState::Protocol;
                 break;
             }
@@ -100,7 +104,7 @@ public:
             //std::cout<<"case TcpProcState::SeqAckNumber:\n";
                 mSeqNum(15, 0) = in.data(63, 48);
                 mAckNum(31, 0) = in.data(47, 16);
-                mTcpHeaderLen(7, 0) = in.data(15, 8);
+                mTcpHeaderLen(7, 0) = in.data(15, 12);
                 mTcpFlag(3,0) = (in.data(4,4),in.data(2, 0)); //Ack Reset, Syn, Fin
                 state = TcpProcState::MacDest;
                 return true;
@@ -111,11 +115,4 @@ public:
     }
 };
 
-/// @brief Processes ethernet input streams
-/// @param tcpConfig Tcp configurations
-/// @param askPxInt Integer part of Ask Price (passed to host via register)
-/// @param askPxDec Decimal part of Ask Price (passed to host via register)
-/// @param askSz Ask Volume of Ask Price (passed to host via register)
-/// @param eth_in 64-bit ethernet stream
-void InputProcessor(Configuration& tcpConfig, ap_uint<32>& askPxInt, ap_uint<32>& askPxDec, ap_uint<32>& askSz, hls::stream<ethernetAxi64>& eth_in);//, hls::stream<ethernetAxi64>& toPayloadParser_out)
-// void InputProcessor(Configuration& tcpConfig, hls::stream<ethernetAxi64>& eth_in, hls::stream<ethernetAxi64>& payloadStreamOut);
+#endif
