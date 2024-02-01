@@ -174,6 +174,7 @@ void Manager(TcpConfig& tcpConfig, hls::stream<ap_uint<1>>& tick_stream_in, hls:
         default:
             break;
     }
+
     if (reset)
     {
         toSend.mRst = 1;
