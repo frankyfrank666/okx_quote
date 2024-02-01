@@ -10,7 +10,7 @@ make[1]: Entering directory `/root/okx/hls_proj/Tcp/solution1/csim/build'
    Compiling ../../../../../src/Tcp/Counter.cpp in debug mode
    Generating csim.exe
 make[1]: Leaving directory `/root/okx/hls_proj/Tcp/solution1/csim/build'
-Valid 2846485537 1990516640.1040 1990516608
+Valid 2846485537 2252570688.1040 2252570656
 1
 0xac8fa9a9ec215c87
 0x9c50640508004500
@@ -105,14 +105,13 @@ Valid 1 42033.4 287
 0xffff000000000000
 
 12
-WARNING: Hls::stream 'hls::stream<TcpMeta, 0>.2590' contains leftover data, which may result in RTL simulation hanging.
 13
 0xac8fa9a9ec215c87
 0x9c50640508004500
 0x28261040008006
 0x0c0a8120312b5
-0x9708de1b17c9977c
-0x6f60000dfff5004
+0x9708de1b17c906f6
+0xbe0c3571977d5012
 0xffff000000000000
 
 INFO: [SIM 1] CSim done with 0 errors.
