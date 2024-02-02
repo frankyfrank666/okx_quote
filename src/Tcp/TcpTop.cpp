@@ -5,11 +5,11 @@ extern "C" {
     void TcpTop(
         ap_uint<32> mDelayCycle, // 3s
         ap_uint<32> mMyIp, //FPGA IP and MAC
-        ap_uint<48> mMyMac, 
-        ap_uint<48> mMyPort,
+        ap_uint<64> mMyMac, 
+        ap_uint<64> mMyPort,
         ap_uint<32> mTargetIp,
-        ap_uint<48> mTargetMac, //Of course, it is the router, not the actual okx server, need ARP or static router in production. 
-        ap_uint<48> mTargetPort,
+        ap_uint<64> mTargetMac, //Of course, it is the router, not the actual okx server, need ARP or static router in production. 
+        ap_uint<64> mTargetPort,
         ap_uint<32> mCommand,
 
         ap_uint<32>& mAskPriceInt,

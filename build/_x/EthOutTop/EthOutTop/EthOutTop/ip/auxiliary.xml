@@ -7,5 +7,5 @@
   <xd:arg xd:name="ethernet_stream_in.strb" xd:originalName="ethernet_stream_in" xd:direction="in" xd:interfaceRef="ethernet_stream_in" xd:busTypeRef="axis" xd:arraySize="2" xd:dataWidth="8"/>
   <xd:arg xd:name="ethernet_stream_in.last" xd:originalName="ethernet_stream_in" xd:direction="in" xd:interfaceRef="ethernet_stream_in" xd:busTypeRef="axis" xd:arraySize="2" xd:dataWidth="1"/>
   <xd:latencyEstimates xd:best-case="undef" xd:worst-case="undef" xd:average-case="undef"/>
-  <xd:resourceEstimates xd:LUT="2475" xd:FF="1617" xd:BRAM="8" xd:DSP="0"/>
+  <xd:resourceEstimates xd:LUT="2434" xd:FF="1584" xd:BRAM="8" xd:DSP="0"/>
 </xd:acceleratorMap>

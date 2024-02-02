@@ -1,0 +1,1074 @@
+<ENTRY>
+{
+ "thisFile": "/root/okx/build/x3.xclbin.link_summary",
+ "connectId": "",
+ "serverToken": "",
+ "timestamp": "0"
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "Fri Jan  1 00:00:02 2021",
+ "timestampMillis": "1609430402123",
+ "buildStep": {
+  "cmdId": "d1b1137c-81ea-4b95-8ae0-2342480f83b2",
+  "name": "v++",
+  "logFile": "/root/okx/build/binary_container_1.build/link/link.steps.log",
+  "commandLine": "/opt/Xilinx/Vitis/2020.1/bin/unwrapped/lnx64.o/v++ --xp param:compiler.lockFlowCritSlackThreshold=0 --xp vivado_param:bd.disablePrefixForFaasIntf=1 --xp vivado_param:hd.routingContainmentAreaExpansion=true --xp vivado_param:hd.supportClockNetCrossDiffReconfigurablePartitions=1 --xp vivado_param:bitstream.enablePR=4123  --xp \"vivado_prop:run.__KERNEL__.{STEPS.SYNTH_DESIGN.ARGS.MORE OPTIONS}={-directive sdx_optimization_effort_high}\" --xp \"misc:report=type report_timing_summary name impl_report_timing_summary_route_design_summary steps {route_design} runs {impl_1} options {-max_paths 10}\" --xp \"misc:report=type report_timing_summary name impl_report_timing_summary_post_route_phys_opt_design_summary steps {post_route_phys_opt_design} runs {impl_1} options {-max_paths 10}\" --platform /opt/xilinx/platforms/xilinx_aliyun-f3_dynamic_5_0/xilinx_aliyun-f3_dynamic_5_0.xpfm --target hw_emu --link -g -s --optimize 0 --config kernel-link.cfg -ox3.xclbin build/EthInTop.xo build/EthOutTop.xo build/TcpTop.xo ",
+  "args": [
+   "--xp",
+   "param:compiler.lockFlowCritSlackThreshold=0",
+   "--xp",
+   "vivado_param:bd.disablePrefixForFaasIntf=1",
+   "--xp",
+   "vivado_param:hd.routingContainmentAreaExpansion=true",
+   "--xp",
+   "vivado_param:hd.supportClockNetCrossDiffReconfigurablePartitions=1",
+   "--xp",
+   "vivado_param:bitstream.enablePR=4123",
+   "--platform",
+   "/opt/xilinx/platforms/xilinx_aliyun-f3_dynamic_5_0/xilinx_aliyun-f3_dynamic_5_0.xpfm",
+   "--target",
+   "hw_emu",
+   "--link",
+   "-g",
+   "-s",
+   "--optimize",
+   "0",
+   "--config",
+   "kernel-link.cfg",
+   "-ox3.xclbin",
+   "build/EthInTop.xo",
+   "build/EthOutTop.xo",
+   "build/TcpTop.xo"
+  ],
+  "iniFiles": [
+   {
+    "path": "/root/okx/build/kernel-link.cfg",
+    "content": "debug=1\nmessageDb=binary_container_1.mdb\ntemp_dir=binary_container_1.build\nreport_dir=binary_container_1.build/reports\nlog_dir=binary_container_1.build/logs\nremote_ip_cache=/root/vitis_example/ex/ip_cache\n\n[connectivity]\nnk=EthOutTop:1:EthOutTop\nnk=EthInTop:1:EthInTop\nnk=TcpTop:1:TcpTop\nsc=EthInTop.ethernet_stream_out:TcpTop.ethernet_stream_in:8192\nsc=TcpTop.ethernet_stream_out:EthOutTop.ethernet_stream_in:8192"
+   }
+  ],
+  "cwd": "/root/okx/build"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Jan  1 00:00:02 2021",
+ "timestampMillis": "1609430402124",
+ "status": {
+  "cmdId": "d1b1137c-81ea-4b95-8ae0-2342480f83b2",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_FlowMetaData",
+ "dateTimestamp": "Fri Jan  1 00:00:18 2021",
+ "timestampMillis": "1609430418706",
+ "buildSummary": {
+  "hardwarePlatform": "xilinx_aliyun-f3_dynamic_5_0.xpfm",
+  "hardwareDsa": "xilinx_aliyun-f3_dynamic_5_0.xsa",
+  "platformDirectory": "/opt/xilinx/platforms/xilinx_aliyun-f3_dynamic_5_0",
+  "runtime": "OpenCL",
+  "systemConfig": "Linux",
+  "flow": "BF_LINK",
+  "target": "TT_HW_EMU",
+  "binaryContainer": {
+   "base": {
+    "type": "BT_UKNOWN",
+    "name": "x3",
+    "file": "/root/okx/build/x3.xclbin",
+    "reports": []
+   },
+   "kernels": []
+  },
+  "kernels": [
+   {
+    "base": {
+     "type": "KERNEL",
+     "name": "EthInTop",
+     "file": "/root/okx/build/build/EthInTop.xo",
+     "reports": []
+    },
+    "sources": [
+     "/root/okx/build/binary_container_1.build/link/int/xo/EthInTop/EthInTop/cpu_sources/EthInTop.cpp"
+    ],
+    "psSources": [],
+    "cuNames": [
+     "EthInTop"
+    ],
+    "type": "HLS"
+   },
+   {
+    "base": {
+     "type": "KERNEL",
+     "name": "EthOutTop",
+     "file": "/root/okx/build/build/EthOutTop.xo",
+     "reports": []
+    },
+    "sources": [
+     "/root/okx/build/binary_container_1.build/link/int/xo/EthOutTop/EthOutTop/cpu_sources/EthOutTop.cpp"
+    ],
+    "psSources": [],
+    "cuNames": [
+     "EthOutTop"
+    ],
+    "type": "HLS"
+   },
+   {
+    "base": {
+     "type": "KERNEL",
+     "name": "TcpTop",
+     "file": "/root/okx/build/build/TcpTop.xo",
+     "reports": []
+    },
+    "sources": [
+     "/root/okx/build/binary_container_1.build/link/int/xo/TcpTop/TcpTop/cpu_sources/TcpTop.cpp",
+     "/root/okx/build/binary_container_1.build/link/int/xo/TcpTop/TcpTop/cpu_sources/TcpTop.h",
+     "/root/okx/build/binary_container_1.build/link/int/xo/TcpTop/TcpTop/cpu_sources/TcpManager.h",
+     "/root/okx/build/binary_container_1.build/link/int/xo/TcpTop/TcpTop/cpu_sources/TcpPayloadParsor.h",
+     "/root/okx/build/binary_container_1.build/link/int/xo/TcpTop/TcpTop/cpu_sources/TcpPayloadParsor.cpp",
+     "/root/okx/build/binary_container_1.build/link/int/xo/TcpTop/TcpTop/cpu_sources/TcpSend.cpp",
+     "/root/okx/build/binary_container_1.build/link/int/xo/TcpTop/TcpTop/cpu_sources/TcpManager.cpp",
+     "/root/okx/build/binary_container_1.build/link/int/xo/TcpTop/TcpTop/cpu_sources/TcpInputProcessor.cpp",
+     "/root/okx/build/binary_container_1.build/link/int/xo/TcpTop/TcpTop/cpu_sources/Counter.cpp",
+     "/root/okx/build/binary_container_1.build/link/int/xo/TcpTop/TcpTop/cpu_sources/TcpInputProcessor.h",
+     "/root/okx/build/binary_container_1.build/link/int/xo/TcpTop/TcpTop/cpu_sources/TcpSend.h"
+    ],
+    "psSources": [],
+    "cuNames": [
+     "TcpTop"
+    ],
+    "type": "HLS"
+   }
+  ],
+  "toolVersion": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Fri Jan  1 00:00:18 2021",
+ "timestampMillis": "1609430418778",
+ "buildStep": {
+  "cmdId": "a7ca8791-1274-4b80-a546-91499291bcf1",
+  "name": "system_link",
+  "logFile": "",
+  "commandLine": "system_link --xo /root/okx/build/build/EthInTop.xo --xo /root/okx/build/build/EthOutTop.xo --xo /root/okx/build/build/TcpTop.xo -keep --config /root/okx/build/binary_container_1.build/link/int/syslinkConfig.ini --xpfm /opt/xilinx/platforms/xilinx_aliyun-f3_dynamic_5_0/xilinx_aliyun-f3_dynamic_5_0.xpfm --target emu --output_dir /root/okx/build/binary_container_1.build/link/int --temp_dir /root/okx/build/binary_container_1.build/link/sys_link",
+  "args": [
+   "--xo",
+   "/root/okx/build/build/EthInTop.xo",
+   "--xo",
+   "/root/okx/build/build/EthOutTop.xo",
+   "--xo",
+   "/root/okx/build/build/TcpTop.xo",
+   "-keep",
+   "--config",
+   "/root/okx/build/binary_container_1.build/link/int/syslinkConfig.ini",
+   "--xpfm",
+   "/opt/xilinx/platforms/xilinx_aliyun-f3_dynamic_5_0/xilinx_aliyun-f3_dynamic_5_0.xpfm",
+   "--target",
+   "emu",
+   "--output_dir",
+   "/root/okx/build/binary_container_1.build/link/int",
+   "--temp_dir",
+   "/root/okx/build/binary_container_1.build/link/sys_link"
+  ],
+  "iniFiles": [
+   {
+    "path": "/root/okx/build/binary_container_1.build/link/int/syslinkConfig.ini",
+    "content": "nk=EthOutTop:1:EthOutTop\nnk=EthInTop:1:EthInTop\nnk=TcpTop:1:TcpTop\nsc=EthInTop.ethernet_stream_out:TcpTop.ethernet_stream_in:8192\nsc=TcpTop.ethernet_stream_out:EthOutTop.ethernet_stream_in:8192\n\n"
+   }
+  ],
+  "cwd": "/root/okx/build"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Jan  1 00:00:18 2021",
+ "timestampMillis": "1609430418779",
+ "status": {
+  "cmdId": "a7ca8791-1274-4b80-a546-91499291bcf1",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Jan  1 00:00:37 2021",
+ "timestampMillis": "1609430437986",
+ "status": {
+  "cmdId": "a7ca8791-1274-4b80-a546-91499291bcf1",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Fri Jan  1 00:00:37 2021",
+ "timestampMillis": "1609430437987",
+ "buildStep": {
+  "cmdId": "7d68b104-e9e5-4ba6-b034-dc1315130ef1",
+  "name": "cf2sw",
+  "logFile": "",
+  "commandLine": "cf2sw -sdsl /root/okx/build/binary_container_1.build/link/int/sdsl.dat -rtd /root/okx/build/binary_container_1.build/link/int/cf2sw.rtd -xclbin /root/okx/build/binary_container_1.build/link/int/xclbin_orig.xml -o /root/okx/build/binary_container_1.build/link/int/xclbin_orig.1.xml",
+  "args": [
+   "-sdsl",
+   "/root/okx/build/binary_container_1.build/link/int/sdsl.dat",
+   "-rtd",
+   "/root/okx/build/binary_container_1.build/link/int/cf2sw.rtd",
+   "-xclbin",
+   "/root/okx/build/binary_container_1.build/link/int/xclbin_orig.xml",
+   "-o",
+   "/root/okx/build/binary_container_1.build/link/int/xclbin_orig.1.xml"
+  ],
+  "iniFiles": [],
+  "cwd": "/root/okx/build"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Jan  1 00:00:37 2021",
+ "timestampMillis": "1609430437988",
+ "status": {
+  "cmdId": "7d68b104-e9e5-4ba6-b034-dc1315130ef1",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Jan  1 00:00:42 2021",
+ "timestampMillis": "1609430442955",
+ "status": {
+  "cmdId": "7d68b104-e9e5-4ba6-b034-dc1315130ef1",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Fri Jan  1 00:00:42 2021",
+ "timestampMillis": "1609430442956",
+ "buildStep": {
+  "cmdId": "f69e1a20-29db-4e3c-b1f1-3c2109ad04c1",
+  "name": "rtd2_system_diagram",
+  "logFile": "",
+  "commandLine": "rtd2SystemDiagram",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "/root/okx/build"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Jan  1 00:00:42 2021",
+ "timestampMillis": "1609430442957",
+ "status": {
+  "cmdId": "f69e1a20-29db-4e3c-b1f1-3c2109ad04c1",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Jan  1 00:00:44 2021",
+ "timestampMillis": "1609430444452",
+ "report": {
+  "path": "/root/okx/build/binary_container_1.build/link/int/systemDiagramModel.json",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "SYSTEM_DIAGRAM"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Jan  1 00:00:44 2021",
+ "timestampMillis": "1609430444453",
+ "status": {
+  "cmdId": "f69e1a20-29db-4e3c-b1f1-3c2109ad04c1",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Fri Jan  1 00:00:44 2021",
+ "timestampMillis": "1609430444454",
+ "buildStep": {
+  "cmdId": "9979b880-4712-4d16-a871-b52cd1d25b43",
+  "name": "vpl",
+  "logFile": "",
+  "commandLine": "vpl -t hw_emu -f /opt/xilinx/platforms/xilinx_aliyun-f3_dynamic_5_0/xilinx_aliyun-f3_dynamic_5_0.xpfm -g --remote_ip_cache /root/vitis_example/ex/ip_cache -s --output_dir /root/okx/build/binary_container_1.build/link/int --log_dir /root/okx/build/binary_container_1.build/logs/link --report_dir /root/okx/build/binary_container_1.build/reports/link --config /root/okx/build/binary_container_1.build/link/int/vplConfig.ini -k /root/okx/build/binary_container_1.build/link/int/kernel_info.dat --webtalk_flag Vitis --temp_dir /root/okx/build/binary_container_1.build/link --emulation_mode debug_waveform --no-info --iprepo /root/okx/build/binary_container_1.build/link/int/xo/ip_repo/xilinx_com_hls_TcpTop_1_0 --iprepo /root/okx/build/binary_container_1.build/link/int/xo/ip_repo/xilinx_com_hls_EthInTop_1_0 --iprepo /root/okx/build/binary_container_1.build/link/int/xo/ip_repo/xilinx_com_hls_EthOutTop_1_0 --messageDb /root/okx/build/binary_container_1.build/link/run_link/vpl.pb /root/okx/build/binary_container_1.build/link/int/dr.bd.tcl",
+  "args": [
+   "-t",
+   "hw_emu",
+   "-f",
+   "/opt/xilinx/platforms/xilinx_aliyun-f3_dynamic_5_0/xilinx_aliyun-f3_dynamic_5_0.xpfm",
+   "-g",
+   "--remote_ip_cache",
+   "/root/vitis_example/ex/ip_cache",
+   "-s",
+   "--output_dir",
+   "/root/okx/build/binary_container_1.build/link/int",
+   "--log_dir",
+   "/root/okx/build/binary_container_1.build/logs/link",
+   "--report_dir",
+   "/root/okx/build/binary_container_1.build/reports/link",
+   "--config",
+   "/root/okx/build/binary_container_1.build/link/int/vplConfig.ini",
+   "-k",
+   "/root/okx/build/binary_container_1.build/link/int/kernel_info.dat",
+   "--webtalk_flag",
+   "Vitis",
+   "--temp_dir",
+   "/root/okx/build/binary_container_1.build/link",
+   "--emulation_mode",
+   "debug_waveform",
+   "--no-info",
+   "--iprepo",
+   "/root/okx/build/binary_container_1.build/link/int/xo/ip_repo/xilinx_com_hls_TcpTop_1_0",
+   "--iprepo",
+   "/root/okx/build/binary_container_1.build/link/int/xo/ip_repo/xilinx_com_hls_EthInTop_1_0",
+   "--iprepo",
+   "/root/okx/build/binary_container_1.build/link/int/xo/ip_repo/xilinx_com_hls_EthOutTop_1_0",
+   "--messageDb",
+   "/root/okx/build/binary_container_1.build/link/run_link/vpl.pb",
+   "/root/okx/build/binary_container_1.build/link/int/dr.bd.tcl"
+  ],
+  "iniFiles": [
+   {
+    "path": "/root/okx/build/binary_container_1.build/link/int/vplConfig.ini",
+    "content": "[advanced]\nparam=compiler.lockFlowCritSlackThreshold=0\nmisc=report=type report_timing_summary name impl_report_timing_summary_route_design_summary steps {route_design} runs {impl_1} options {-max_paths 10}\nmisc=report=type report_timing_summary name impl_report_timing_summary_post_route_phys_opt_design_summary steps {post_route_phys_opt_design} runs {impl_1} options {-max_paths 10}\nparam=compiler.enablePerformanceTrace=1\nparam=hw_emu.enableDebugWaveform=1\nparam=compiler.vppCurrentWorkingDir=/root/okx/build\nmisc=BinaryName=x3\n\n[connectivity]\nnk=EthInTop:1:EthInTop\nnk=EthOutTop:1:EthOutTop\nnk=TcpTop:1:TcpTop\n\n[vivado]\nparam=bd.disablePrefixForFaasIntf=1\nparam=hd.routingContainmentAreaExpansion=true\nparam=hd.supportClockNetCrossDiffReconfigurablePartitions=1\nparam=bitstream.enablePR=4123\nprop=run.__KERNEL__.{STEPS.SYNTH_DESIGN.ARGS.MORE OPTIONS}={-directive sdx_optimization_effort_high}\n\n"
+   }
+  ],
+  "cwd": "/root/okx/build"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Jan  1 00:00:44 2021",
+ "timestampMillis": "1609430444455",
+ "status": {
+  "cmdId": "9979b880-4712-4d16-a871-b52cd1d25b43",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "Fri Jan  1 00:00:46 2021",
+ "timestampMillis": "1609430446628",
+ "buildStep": {
+  "cmdId": "1b964b4d-5b60-45ff-bac9-57ab8ceebf5d",
+  "name": "vpl",
+  "logFile": "/root/okx/build/binary_container_1.build/link/link.steps.log",
+  "commandLine": "/opt/Xilinx/Vitis/2020.1/bin/unwrapped/lnx64.o/vpl -t hw_emu -f /opt/xilinx/platforms/xilinx_aliyun-f3_dynamic_5_0/xilinx_aliyun-f3_dynamic_5_0.xpfm -g --remote_ip_cache /root/vitis_example/ex/ip_cache -s --output_dir /root/okx/build/binary_container_1.build/link/int --log_dir /root/okx/build/binary_container_1.build/logs/link --report_dir /root/okx/build/binary_container_1.build/reports/link --config /root/okx/build/binary_container_1.build/link/int/vplConfig.ini -k /root/okx/build/binary_container_1.build/link/int/kernel_info.dat --webtalk_flag Vitis --temp_dir /root/okx/build/binary_container_1.build/link --emulation_mode debug_waveform --no-info --iprepo /root/okx/build/binary_container_1.build/link/int/xo/ip_repo/xilinx_com_hls_TcpTop_1_0 --iprepo /root/okx/build/binary_container_1.build/link/int/xo/ip_repo/xilinx_com_hls_EthInTop_1_0 --iprepo /root/okx/build/binary_container_1.build/link/int/xo/ip_repo/xilinx_com_hls_EthOutTop_1_0 --messageDb /root/okx/build/binary_container_1.build/link/run_link/vpl.pb /root/okx/build/binary_container_1.build/link/int/dr.bd.tcl ",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "/root/okx/build/binary_container_1.build/link/run_link"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Jan  1 00:00:46 2021",
+ "timestampMillis": "1609430446628",
+ "status": {
+  "cmdId": "1b964b4d-5b60-45ff-bac9-57ab8ceebf5d",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_VivadoProject",
+ "dateTimestamp": "Fri Jan  1 00:00:54 2021",
+ "timestampMillis": "1609430454542",
+ "vivadoProject": {
+  "openDir": "/root/okx/build/binary_container_1.build/link/vivado/vpl",
+  "openScript": "openprj.tcl",
+  "relativeProject": "prj/prj.xpr"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Fri Jan  1 00:00:54 2021",
+ "timestampMillis": "1609430454543",
+ "buildStep": {
+  "cmdId": "e8cea906-7835-4341-a5b5-a8b2827fde14",
+  "name": "vivado",
+  "logFile": "/root/okx/build/binary_container_1.build/link/vivado/vpl/vivado.log",
+  "commandLine": "vivado -log vivado.log -applog -m64 -messageDb vivado.pb -mode batch -source vpl.tcl -notrace",
+  "args": [
+   "-log",
+   "vivado.log",
+   "-applog",
+   " -m64",
+   "-messageDb",
+   "vivado.pb",
+   "-mode",
+   "batch",
+   "-source",
+   "vpl.tcl",
+   "-notrace"
+  ],
+  "iniFiles": [],
+  "cwd": "/root/okx/build/binary_container_1.build/link/run_link"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Jan  1 00:00:54 2021",
+ "timestampMillis": "1609430454544",
+ "status": {
+  "cmdId": "e8cea906-7835-4341-a5b5-a8b2827fde14",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Jan  1 00:12:15 2021",
+ "timestampMillis": "1609431135770",
+ "status": {
+  "cmdId": "e8cea906-7835-4341-a5b5-a8b2827fde14",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Jan  1 00:12:16 2021",
+ "timestampMillis": "1609431136003",
+ "status": {
+  "cmdId": "1b964b4d-5b60-45ff-bac9-57ab8ceebf5d",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Jan  1 00:12:16 2021",
+ "timestampMillis": "1609431136013",
+ "status": {
+  "cmdId": "9979b880-4712-4d16-a871-b52cd1d25b43",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Fri Jan  1 00:12:16 2021",
+ "timestampMillis": "1609431136014",
+ "buildStep": {
+  "cmdId": "53f23ee6-df25-4775-a8c2-75653ac69042",
+  "name": "rtdgen",
+  "logFile": "",
+  "commandLine": "rtdgen",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "/root/okx/build"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Jan  1 00:12:16 2021",
+ "timestampMillis": "1609431136015",
+ "status": {
+  "cmdId": "53f23ee6-df25-4775-a8c2-75653ac69042",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Fri Jan  1 00:12:16 2021",
+ "timestampMillis": "1609431136015",
+ "buildStep": {
+  "cmdId": "45849a5d-eab5-4f94-8b4f-e92971a0cbca",
+  "name": "xrflink",
+  "logFile": "",
+  "commandLine": "/opt/Xilinx/Vitis/2020.1/bin/xrflink -f /root/okx/build/binary_container_1.build/link/int/consolidated.cf --hls /root/okx/build/binary_container_1.build/link/int/xo/EthInTop/EthInTop/debug/EthInTop.xrf",
+  "args": [
+   "-f",
+   "/root/okx/build/binary_container_1.build/link/int/consolidated.cf",
+   "--hls",
+   "/root/okx/build/binary_container_1.build/link/int/xo/EthInTop/EthInTop/debug/EthInTop.xrf"
+  ],
+  "iniFiles": [],
+  "cwd": "/root/okx/build"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Jan  1 00:12:16 2021",
+ "timestampMillis": "1609431136016",
+ "status": {
+  "cmdId": "45849a5d-eab5-4f94-8b4f-e92971a0cbca",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Jan  1 00:12:16 2021",
+ "timestampMillis": "1609431136098",
+ "status": {
+  "cmdId": "45849a5d-eab5-4f94-8b4f-e92971a0cbca",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Fri Jan  1 00:12:16 2021",
+ "timestampMillis": "1609431136099",
+ "buildStep": {
+  "cmdId": "06520882-c1c2-4aaa-9df1-7b2c345948ff",
+  "name": "xrflink",
+  "logFile": "",
+  "commandLine": "/opt/Xilinx/Vitis/2020.1/bin/xrflink -f /root/okx/build/binary_container_1.build/link/int/consolidated.cf --hls /root/okx/build/binary_container_1.build/link/int/xo/EthOutTop/EthOutTop/debug/EthOutTop.xrf",
+  "args": [
+   "-f",
+   "/root/okx/build/binary_container_1.build/link/int/consolidated.cf",
+   "--hls",
+   "/root/okx/build/binary_container_1.build/link/int/xo/EthOutTop/EthOutTop/debug/EthOutTop.xrf"
+  ],
+  "iniFiles": [],
+  "cwd": "/root/okx/build"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Jan  1 00:12:16 2021",
+ "timestampMillis": "1609431136099",
+ "status": {
+  "cmdId": "06520882-c1c2-4aaa-9df1-7b2c345948ff",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Jan  1 00:12:16 2021",
+ "timestampMillis": "1609431136180",
+ "status": {
+  "cmdId": "06520882-c1c2-4aaa-9df1-7b2c345948ff",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Fri Jan  1 00:12:16 2021",
+ "timestampMillis": "1609431136181",
+ "buildStep": {
+  "cmdId": "d5c4010f-eae5-4de5-b8d4-7340f04e034c",
+  "name": "gcc",
+  "logFile": "",
+  "commandLine": "/opt/Xilinx/Vitis/2020.1/bin/xcpp -c -g -fPIC /root/okx/build/binary_container_1.build/link/int/xo/TcpTop/TcpTop/cpu_sources/TcpTop.cpp -o /root/okx/build/binary_container_1.build/link/int/xo/TcpTop/TcpTop/cpu_sources/TcpTop.cpp.o -I/opt/Xilinx/Vivado/2020.1/bin/../include -I/opt/Xilinx/Vitis/2020.1/bin/../include -g -g",
+  "args": [
+   "-c",
+   "-g",
+   "-fPIC",
+   "/root/okx/build/binary_container_1.build/link/int/xo/TcpTop/TcpTop/cpu_sources/TcpTop.cpp",
+   "-o",
+   "/root/okx/build/binary_container_1.build/link/int/xo/TcpTop/TcpTop/cpu_sources/TcpTop.cpp.o",
+   "-I/opt/Xilinx/Vivado/2020.1/bin/../include",
+   "-I/opt/Xilinx/Vitis/2020.1/bin/../include",
+   "-g",
+   "-g"
+  ],
+  "iniFiles": [],
+  "cwd": "/root/okx/build"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Jan  1 00:12:16 2021",
+ "timestampMillis": "1609431136181",
+ "status": {
+  "cmdId": "d5c4010f-eae5-4de5-b8d4-7340f04e034c",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Jan  1 00:12:16 2021",
+ "timestampMillis": "1609431136197",
+ "status": {
+  "cmdId": "d5c4010f-eae5-4de5-b8d4-7340f04e034c",
+  "state": "CS_FAILED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Jan  1 00:12:16 2021",
+ "timestampMillis": "1609431136199",
+ "report": {
+  "path": "/root/okx/build/binary_container_1.build/link/int/x3_xml.rtd",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "XCLBIN_INFO"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Fri Jan  1 00:12:16 2021",
+ "timestampMillis": "1609431136200",
+ "buildStep": {
+  "cmdId": "4e161711-9ae8-4a50-8eef-fc0ac4970424",
+  "name": "cf2sw",
+  "logFile": "",
+  "commandLine": "cf2sw -a /root/okx/build/binary_container_1.build/link/int/address_map.xml -sdsl /root/okx/build/binary_container_1.build/link/int/sdsl.dat -xclbin /root/okx/build/binary_container_1.build/link/int/xclbin_orig.xml -rtd /root/okx/build/binary_container_1.build/link/int/x3.rtd -o /root/okx/build/binary_container_1.build/link/int/x3.xml",
+  "args": [
+   "-a",
+   "/root/okx/build/binary_container_1.build/link/int/address_map.xml",
+   "-sdsl",
+   "/root/okx/build/binary_container_1.build/link/int/sdsl.dat",
+   "-xclbin",
+   "/root/okx/build/binary_container_1.build/link/int/xclbin_orig.xml",
+   "-rtd",
+   "/root/okx/build/binary_container_1.build/link/int/x3.rtd",
+   "-o",
+   "/root/okx/build/binary_container_1.build/link/int/x3.xml"
+  ],
+  "iniFiles": [],
+  "cwd": "/root/okx/build"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Jan  1 00:12:16 2021",
+ "timestampMillis": "1609431136200",
+ "status": {
+  "cmdId": "4e161711-9ae8-4a50-8eef-fc0ac4970424",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Jan  1 00:12:21 2021",
+ "timestampMillis": "1609431141280",
+ "status": {
+  "cmdId": "4e161711-9ae8-4a50-8eef-fc0ac4970424",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Fri Jan  1 00:12:24 2021",
+ "timestampMillis": "1609431144534",
+ "buildStep": {
+  "cmdId": "880fd817-927f-4668-9236-14fe084a4741",
+  "name": "xrflink",
+  "logFile": "",
+  "commandLine": "/opt/Xilinx/Vitis/2020.1/bin/xrflink -f /root/okx/build/binary_container_1.build/link/int/consolidated.cf --kernel /root/okx/build/binary_container_1.build/link/int/x3.xml",
+  "args": [
+   "-f",
+   "/root/okx/build/binary_container_1.build/link/int/consolidated.cf",
+   "--kernel",
+   "/root/okx/build/binary_container_1.build/link/int/x3.xml"
+  ],
+  "iniFiles": [],
+  "cwd": "/root/okx/build"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Jan  1 00:12:24 2021",
+ "timestampMillis": "1609431144534",
+ "status": {
+  "cmdId": "880fd817-927f-4668-9236-14fe084a4741",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Jan  1 00:12:24 2021",
+ "timestampMillis": "1609431144614",
+ "status": {
+  "cmdId": "880fd817-927f-4668-9236-14fe084a4741",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Fri Jan  1 00:12:24 2021",
+ "timestampMillis": "1609431144615",
+ "buildStep": {
+  "cmdId": "36d861d4-0e9b-45f7-b278-5d452d8bd1d0",
+  "name": "xrflink",
+  "logFile": "",
+  "commandLine": "/opt/Xilinx/Vitis/2020.1/bin/xrflink -f /root/okx/build/binary_container_1.build/link/int/consolidated.cf --hierarchy /root/okx/build/binary_container_1.build/link/int/_kernel_inst_paths.dat",
+  "args": [
+   "-f",
+   "/root/okx/build/binary_container_1.build/link/int/consolidated.cf",
+   "--hierarchy",
+   "/root/okx/build/binary_container_1.build/link/int/_kernel_inst_paths.dat"
+  ],
+  "iniFiles": [],
+  "cwd": "/root/okx/build"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Jan  1 00:12:24 2021",
+ "timestampMillis": "1609431144615",
+ "status": {
+  "cmdId": "36d861d4-0e9b-45f7-b278-5d452d8bd1d0",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Jan  1 00:12:24 2021",
+ "timestampMillis": "1609431144693",
+ "status": {
+  "cmdId": "36d861d4-0e9b-45f7-b278-5d452d8bd1d0",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Jan  1 00:12:24 2021",
+ "timestampMillis": "1609431144696",
+ "report": {
+  "path": "/root/okx/build/binary_container_1.build/link/int/systemDiagramModelSlrBaseAddress.json",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "SYSTEM_DIAGRAM_PLUS"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Fri Jan  1 00:12:24 2021",
+ "timestampMillis": "1609431144696",
+ "buildStep": {
+  "cmdId": "f1b86744-da21-4132-af75-bed373000261",
+  "name": "rtdgen",
+  "logFile": "",
+  "commandLine": "writeSystemDiagram",
+  "args": [
+   "/root/okx/build/binary_container_1.build/link/int/x3.rtd",
+   "/root/okx/build/binary_container_1.build/link/int/systemDiagramModelSlrBaseAddress.json"
+  ],
+  "iniFiles": [],
+  "cwd": "/root/okx/build"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Jan  1 00:12:24 2021",
+ "timestampMillis": "1609431144697",
+ "status": {
+  "cmdId": "f1b86744-da21-4132-af75-bed373000261",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Jan  1 00:12:24 2021",
+ "timestampMillis": "1609431144697",
+ "status": {
+  "cmdId": "f1b86744-da21-4132-af75-bed373000261",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Jan  1 00:12:24 2021",
+ "timestampMillis": "1609431144697",
+ "status": {
+  "cmdId": "53f23ee6-df25-4775-a8c2-75653ac69042",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Fri Jan  1 00:12:24 2021",
+ "timestampMillis": "1609431144698",
+ "buildStep": {
+  "cmdId": "4bd6b252-06bb-41ed-ad8f-107ae6a1363f",
+  "name": "xclbinutil",
+  "logFile": "",
+  "commandLine": "xclbinutil --add-section DEBUG_DATA:RAW:/root/okx/build/binary_container_1.build/link/int/consolidated.cf --add-section BITSTREAM:RAW:/root/okx/build/binary_container_1.build/link/int/behav.xse --force --target hw_emu --key-value SYS:dfx_enable:false --add-section :JSON:/root/okx/build/binary_container_1.build/link/int/x3.rtd --append-section :JSON:/root/okx/build/binary_container_1.build/link/int/appendSection.rtd --add-section CLOCK_FREQ_TOPOLOGY:JSON:/root/okx/build/binary_container_1.build/link/int/x3_xml.rtd --add-section BUILD_METADATA:JSON:/root/okx/build/binary_container_1.build/link/int/x3_build.rtd --add-section EMBEDDED_METADATA:RAW:/root/okx/build/binary_container_1.build/link/int/x3.xml --add-section SYSTEM_METADATA:RAW:/root/okx/build/binary_container_1.build/link/int/systemDiagramModelSlrBaseAddress.json --key-value SYS:PlatformVBNV:xilinx_aliyun-f3_dynamic_5_0 --output /root/okx/build/x3.xclbin",
+  "args": [
+   "--add-section",
+   "DEBUG_DATA:RAW:/root/okx/build/binary_container_1.build/link/int/consolidated.cf",
+   "--add-section",
+   "BITSTREAM:RAW:/root/okx/build/binary_container_1.build/link/int/behav.xse",
+   "--force",
+   "--target",
+   "hw_emu",
+   "--key-value",
+   "SYS:dfx_enable:false",
+   "--add-section",
+   ":JSON:/root/okx/build/binary_container_1.build/link/int/x3.rtd",
+   "--append-section",
+   ":JSON:/root/okx/build/binary_container_1.build/link/int/appendSection.rtd",
+   "--add-section",
+   "CLOCK_FREQ_TOPOLOGY:JSON:/root/okx/build/binary_container_1.build/link/int/x3_xml.rtd",
+   "--add-section",
+   "BUILD_METADATA:JSON:/root/okx/build/binary_container_1.build/link/int/x3_build.rtd",
+   "--add-section",
+   "EMBEDDED_METADATA:RAW:/root/okx/build/binary_container_1.build/link/int/x3.xml",
+   "--add-section",
+   "SYSTEM_METADATA:RAW:/root/okx/build/binary_container_1.build/link/int/systemDiagramModelSlrBaseAddress.json",
+   "--key-value",
+   "SYS:PlatformVBNV:xilinx_aliyun-f3_dynamic_5_0",
+   "--output",
+   "/root/okx/build/x3.xclbin"
+  ],
+  "iniFiles": [],
+  "cwd": "/root/okx/build"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Jan  1 00:12:24 2021",
+ "timestampMillis": "1609431144699",
+ "status": {
+  "cmdId": "4bd6b252-06bb-41ed-ad8f-107ae6a1363f",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Jan  1 00:12:24 2021",
+ "timestampMillis": "1609431144819",
+ "status": {
+  "cmdId": "4bd6b252-06bb-41ed-ad8f-107ae6a1363f",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Fri Jan  1 00:12:24 2021",
+ "timestampMillis": "1609431144820",
+ "buildStep": {
+  "cmdId": "3426df86-9166-4079-ba29-1e8a52796f86",
+  "name": "xclbinutilinfo",
+  "logFile": "",
+  "commandLine": "xclbinutil --quiet --force --info /root/okx/build/x3.xclbin.info --input /root/okx/build/x3.xclbin",
+  "args": [
+   "--quiet",
+   "--force",
+   "--info",
+   "/root/okx/build/x3.xclbin.info",
+   "--input",
+   "/root/okx/build/x3.xclbin"
+  ],
+  "iniFiles": [],
+  "cwd": "/root/okx/build"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Jan  1 00:12:24 2021",
+ "timestampMillis": "1609431144821",
+ "status": {
+  "cmdId": "3426df86-9166-4079-ba29-1e8a52796f86",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Jan  1 00:12:25 2021",
+ "timestampMillis": "1609431145194",
+ "status": {
+  "cmdId": "3426df86-9166-4079-ba29-1e8a52796f86",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Fri Jan  1 00:12:25 2021",
+ "timestampMillis": "1609431145195",
+ "buildStep": {
+  "cmdId": "33c2887d-2582-47b6-a74e-3fd61e1804d2",
+  "name": "generate_sc_driver",
+  "logFile": "",
+  "commandLine": "",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "/root/okx/build"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Jan  1 00:12:25 2021",
+ "timestampMillis": "1609431145196",
+ "status": {
+  "cmdId": "33c2887d-2582-47b6-a74e-3fd61e1804d2",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Jan  1 00:12:25 2021",
+ "timestampMillis": "1609431145196",
+ "status": {
+  "cmdId": "33c2887d-2582-47b6-a74e-3fd61e1804d2",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Jan  1 00:12:25 2021",
+ "timestampMillis": "1609431145204",
+ "report": {
+  "path": "/root/okx/build/binary_container_1.build/reports/link/system_estimate_x3.xtxt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_SYSTEM_ESTIMATE"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Jan  1 00:12:25 2021",
+ "timestampMillis": "1609431145264",
+ "report": {
+  "path": "/root/okx/build/binary_container_1.build/reports/link/v++_link_x3_guidance.html",
+  "name": "",
+  "fileType": "HTML",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Jan  1 00:12:25 2021",
+ "timestampMillis": "1609431145264",
+ "report": {
+  "path": "/root/okx/build/binary_container_1.build/v++_link_x3_guidance.pb",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Jan  1 00:12:25 2021",
+ "timestampMillis": "1609431145265",
+ "report": {
+  "path": "/root/okx/build/binary_container_1.build/logs/optraceViewer.html",
+  "name": "",
+  "fileType": "HTML",
+  "reportType": "OPERATION_TRACE"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Jan  1 00:12:25 2021",
+ "timestampMillis": "1609431145265",
+ "status": {
+  "cmdId": "d1b1137c-81ea-4b95-8ae0-2342480f83b2",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>

@@ -29,9 +29,6 @@
 // 0x1c : Data signal of buffSize
 //        bit 31~0 - buffSize[31:0] (Read/Write)
 // 0x20 : reserved
-// 0x24 : Data signal of keep
-//        bit 31~0 - keep[31:0] (Read/Write)
-// 0x28 : reserved
 // (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
 #define XETHINTOP_CONTROL_ADDR_AP_CTRL       0x00
@@ -42,6 +39,4 @@
 #define XETHINTOP_CONTROL_BITS_IN_R_DATA     64
 #define XETHINTOP_CONTROL_ADDR_BUFFSIZE_DATA 0x1c
 #define XETHINTOP_CONTROL_BITS_BUFFSIZE_DATA 32
-#define XETHINTOP_CONTROL_ADDR_KEEP_DATA     0x24
-#define XETHINTOP_CONTROL_BITS_KEEP_DATA     32
 

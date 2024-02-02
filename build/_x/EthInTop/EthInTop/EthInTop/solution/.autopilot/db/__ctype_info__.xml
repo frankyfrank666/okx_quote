@@ -20,16 +20,6 @@
 <InvalidType>0</InvalidType>
 </RtlPorts>
 <RtlPorts>
-<name>keep</name>
-<CType>
-<TypeName>int</TypeName>
-<TypeWidth>32</TypeWidth>
-<PhysicalWidth>32</PhysicalWidth>
-</CType>
-<CFractionWidth>0</CFractionWidth>
-<InvalidType>0</InvalidType>
-</RtlPorts>
-<RtlPorts>
 <name>ethernet_stream_out_V_data_V</name>
 <CType>
 <TypeName>ap_uint 64</TypeName>

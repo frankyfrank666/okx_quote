@@ -16,7 +16,7 @@ XILINX_DSP=
 TERM=xterm-256color
 SHELL=/bin/bash
 HISTSIZE=1000
-MAKEFLAGS=w --jobserver-fds=3,4 -j
+MAKEFLAGS=
 SSH_CLIENT=116.88.217.81 52456 22
 MYVIVADO=
 TERM_PROGRAM_VERSION=1.85.2
@@ -33,9 +33,9 @@ LS_COLORS=rs=0:di=38;5;27:ln=38;5;51:mh=44;38;5;15:pi=40;38;5;11:so=38;5;13:do=3
 RDI_PATCHROOT=
 TCL_LIBRARY=/opt/Xilinx/Vitis/2020.1/tps/tcl/tcl8.5
 RDI_PLATFORM=lnx64
-MAKELEVEL=2
+MAKELEVEL=1
 RDI_BUILD=yes
-MFLAGS=-w --jobserver-fds=3,4 -j
+MFLAGS=
 RT_LIBPATH=/opt/Xilinx/Vitis/2020.1/scripts/rt/data
 RDI_LIBDIR=/opt/Xilinx/Vitis/2020.1/lib/lnx64.o/Default:/opt/Xilinx/Vitis/2020.1/lib/lnx64.o
 MAIL=/var/spool/mail/root
@@ -82,10 +82,10 @@ RDI_DATADIR=/opt/Xilinx/Vitis/2020.1/data
 COLORTERM=truecolor
 RDI_INSTALLROOT=/opt/Xilinx
 _=/opt/Xilinx/Vitis/2020.1/bin/unwrapped/lnx64.o/v++
-XILINX_CD_CONNECT_ID=36800
-XILINX_CD_SESSION=a1b02a98-5236-4e10-b74d-980e747e14e8
-XILINX_RS_PORT=37624
-XILINX_RS_SESSION=87aa0527-49c3-427d-b6b5-0a5e79770577
+XILINX_CD_CONNECT_ID=40551
+XILINX_CD_SESSION=df30e021-f5c4-4f0f-82a3-3e396cbdf412
+XILINX_RS_PORT=36687
+XILINX_RS_SESSION=c13e3097-c6b9-4443-9278-736586db110a
 
 
 V++ command line:

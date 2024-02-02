@@ -35,7 +35,7 @@
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- VITIS_LOOP_19_1">?, ?, 3, 1, 1, ?, yes</column>
+<column name="- VITIS_LOOP_18_1">?, ?, 3, 1, 1, ?, yes</column>
 </table>
 </item>
 </section>

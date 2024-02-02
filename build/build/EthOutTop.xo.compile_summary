@@ -10,9 +10,9 @@
 {
  "type": "ET_CmdStep",
  "dateTimestamp": "Fri Jan  1 00:00:02 2021",
- "timestampMillis": "1609430402154",
+ "timestampMillis": "1609430402090",
  "buildStep": {
-  "cmdId": "dd8ad1a1-f16b-4027-8de5-617b0a55b769",
+  "cmdId": "f091dc49-8d45-481d-86c1-7e3f0187ef88",
   "name": "v++",
   "logFile": "/root/okx/build/_x/EthOutTop/EthOutTop.steps.log",
   "commandLine": "/opt/Xilinx/Vitis/2020.1/bin/unwrapped/lnx64.o/v++  --xp \"vivado_prop:run.__KERNEL__.{STEPS.SYNTH_DESIGN.ARGS.MORE OPTIONS}={-directive sdx_optimization_effort_high}\" --xp \"misc:report=type report_timing_summary name impl_report_timing_summary_route_design_summary steps {route_design} runs {impl_1} options {-max_paths 10}\" --xp \"misc:report=type report_timing_summary name impl_report_timing_summary_post_route_phys_opt_design_summary steps {post_route_phys_opt_design} runs {impl_1} options {-max_paths 10}\" --platform /opt/xilinx/platforms/xilinx_aliyun-f3_dynamic_5_0/xilinx_aliyun-f3_dynamic_5_0.xpfm --target hw_emu --compile -g -s -k EthOutTop -obuild/EthOutTop.xo ../src/EthOut/EthOutTop.cpp ",
@@ -38,9 +38,9 @@
 {
  "type": "ET_Status",
  "dateTimestamp": "Fri Jan  1 00:00:02 2021",
- "timestampMillis": "1609430402154",
+ "timestampMillis": "1609430402090",
  "status": {
-  "cmdId": "dd8ad1a1-f16b-4027-8de5-617b0a55b769",
+  "cmdId": "f091dc49-8d45-481d-86c1-7e3f0187ef88",
   "state": "CS_RUNNING"
  }
 }
@@ -49,7 +49,7 @@
 {
  "type": "ET_FlowMetaData",
  "dateTimestamp": "Fri Jan  1 00:00:18 2021",
- "timestampMillis": "1609430418644",
+ "timestampMillis": "1609430418665",
  "buildSummary": {
   "hardwarePlatform": "xilinx_aliyun-f3_dynamic_5_0.xpfm",
   "hardwareDsa": "xilinx_aliyun-f3_dynamic_5_0.xsa",
@@ -82,9 +82,9 @@
 {
  "type": "ET_SubCmdStep",
  "dateTimestamp": "Fri Jan  1 00:00:18 2021",
- "timestampMillis": "1609430418648",
+ "timestampMillis": "1609430418669",
  "buildStep": {
-  "cmdId": "2f0d9c37-ec1e-4ba0-9f53-facf086e9aaa",
+  "cmdId": "d27feb9c-230b-43e7-a913-96b92a89ca74",
   "name": "vitis_hls",
   "logFile": "/root/okx/build/_x/EthOutTop/EthOutTop/vitis_hls.log",
   "commandLine": "vitis_hls -f /root/okx/build/_x/EthOutTop/EthOutTop/EthOutTop.tcl -messageDb vitis_hls.pb",
@@ -104,9 +104,9 @@
 {
  "type": "ET_Status",
  "dateTimestamp": "Fri Jan  1 00:00:18 2021",
- "timestampMillis": "1609430418648",
+ "timestampMillis": "1609430418669",
  "status": {
-  "cmdId": "2f0d9c37-ec1e-4ba0-9f53-facf086e9aaa",
+  "cmdId": "d27feb9c-230b-43e7-a913-96b92a89ca74",
   "state": "CS_RUNNING"
  }
 }
@@ -115,9 +115,9 @@
 {
  "type": "ET_Status",
  "dateTimestamp": "Fri Jan  1 00:00:51 2021",
- "timestampMillis": "1609430451324",
+ "timestampMillis": "1609430451265",
  "status": {
-  "cmdId": "2f0d9c37-ec1e-4ba0-9f53-facf086e9aaa",
+  "cmdId": "d27feb9c-230b-43e7-a913-96b92a89ca74",
   "state": "CS_PASSED"
  }
 }
@@ -126,7 +126,7 @@
 {
  "type": "ET_Report",
  "dateTimestamp": "Fri Jan  1 00:00:51 2021",
- "timestampMillis": "1609430451331",
+ "timestampMillis": "1609430451272",
  "report": {
   "path": "/root/okx/build/_x/EthOutTop/EthOutTop/EthOutTop/solution/.autopilot/db/EthOutTop.design.xml",
   "name": "EthOutTop",
@@ -139,7 +139,7 @@
 {
  "type": "ET_Report",
  "dateTimestamp": "Fri Jan  1 00:00:51 2021",
- "timestampMillis": "1609430451332",
+ "timestampMillis": "1609430451272",
  "report": {
   "path": "/root/okx/build/_x/EthOutTop/EthOutTop/EthOutTop/solution/.autopilot/db/.message_syn.xml",
   "name": "EthOutTop",
@@ -152,7 +152,7 @@
 {
  "type": "ET_Report",
  "dateTimestamp": "Fri Jan  1 00:00:51 2021",
- "timestampMillis": "1609430451332",
+ "timestampMillis": "1609430451273",
  "report": {
   "path": "/root/okx/build/_x/reports/EthOutTop/hls_reports/EthOutTop_csynth.rpt",
   "name": "EthOutTop",
@@ -165,7 +165,7 @@
 {
  "type": "ET_Report",
  "dateTimestamp": "Fri Jan  1 00:00:51 2021",
- "timestampMillis": "1609430451333",
+ "timestampMillis": "1609430451273",
  "report": {
   "path": "/root/okx/build/_x/EthOutTop/EthOutTop/EthOutTop/solution/syn/report/EthOutTop_csynth.xml",
   "name": "EthOutTop",
@@ -178,7 +178,7 @@
 {
  "type": "ET_Report",
  "dateTimestamp": "Fri Jan  1 00:00:51 2021",
- "timestampMillis": "1609430451336",
+ "timestampMillis": "1609430451277",
  "report": {
   "path": "/root/okx/build/_x/reports/EthOutTop/system_estimate_EthOutTop.xtxt",
   "name": "",
@@ -191,7 +191,7 @@
 {
  "type": "ET_Report",
  "dateTimestamp": "Fri Jan  1 00:00:51 2021",
- "timestampMillis": "1609430451418",
+ "timestampMillis": "1609430451372",
  "report": {
   "path": "/root/okx/build/_x/reports/EthOutTop/v++_compile_EthOutTop_guidance.html",
   "name": "",
@@ -204,7 +204,7 @@
 {
  "type": "ET_Report",
  "dateTimestamp": "Fri Jan  1 00:00:51 2021",
- "timestampMillis": "1609430451418",
+ "timestampMillis": "1609430451373",
  "report": {
   "path": "/root/okx/build/_x/v++_compile_EthOutTop_guidance.pb",
   "name": "",
@@ -217,9 +217,9 @@
 {
  "type": "ET_Status",
  "dateTimestamp": "Fri Jan  1 00:00:51 2021",
- "timestampMillis": "1609430451419",
+ "timestampMillis": "1609430451373",
  "status": {
-  "cmdId": "dd8ad1a1-f16b-4027-8de5-617b0a55b769",
+  "cmdId": "f091dc49-8d45-481d-86c1-7e3f0187ef88",
   "state": "CS_PASSED"
  }
 }

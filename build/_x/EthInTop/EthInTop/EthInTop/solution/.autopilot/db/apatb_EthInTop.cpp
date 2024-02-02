@@ -27,9 +27,6 @@ using namespace sc_dt;
 #define AUTOTB_TVIN_buffSize "../tv/cdatafile/c.EthInTop.autotvin_buffSize.dat"
 #define AUTOTB_TVOUT_buffSize "../tv/cdatafile/c.EthInTop.autotvout_buffSize.dat"
 // wrapc file define:
-#define AUTOTB_TVIN_keep "../tv/cdatafile/c.EthInTop.autotvin_keep.dat"
-#define AUTOTB_TVOUT_keep "../tv/cdatafile/c.EthInTop.autotvout_keep.dat"
-// wrapc file define:
 #define AUTOTB_TVIN_ethernet_stream_out_V_data_V "../tv/cdatafile/c.EthInTop.autotvin_ethernet_stream_out_V_data_V.dat"
 #define AUTOTB_TVOUT_ethernet_stream_out_V_data_V "../tv/cdatafile/c.EthInTop.autotvout_ethernet_stream_out_V_data_V.dat"
 #define AUTOTB_TVIN_ethernet_stream_out_V_keep_V "../tv/cdatafile/c.EthInTop.autotvin_ethernet_stream_out_V_keep_V.dat"
@@ -56,8 +53,6 @@ using namespace sc_dt;
 // tvout file define:
 #define AUTOTB_TVOUT_PC_buffSize "../tv/rtldatafile/rtl.EthInTop.autotvout_buffSize.dat"
 // tvout file define:
-#define AUTOTB_TVOUT_PC_keep "../tv/rtldatafile/rtl.EthInTop.autotvout_keep.dat"
-// tvout file define:
 #define AUTOTB_TVOUT_PC_ethernet_stream_out_V_data_V "../tv/rtldatafile/rtl.EthInTop.autotvout_ethernet_stream_out_V_data_V.dat"
 #define AUTOTB_TVOUT_PC_ethernet_stream_out_V_keep_V "../tv/rtldatafile/rtl.EthInTop.autotvout_ethernet_stream_out_V_keep_V.dat"
 #define AUTOTB_TVOUT_PC_ethernet_stream_out_V_strb_V "../tv/rtldatafile/rtl.EthInTop.autotvout_ethernet_stream_out_V_strb_V.dat"
@@ -70,7 +65,6 @@ INTER_TCL_FILE(const char* name) {
   gmem_depth = 0;
   in_depth = 0;
   buffSize_depth = 0;
-  keep_depth = 0;
   ethernet_stream_out_V_data_V_depth = 0;
   ethernet_stream_out_V_keep_V_depth = 0;
   ethernet_stream_out_V_strb_V_depth = 0;
@@ -95,7 +89,6 @@ string get_depth_list () {
   total_list << "{gmem " << gmem_depth << "}\n";
   total_list << "{in_r " << in_depth << "}\n";
   total_list << "{buffSize " << buffSize_depth << "}\n";
-  total_list << "{keep " << keep_depth << "}\n";
   total_list << "{ethernet_stream_out_V_data_V " << ethernet_stream_out_V_data_V_depth << "}\n";
   total_list << "{ethernet_stream_out_V_keep_V " << ethernet_stream_out_V_keep_V_depth << "}\n";
   total_list << "{ethernet_stream_out_V_strb_V " << ethernet_stream_out_V_strb_V_depth << "}\n";
@@ -109,7 +102,6 @@ void set_num (int num , int* class_num) {
     int gmem_depth;
     int in_depth;
     int buffSize_depth;
-    int keep_depth;
     int ethernet_stream_out_V_data_V_depth;
     int ethernet_stream_out_V_keep_V_depth;
     int ethernet_stream_out_V_strb_V_depth;
@@ -157,9 +149,9 @@ static void RTLOutputCheckAndReplacement(std::string &AESL_token, std::string Po
 }
 struct __cosim_s4__ { char data[4]; };
 struct __cosim_s10__ { char data[16]; };
-extern "C" void EthInTop_hw_stub(volatile void *, __cosim_s4__, __cosim_s4__, volatile void *);
+extern "C" void EthInTop_hw_stub(volatile void *, __cosim_s4__, volatile void *);
 
-extern "C" void apatb_EthInTop_hw(volatile void * __xlx_apatb_param_in, __cosim_s4__ __xlx_apatb_param_buffSize, __cosim_s4__ __xlx_apatb_param_keep, volatile void * __xlx_apatb_param_ethernet_stream_out) {
+extern "C" void apatb_EthInTop_hw(volatile void * __xlx_apatb_param_in, __cosim_s4__ __xlx_apatb_param_buffSize, volatile void * __xlx_apatb_param_ethernet_stream_out) {
   refine_signal_handler();
   fstream wrapc_switch_file_token;
   wrapc_switch_file_token.open(".hls_cosim_wrapc_switch.log");
@@ -379,9 +371,6 @@ aesl_fh.touch(AUTOTB_TVOUT_in);
 //buffSize
 aesl_fh.touch(AUTOTB_TVIN_buffSize);
 aesl_fh.touch(AUTOTB_TVOUT_buffSize);
-//keep
-aesl_fh.touch(AUTOTB_TVIN_keep);
-aesl_fh.touch(AUTOTB_TVOUT_keep);
 //ethernet_stream_out
 aesl_fh.touch(AUTOTB_TVIN_ethernet_stream_out_V_data_V);
 aesl_fh.touch(AUTOTB_TVOUT_ethernet_stream_out_V_data_V);
@@ -445,23 +434,10 @@ __xlx_tmp_lv.range(127,64) = ((long long*)__xlx_apatb_param_in)[j*2+1];
   sprintf(__xlx_sprintf_buffer.data(), "[[/transaction]] \n");
   aesl_fh.write(AUTOTB_TVIN_buffSize, __xlx_sprintf_buffer.data());
 }
-// print keep Transactions
-{
-  sprintf(__xlx_sprintf_buffer.data(), "[[transaction]] %d\n", AESL_transaction);
-  aesl_fh.write(AUTOTB_TVIN_keep, __xlx_sprintf_buffer.data());
-  {
-    sc_bv<32> __xlx_tmp_lv = *((int*)&__xlx_apatb_param_keep);
-    sprintf(__xlx_sprintf_buffer.data(), "%s\n", __xlx_tmp_lv.to_string(SC_HEX).c_str());
-    aesl_fh.write(AUTOTB_TVIN_keep, __xlx_sprintf_buffer.data()); 
-  }
-  tcl_file.set_num(1, &tcl_file.keep_depth);
-  sprintf(__xlx_sprintf_buffer.data(), "[[/transaction]] \n");
-  aesl_fh.write(AUTOTB_TVIN_keep, __xlx_sprintf_buffer.data());
-}
 std::vector<__cosim_s10__> __xlx_apatb_param_ethernet_stream_out_stream_buf;
 long __xlx_apatb_param_ethernet_stream_out_stream_buf_size = ((hls::stream<__cosim_s10__>*)__xlx_apatb_param_ethernet_stream_out)->size();
 CodeState = CALL_C_DUT;
-EthInTop_hw_stub(__xlx_apatb_param_in, __xlx_apatb_param_buffSize, __xlx_apatb_param_keep, __xlx_apatb_param_ethernet_stream_out);
+EthInTop_hw_stub(__xlx_apatb_param_in, __xlx_apatb_param_buffSize, __xlx_apatb_param_ethernet_stream_out);
 CodeState = DUMP_OUTPUTS;
 
 //********************** dump C output stream *******************

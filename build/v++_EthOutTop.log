@@ -21,6 +21,7 @@ INFO: [v++ 200-789] **** Estimated Fmax: 411.02 MHz
 INFO: [v++ 60-594] Finished kernel compilation
 INFO: [v++ 60-244] Generating system estimate report...
 INFO: [v++ 60-1092] Generated system estimate report: /root/okx/build/_x/reports/EthOutTop/system_estimate_EthOutTop.xtxt
+WARNING: [v++ 17-1525] IP definition with the same IP name already exists in XO container. Will overwrite the existing IP definition.
 INFO: [v++ 60-586] Created build/EthOutTop.xo
 INFO: [v++ 60-2343] Use the vitis_analyzer tool to visualize and navigate the relevant reports. Run the following command. 
     vitis_analyzer /root/okx/build/build/EthOutTop.xo.compile_summary 

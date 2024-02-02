@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'EthOutTop'" level="0">
-<item name = "Date">Fri Jan  1 00:00:34 2021
+<item name = "Date">Fri Jan  1 00:00:33 2021
 </item>
 <item name = "Version">2020.1 (Build 2902540 on Wed May 27 20:16:15 MDT 2020)</item>
 <item name = "Project">EthOutTop</item>
@@ -48,12 +48,12 @@
 <item name = "Summary"><table name="" hasTotal="1">
 <keys size="6">Name, BRAM_18K, DSP, FF, LUT, URAM</keys>
 <column name="DSP">-, -, -, -, -</column>
-<column name="Expression">-, -, 0, 1265, -</column>
+<column name="Expression">-, -, 0, 1224, -</column>
 <column name="FIFO">-, -, -, -, -</column>
 <column name="Instance">8, -, 757, 1019, -</column>
 <column name="Memory">-, -, -, -, -</column>
 <column name="Multiplexer">-, -, -, 159, -</column>
-<column name="Register">-, -, 860, 32, -</column>
+<column name="Register">-, -, 827, 32, -</column>
 <specialColumn name="Available SLR">1440, 2280, 788160, 394080, 320</specialColumn>
 <specialColumn name="Utilization SLR (%)">~0, 0, ~0, ~0, 0</specialColumn>
 <specialColumn name="Available">4320, 6840, 2364480, 1182240, 960</specialColumn>
@@ -82,12 +82,11 @@
 </item>
 <item name = "Expression"><table name="" hasTotal="1">
 <keys size="7">Variable Name, Operation, DSP, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
-<column name="add_ln324_1_fu_339_p2">+, 0, 0, 71, 64, 4</column>
-<column name="add_ln324_2_fu_371_p2">+, 0, 0, 71, 64, 4</column>
-<column name="add_ln324_3_fu_247_p2">+, 0, 0, 12, 4, 4</column>
-<column name="add_ln324_fu_302_p2">+, 0, 0, 71, 64, 64</column>
-<column name="add_ln695_fu_284_p2">+, 0, 0, 39, 32, 1</column>
-<column name="sub_i_i_fu_209_p2">+, 0, 0, 40, 2, 33</column>
+<column name="add_ln18_fu_213_p2">+, 0, 0, 12, 4, 4</column>
+<column name="add_ln324_1_fu_323_p2">+, 0, 0, 71, 64, 4</column>
+<column name="add_ln324_2_fu_355_p2">+, 0, 0, 71, 64, 4</column>
+<column name="add_ln324_fu_286_p2">+, 0, 0, 71, 64, 64</column>
+<column name="add_ln695_fu_268_p2">+, 0, 0, 39, 32, 1</column>
 <column name="ap_block_pp0_stage0_01001">and, 0, 0, 2, 1, 1</column>
 <column name="ap_block_pp0_stage2_01001">and, 0, 0, 2, 1, 1</column>
 <column name="ap_block_state3_io">and, 0, 0, 2, 1, 1</column>
@@ -97,31 +96,30 @@
 <column name="ap_ext_blocking_cur_n">and, 0, 0, 2, 1, 1</column>
 <column name="ap_ext_blocking_n">and, 0, 0, 2, 1, 2</column>
 <column name="ap_int_blocking_n">and, 0, 0, 2, 2, 2</column>
-<column name="ap_predicate_op121_read_state3">and, 0, 0, 2, 1, 1</column>
+<column name="ap_predicate_op118_read_state3">and, 0, 0, 2, 1, 1</column>
 <column name="ap_str_blocking_cur_n">and, 0, 0, 2, 1, 0</column>
 <column name="ap_str_blocking_n">and, 0, 0, 2, 1, 2</column>
-<column name="tmp_nbreadreq_fu_122_p6">and, 0, 0, 2, 1, 0</column>
-<column name="icmp_ln882_fu_279_p2">icmp, 0, 0, 21, 33, 33</column>
+<column name="tmp_nbreadreq_fu_120_p6">and, 0, 0, 2, 1, 0</column>
+<column name="icmp_ln882_fu_263_p2">icmp, 0, 0, 20, 32, 32</column>
 <column name="ap_block_pp0_stage0_11001">or, 0, 0, 2, 1, 1</column>
 <column name="ap_block_pp0_stage1_01001">or, 0, 0, 2, 1, 1</column>
 <column name="ap_block_pp0_stage1_11001">or, 0, 0, 2, 1, 1</column>
 <column name="ap_block_pp0_stage2_11001">or, 0, 0, 2, 1, 1</column>
 <column name="ap_block_state4_io">or, 0, 0, 2, 1, 1</column>
 <column name="ap_block_state5_io">or, 0, 0, 2, 1, 1</column>
-<column name="shl_ln324_1_fu_229_p2">shl, 0, 0, 35, 2, 16</column>
-<column name="shl_ln324_3_fu_356_p2">shl, 0, 0, 423, 128, 128</column>
-<column name="shl_ln324_4_fu_257_p2">shl, 0, 0, 35, 1, 16</column>
-<column name="shl_ln324_fu_407_p2">shl, 0, 0, 402, 121, 121</column>
+<column name="shl_ln324_2_fu_245_p2">shl, 0, 0, 35, 1, 16</column>
+<column name="shl_ln324_5_fu_340_p2">shl, 0, 0, 423, 128, 128</column>
+<column name="shl_ln324_6_fu_391_p2">shl, 0, 0, 402, 121, 121</column>
+<column name="shl_ln324_fu_223_p2">shl, 0, 0, 35, 2, 16</column>
 <column name="ap_enable_pp0">xor, 0, 0, 2, 1, 2</column>
-<column name="xor_ln324_fu_219_p2">xor, 0, 0, 5, 4, 5</column>
+<column name="xor_ln18_fu_207_p2">xor, 0, 0, 5, 4, 5</column>
 </table>
 </item>
 <item name = "Multiplexer"><table name="" hasTotal="1">
 <keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
 <column name="ap_NS_fsm">33, 6, 1, 6</column>
 <column name="ap_enable_reg_pp0_iter24">9, 2, 1, 2</column>
-<column name="ap_phi_mux_empty_phi_fu_198_p4">9, 2, 32, 64</column>
-<column name="empty_reg_194">9, 2, 32, 64</column>
+<column name="ap_phi_mux_indvars_iv_phi_fu_196_p4">9, 2, 32, 64</column>
 <column name="ethernet_stream_in_TDATA_blk_n">9, 2, 1, 2</column>
 <column name="gmem_AWADDR">21, 4, 64, 256</column>
 <column name="gmem_WDATA">21, 4, 128, 512</column>
@@ -129,12 +127,13 @@
 <column name="gmem_blk_n_AW">9, 2, 1, 2</column>
 <column name="gmem_blk_n_B">9, 2, 1, 2</column>
 <column name="gmem_blk_n_W">9, 2, 1, 2</column>
+<column name="indvars_iv_reg_192">9, 2, 32, 64</column>
 </table>
 </item>
 <item name = "Register"><table name="" hasTotal="1">
 <keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
-<column name="add_ln324_reg_469">64, 0, 64, 0</column>
-<column name="add_ln695_reg_460">32, 0, 32, 0</column>
+<column name="add_ln324_reg_453">64, 0, 64, 0</column>
+<column name="add_ln695_reg_444">32, 0, 32, 0</column>
 <column name="ap_CS_fsm">5, 0, 5, 0</column>
 <column name="ap_enable_reg_pp0_iter0">1, 0, 1, 0</column>
 <column name="ap_enable_reg_pp0_iter1">1, 0, 1, 0</column>
@@ -167,23 +166,22 @@
 <column name="ap_rst_reg_1">1, 0, 1, 0</column>
 <column name="ap_rst_reg_2">1, 0, 1, 0</column>
 <column name="ap_str_blocking_n_reg">1, 0, 1, 0</column>
-<column name="empty_30_reg_480_3">1, 0, 1, 0</column>
-<column name="empty_reg_194">32, 0, 32, 0</column>
-<column name="icmp_ln882_reg_456">1, 0, 1, 0</column>
-<column name="out_read_reg_426">64, 0, 64, 0</column>
-<column name="shl_ln324_1_reg_436">16, 0, 16, 0</column>
-<column name="shl_ln324_3_reg_496">128, 0, 128, 0</column>
-<column name="shl_ln324_4_reg_446">16, 0, 16, 0</column>
-<column name="shl_ln324_reg_517">121, 0, 121, 0</column>
-<column name="sub_i_i_reg_431">33, 0, 33, 0</column>
-<column name="tmp_data_V_reg_485">64, 0, 64, 0</column>
-<column name="tmp_reg_465">1, 0, 1, 0</column>
-<column name="trunc_ln324_2_reg_475">60, 0, 60, 0</column>
-<column name="trunc_ln324_3_reg_506">60, 0, 60, 0</column>
-<column name="trunc_ln_reg_501">60, 0, 60, 0</column>
-<column name="zext_ln18_reg_451">4, 0, 121, 117</column>
-<column name="zext_ln324_3_reg_441">4, 0, 128, 124</column>
-<column name="tmp_reg_465">64, 32, 1, 0</column>
+<column name="empty_reg_464_3">1, 0, 1, 0</column>
+<column name="icmp_ln882_reg_440">1, 0, 1, 0</column>
+<column name="indvars_iv_reg_192">32, 0, 32, 0</column>
+<column name="out_read_reg_415">64, 0, 64, 0</column>
+<column name="shl_ln324_2_reg_430">16, 0, 16, 0</column>
+<column name="shl_ln324_5_reg_480">128, 0, 128, 0</column>
+<column name="shl_ln324_6_reg_501">121, 0, 121, 0</column>
+<column name="shl_ln324_reg_420">16, 0, 16, 0</column>
+<column name="tmp_data_V_reg_469">64, 0, 64, 0</column>
+<column name="tmp_reg_449">1, 0, 1, 0</column>
+<column name="trunc_ln1_reg_459">60, 0, 60, 0</column>
+<column name="trunc_ln324_1_reg_485">60, 0, 60, 0</column>
+<column name="trunc_ln324_2_reg_490">60, 0, 60, 0</column>
+<column name="zext_ln18_reg_435">4, 0, 121, 117</column>
+<column name="zext_ln324_1_reg_425">4, 0, 128, 124</column>
+<column name="tmp_reg_449">64, 32, 1, 0</column>
 </table>
 </item>
 </section>

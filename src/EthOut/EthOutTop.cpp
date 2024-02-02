@@ -15,11 +15,11 @@ extern "C" {
 #pragma hls INTERFACE axis port=ethernet_stream_in
 #pragma HLS INTERFACE ap_ctrl_hs port=return
 
-        for (ap_uint<32> i = 0; i < buffSize - 1; ++i)
+        for (ap_uint<32> i = 0; i < buffSize; ++i)
         {
             if(!ethernet_stream_in.empty())
             {
-                out[i] = ethernet_stream_in.read()
+                out[i] = ethernet_stream_in.read();
             }
         }
     }

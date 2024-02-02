@@ -3,7 +3,7 @@
 # SW Build 2902540 on Wed May 27 19:54:35 MDT 2020
 # IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
 # Start of session at: Fri Jan  1 00:00:36 2021
-# Process ID: 25014
+# Process ID: 30920
 # Current directory: /root/okx/build/_x/EthInTop/EthInTop/EthInTop/solution/impl/ip
 # Command line: vivado -notrace -mode batch -source run_ippack.tcl
 # Log file: /root/okx/build/_x/EthInTop/EthInTop/EthInTop/solution/impl/ip/vivado.log
@@ -13,4 +13,4 @@ source run_ippack.tcl -notrace
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2020.1/data/ip'.
-INFO: [Common 17-206] Exiting Vivado at Fri Jan  1 00:00:48 2021...
+INFO: [Common 17-206] Exiting Vivado at Fri Jan  1 00:00:47 2021...

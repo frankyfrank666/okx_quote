@@ -884,10 +884,10 @@
           "BRAM_18K": "8",
           "AVAIL_BRAM": "4320",
           "UTIL_BRAM": "~0",
-          "FF": "1617",
+          "FF": "1584",
           "AVAIL_FF": "2364480",
           "UTIL_FF": "~0",
-          "LUT": "2475",
+          "LUT": "2434",
           "AVAIL_LUT": "1182240",
           "UTIL_LUT": "~0",
           "DSP": "0",
@@ -902,7 +902,7 @@
   "GenerateBdFiles": "1",
   "GenData": {
     "DataVersion": "0.2",
-    "Time": "2021-01-01 00:00:36 CST",
+    "Time": "2021-01-01 00:00:35 CST",
     "ToolName": "vivado_hls",
     "ToolVersion": "2020.1"
   }

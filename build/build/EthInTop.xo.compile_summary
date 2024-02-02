@@ -10,9 +10,9 @@
 {
  "type": "ET_CmdStep",
  "dateTimestamp": "Fri Jan  1 00:00:02 2021",
- "timestampMillis": "1609430402148",
+ "timestampMillis": "1609430402052",
  "buildStep": {
-  "cmdId": "599c8bb4-2042-4f7d-a728-1df6b58683fe",
+  "cmdId": "7bd1ed9d-ee61-4fa2-9045-249fe89c4bed",
   "name": "v++",
   "logFile": "/root/okx/build/_x/EthInTop/EthInTop.steps.log",
   "commandLine": "/opt/Xilinx/Vitis/2020.1/bin/unwrapped/lnx64.o/v++  --xp \"vivado_prop:run.__KERNEL__.{STEPS.SYNTH_DESIGN.ARGS.MORE OPTIONS}={-directive sdx_optimization_effort_high}\" --xp \"misc:report=type report_timing_summary name impl_report_timing_summary_route_design_summary steps {route_design} runs {impl_1} options {-max_paths 10}\" --xp \"misc:report=type report_timing_summary name impl_report_timing_summary_post_route_phys_opt_design_summary steps {post_route_phys_opt_design} runs {impl_1} options {-max_paths 10}\" --platform /opt/xilinx/platforms/xilinx_aliyun-f3_dynamic_5_0/xilinx_aliyun-f3_dynamic_5_0.xpfm --target hw_emu --compile -g -s -k EthInTop -obuild/EthInTop.xo ../src/EthIn/EthInTop.cpp ",
@@ -38,9 +38,9 @@
 {
  "type": "ET_Status",
  "dateTimestamp": "Fri Jan  1 00:00:02 2021",
- "timestampMillis": "1609430402149",
+ "timestampMillis": "1609430402052",
  "status": {
-  "cmdId": "599c8bb4-2042-4f7d-a728-1df6b58683fe",
+  "cmdId": "7bd1ed9d-ee61-4fa2-9045-249fe89c4bed",
   "state": "CS_RUNNING"
  }
 }
@@ -49,7 +49,7 @@
 {
  "type": "ET_FlowMetaData",
  "dateTimestamp": "Fri Jan  1 00:00:18 2021",
- "timestampMillis": "1609430418720",
+ "timestampMillis": "1609430418510",
  "buildSummary": {
   "hardwarePlatform": "xilinx_aliyun-f3_dynamic_5_0.xpfm",
   "hardwareDsa": "xilinx_aliyun-f3_dynamic_5_0.xsa",
@@ -82,9 +82,9 @@
 {
  "type": "ET_SubCmdStep",
  "dateTimestamp": "Fri Jan  1 00:00:18 2021",
- "timestampMillis": "1609430418724",
+ "timestampMillis": "1609430418513",
  "buildStep": {
-  "cmdId": "6da7abde-c762-4534-b1ba-dea9554df6ed",
+  "cmdId": "561f6c14-c0e9-4c87-9a28-13aefa494ec4",
   "name": "vitis_hls",
   "logFile": "/root/okx/build/_x/EthInTop/EthInTop/vitis_hls.log",
   "commandLine": "vitis_hls -f /root/okx/build/_x/EthInTop/EthInTop/EthInTop.tcl -messageDb vitis_hls.pb",
@@ -104,9 +104,9 @@
 {
  "type": "ET_Status",
  "dateTimestamp": "Fri Jan  1 00:00:18 2021",
- "timestampMillis": "1609430418725",
+ "timestampMillis": "1609430418514",
  "status": {
-  "cmdId": "6da7abde-c762-4534-b1ba-dea9554df6ed",
+  "cmdId": "561f6c14-c0e9-4c87-9a28-13aefa494ec4",
   "state": "CS_RUNNING"
  }
 }
@@ -114,10 +114,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Fri Jan  1 00:00:51 2021",
- "timestampMillis": "1609430451317",
+ "dateTimestamp": "Fri Jan  1 00:00:50 2021",
+ "timestampMillis": "1609430450462",
  "status": {
-  "cmdId": "6da7abde-c762-4534-b1ba-dea9554df6ed",
+  "cmdId": "561f6c14-c0e9-4c87-9a28-13aefa494ec4",
   "state": "CS_PASSED"
  }
 }
@@ -125,8 +125,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Fri Jan  1 00:00:51 2021",
- "timestampMillis": "1609430451324",
+ "dateTimestamp": "Fri Jan  1 00:00:50 2021",
+ "timestampMillis": "1609430450469",
  "report": {
   "path": "/root/okx/build/_x/EthInTop/EthInTop/EthInTop/solution/.autopilot/db/EthInTop.design.xml",
   "name": "EthInTop",
@@ -138,8 +138,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Fri Jan  1 00:00:51 2021",
- "timestampMillis": "1609430451325",
+ "dateTimestamp": "Fri Jan  1 00:00:50 2021",
+ "timestampMillis": "1609430450469",
  "report": {
   "path": "/root/okx/build/_x/EthInTop/EthInTop/EthInTop/solution/.autopilot/db/.message_syn.xml",
   "name": "EthInTop",
@@ -151,8 +151,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Fri Jan  1 00:00:51 2021",
- "timestampMillis": "1609430451325",
+ "dateTimestamp": "Fri Jan  1 00:00:50 2021",
+ "timestampMillis": "1609430450470",
  "report": {
   "path": "/root/okx/build/_x/reports/EthInTop/hls_reports/EthInTop_csynth.rpt",
   "name": "EthInTop",
@@ -164,8 +164,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Fri Jan  1 00:00:51 2021",
- "timestampMillis": "1609430451326",
+ "dateTimestamp": "Fri Jan  1 00:00:50 2021",
+ "timestampMillis": "1609430450470",
  "report": {
   "path": "/root/okx/build/_x/EthInTop/EthInTop/EthInTop/solution/syn/report/EthInTop_csynth.xml",
   "name": "EthInTop",
@@ -177,8 +177,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Fri Jan  1 00:00:51 2021",
- "timestampMillis": "1609430451329",
+ "dateTimestamp": "Fri Jan  1 00:00:50 2021",
+ "timestampMillis": "1609430450474",
  "report": {
   "path": "/root/okx/build/_x/reports/EthInTop/system_estimate_EthInTop.xtxt",
   "name": "",
@@ -190,8 +190,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Fri Jan  1 00:00:51 2021",
- "timestampMillis": "1609430451412",
+ "dateTimestamp": "Fri Jan  1 00:00:50 2021",
+ "timestampMillis": "1609430450567",
  "report": {
   "path": "/root/okx/build/_x/reports/EthInTop/v++_compile_EthInTop_guidance.html",
   "name": "",
@@ -203,8 +203,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Fri Jan  1 00:00:51 2021",
- "timestampMillis": "1609430451413",
+ "dateTimestamp": "Fri Jan  1 00:00:50 2021",
+ "timestampMillis": "1609430450567",
  "report": {
   "path": "/root/okx/build/_x/v++_compile_EthInTop_guidance.pb",
   "name": "",
@@ -216,10 +216,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Fri Jan  1 00:00:51 2021",
- "timestampMillis": "1609430451413",
+ "dateTimestamp": "Fri Jan  1 00:00:50 2021",
+ "timestampMillis": "1609430450568",
  "status": {
-  "cmdId": "599c8bb4-2042-4f7d-a728-1df6b58683fe",
+  "cmdId": "7bd1ed9d-ee61-4fa2-9045-249fe89c4bed",
   "state": "CS_PASSED"
  }
 }

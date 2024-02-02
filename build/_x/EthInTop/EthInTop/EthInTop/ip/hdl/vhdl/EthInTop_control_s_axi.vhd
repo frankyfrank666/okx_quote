@@ -34,7 +34,6 @@ port (
     interrupt             :out  STD_LOGIC;
     in_r                  :out  STD_LOGIC_VECTOR(63 downto 0);
     buffSize              :out  STD_LOGIC_VECTOR(31 downto 0);
-    keep                  :out  STD_LOGIC_VECTOR(31 downto 0);
     ap_start              :out  STD_LOGIC;
     ap_done               :in   STD_LOGIC;
     ap_ready              :in   STD_LOGIC;
@@ -70,9 +69,6 @@ end entity EthInTop_control_s_axi;
 -- 0x1c : Data signal of buffSize
 --        bit 31~0 - buffSize[31:0] (Read/Write)
 -- 0x20 : reserved
--- 0x24 : Data signal of keep
---        bit 31~0 - keep[31:0] (Read/Write)
--- 0x28 : reserved
 -- (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
 architecture behave of EthInTop_control_s_axi is
@@ -89,8 +85,6 @@ architecture behave of EthInTop_control_s_axi is
     constant ADDR_IN_R_CTRL       : INTEGER := 16#18#;
     constant ADDR_BUFFSIZE_DATA_0 : INTEGER := 16#1c#;
     constant ADDR_BUFFSIZE_CTRL   : INTEGER := 16#20#;
-    constant ADDR_KEEP_DATA_0     : INTEGER := 16#24#;
-    constant ADDR_KEEP_CTRL       : INTEGER := 16#28#;
     constant ADDR_BITS         : INTEGER := 6;
 
     signal waddr               : UNSIGNED(ADDR_BITS-1 downto 0);
@@ -116,7 +110,6 @@ architecture behave of EthInTop_control_s_axi is
     signal int_isr             : UNSIGNED(1 downto 0) := (others => '0');
     signal int_in_r            : UNSIGNED(63 downto 0) := (others => '0');
     signal int_buffSize        : UNSIGNED(31 downto 0) := (others => '0');
-    signal int_keep            : UNSIGNED(31 downto 0) := (others => '0');
 
 
 begin
@@ -250,8 +243,6 @@ begin
                         rdata_data <= RESIZE(int_in_r(63 downto 32), 32);
                     when ADDR_BUFFSIZE_DATA_0 =>
                         rdata_data <= RESIZE(int_buffSize(31 downto 0), 32);
-                    when ADDR_KEEP_DATA_0 =>
-                        rdata_data <= RESIZE(int_keep(31 downto 0), 32);
                     when others =>
                         NULL;
                     end case;
@@ -266,7 +257,6 @@ begin
     ap_start             <= int_ap_start;
     in_r                 <= STD_LOGIC_VECTOR(int_in_r);
     buffSize             <= STD_LOGIC_VECTOR(int_buffSize);
-    keep                 <= STD_LOGIC_VECTOR(int_keep);
 
     process (ACLK)
     begin
@@ -436,17 +426,6 @@ begin
             if (ACLK_EN = '1') then
                 if (w_hs = '1' and waddr = ADDR_BUFFSIZE_DATA_0) then
                     int_buffSize(31 downto 0) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_buffSize(31 downto 0));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_KEEP_DATA_0) then
-                    int_keep(31 downto 0) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_keep(31 downto 0));
                 end if;
             end if;
         end if;

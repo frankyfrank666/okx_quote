@@ -1,6 +1,8 @@
 # okx_quote
 # okx_quote
 
+requires libpcap for reading the pcap packets for simulation. yum install libpcap
+
 Run software c-simulation:
 In hls_proj folder:
   make csim NAME=Tcp

@@ -1,9 +1,13 @@
-Fri Jan  1 00:00:13 2021: Server was asked to start on port: '37624'
-Fri Jan  1 00:00:13 2021: Server is using token UUID: '8f9f785f-ac32-4395-9141-84bcd758dd8d'
-Fri Jan  1 00:00:13 2021: Attempting to start server on port '37624'
-Fri Jan  1 00:00:13 2021: XRC main fifo: created main fifo '/tmp/xrcmain8f9f785f-ac32-4395-9141-84bcd758dd8d', fd read = 12
+Fri Jan  1 00:00:13 2021: Server was asked to start on port: '42650'
+Fri Jan  1 00:00:13 2021: Server is using token UUID: '4ee64e01-4c30-46eb-bff3-4a16a337010a'
+Fri Jan  1 00:00:13 2021: Attempting to start server on port '42650'
+Fri Jan  1 00:00:13 2021: XRC main fifo: created main fifo '/tmp/xrcmain4ee64e01-4c30-46eb-bff3-4a16a337010a', fd read = 13
 Fri Jan  1 00:00:13 2021: Running Rule Check Server
 Fri Jan  1 00:00:13 2021: Version 1.6.1
 Fri Jan  1 00:00:13 2021: Rule Check Server: Accepted socket connection from client
-Fri Jan  1 00:00:13 2021: EXCHANGE_TOKEN received, server token: 8f9f785f-ac32-4395-9141-84bcd758dd8d, passed token: 8f9f785f-ac32-4395-9141-84bcd758dd8d
-Fri Jan  1 00:00:13 2021: SESSION_MGR: creating session with session uuid: '87aa0527-49c3-427d-b6b5-0a5e79770577' and name 'v++_compile_EthOutTop'FFri Jan  1 00:00:33 2021: Rule Check Server: Accepted socket connection from clientFFri Jan  1 00:00:51 2021: SESSION_MGR: closing session for UUID '87aa0527-49c3-427d-b6b5-0a5e79770577' with name 'v++_compile_EthOutTop'
+Fri Jan  1 00:00:13 2021: EXCHANGE_TOKEN received, server token: 4ee64e01-4c30-46eb-bff3-4a16a337010a, passed token: 4ee64e01-4c30-46eb-bff3-4a16a337010a
+Fri Jan  1 00:00:13 2021: SESSION_MGR: creating session with session uuid: 'fd282d17-0326-4e8a-8d2a-a7fc9cea792c' and name 'v++_link_x3'
+Fri Jan  1 00:00:20 2021: Rule Check Server: Accepted socket connection from client
+Fri Jan  1 00:01:05 2021: Rule Check Server: Accepted socket connection from client
+Fri Jan  1 00:08:03 2021: Rule Check Server: Accepted socket connection from client
+Fri Jan  1 00:12:25 2021: SESSION_MGR: closing session for UUID 'fd282d17-0326-4e8a-8d2a-a7fc9cea792c' with name 'v++_link_x3'

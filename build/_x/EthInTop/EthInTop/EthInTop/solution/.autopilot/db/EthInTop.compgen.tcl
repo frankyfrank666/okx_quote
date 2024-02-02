@@ -25,14 +25,6 @@ buffSize {
 	offset 28
 	offset_end 35
 }
-keep { 
-	dir I
-	width 32
-	depth 1
-	mode ap_none
-	offset 36
-	offset_end 43
-}
 ap_start { }
 ap_done { }
 ap_ready { }

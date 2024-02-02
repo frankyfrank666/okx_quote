@@ -9,6 +9,7 @@
 #include <stdlib.h>
 #include <fstream>
 #include <iostream>
+#include <pcap.h>
 
 
 #include "ap_int.h"
@@ -29,6 +30,7 @@
 #include "/root/Desktop/Vitis_Accel_Examples-2020.1/common/includes/xcl2/xcl2.hpp"
 #include "/root/Desktop/Vitis_Accel_Examples-2020.1/common/includes/xcl2/xcl2.hpp"
 #include "/opt/xilinx/xrt/include/experimental/xrt-next.h"
+#include "../src/common/utils.h"
 
 static const std::string error_message =
     "Error: Result mismatch:\n"
@@ -68,7 +70,6 @@ public:
         // Creating Context and Command Queue for selected device
         mContext = cl::Context(mDevice);
         mQueue = cl::CommandQueue(mContext, mDevice, CL_QUEUE_PROFILING_ENABLE);
-
         // Load xclbin 
         std::cout << "Loading: '" << xclbinFilename << "'\n";
         std::ifstream bin_file(xclbinFilename, std::ifstream::binary);
@@ -86,8 +87,10 @@ public:
         
         mKernelEthInTop = cl::Kernel(mProgram, "EthInTop");
         mKernelEthOutTop = cl::Kernel(mProgram, "EthOutTop");
+        mKernelTcpTop = cl::Kernel(mProgram, "TcpTop");
     }
 
+    cl::Kernel mKernelTcpTop;
     cl::Kernel mKernelEthInTop;
     cl::Kernel mKernelEthOutTop;
 
@@ -104,16 +107,17 @@ class WriteToFpgaBuffer
 {
 public:
     cl::Buffer mBuffer;
-    T* mPtr;
-    size_t mSize;
+    std::vector<T, aligned_allocator<T>> mContainer;
+    size_t mCapacity;
     cl::CommandQueue mQueue;
+    cl::Context mContext;
 
-    WriteToFpgaBuffer(cl::CommandQueue queue, cl::Context context, size_t sizeInBytes)
+    WriteToFpgaBuffer(cl::CommandQueue queue, cl::Context context, size_t blocks)
     {
+        mContext = context;
         mQueue = queue;
-        mSize = sizeInBytes;
-        mBuffer = cl::Buffer(context, CL_MEM_READ_ONLY, sizeInBytes);
-        mPtr = (T*) queue.enqueueMapBuffer (mBuffer , CL_TRUE , CL_MAP_WRITE , 0, sizeInBytes);
+        mCapacity = blocks;
+        mContainer = std::vector<T, aligned_allocator<T>>(mCapacity * sizeof(T));
     }
 
     ~WriteToFpgaBuffer()
@@ -123,6 +127,8 @@ public:
 
     cl_int syncBuffer()
     {   
+        mBuffer = cl::Buffer(mContext, CL_MEM_READ_ONLY | CL_MEM_USE_HOST_PTR, mCapacity * sizeof(T), mContainer.data());
+
         cl_int err = 0;
         OCL_CHECK(err, mQueue.enqueueMigrateMemObjects({mBuffer}, 0));
         if(err)
@@ -136,16 +142,16 @@ class ReadFromFpgaBuffer
 {
 public:
     cl::Buffer mBuffer;
-    T* mPtr;
-    size_t mSize;
+    std::vector<T, aligned_allocator<T>> mContainer;
+    size_t mCapacity;
     cl::CommandQueue mQueue;
 
-    ReadFromFpgaBuffer(cl::CommandQueue queue, cl::Context context, size_t sizeInBytes)
+    ReadFromFpgaBuffer(cl::CommandQueue queue, cl::Context context, size_t blocks)
     {
         mQueue = queue;
-        mSize = sizeInBytes;
-        mBuffer = cl::Buffer(context, CL_MEM_WRITE_ONLY, sizeInBytes);
-        mPtr = (T*) queue.enqueueMapBuffer (mBuffer , CL_TRUE , CL_MAP_READ , 0, sizeInBytes);
+        mCapacity = blocks;
+        mContainer = std::vector<T, aligned_allocator<T>>(mCapacity * sizeof(T));
+        mBuffer = cl::Buffer(context, CL_MEM_WRITE_ONLY | CL_MEM_USE_HOST_PTR, mCapacity * sizeof(T), mContainer.data());
     }
 
     ~ReadFromFpgaBuffer()

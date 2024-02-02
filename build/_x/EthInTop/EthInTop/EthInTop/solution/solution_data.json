@@ -57,21 +57,8 @@
           "direction": "in"
         }]
     },
-    "keep": {
-      "index": "2",
-      "direction": "in",
-      "srcType": "ap_uint<32>",
-      "srcSize": "32",
-      "hwRefs": [{
-          "type": "register",
-          "interface": "s_axi_control",
-          "name": "keep",
-          "usage": "data",
-          "direction": "in"
-        }]
-    },
     "ethernet_stream_out": {
-      "index": "3",
+      "index": "2",
       "direction": "out",
       "srcType": "stream<ap_axiu<64, 0, 0, 0>, 0>&",
       "srcSize": "128",
@@ -524,22 +511,6 @@
               "resetValue": "0",
               "description": "Bit 31 to 0 of buffSize"
             }]
-        },
-        {
-          "offset": "0x24",
-          "name": "keep",
-          "access": "W",
-          "resetValue": "0x0",
-          "description": "Data signal of keep",
-          "range": "32",
-          "fields": [{
-              "offset": "0",
-              "width": "32",
-              "name": "keep",
-              "access": "W",
-              "resetValue": "0",
-              "description": "Bit 31 to 0 of keep"
-            }]
         }
       ]
     }
@@ -903,7 +874,7 @@
           "Estimate": "2.433"
         },
         "Loops": [{
-            "Name": "VITIS_LOOP_19_1",
+            "Name": "VITIS_LOOP_18_1",
             "TripCount": "",
             "Latency": "",
             "PipelineII": "1",
@@ -913,10 +884,10 @@
           "BRAM_18K": "8",
           "AVAIL_BRAM": "4320",
           "UTIL_BRAM": "~0",
-          "FF": "970",
+          "FF": "932",
           "AVAIL_FF": "2364480",
           "UTIL_FF": "~0",
-          "LUT": "1549",
+          "LUT": "1485",
           "AVAIL_LUT": "1182240",
           "UTIL_LUT": "~0",
           "DSP": "0",
@@ -931,7 +902,7 @@
   "GenerateBdFiles": "1",
   "GenData": {
     "DataVersion": "0.2",
-    "Time": "2021-01-01 00:00:35 CST",
+    "Time": "2021-01-01 00:00:34 CST",
     "ToolName": "vivado_hls",
     "ToolVersion": "2020.1"
   }

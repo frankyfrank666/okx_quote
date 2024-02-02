@@ -45,11 +45,11 @@ void run(int n, int tick)
 {
     ap_uint<32> mDelayCycle = tick;
     ap_uint<32> mMyIp = 0xc0a81203;
-    ap_uint<48> mMyMac = 0x5c879c506405;
-    ap_uint<48> mMyPort = 0xde1b ;
+    ap_uint<64> mMyMac = 0x5c879c506405;
+    ap_uint<64> mMyPort = 0xde1b ;
     ap_uint<32> mTargetIp = 0x12b59708;
-    ap_uint<48> mTargetMac = 0xac8fa9a9ec21;
-    ap_uint<48> mTargetPort = 0x17c9;
+    ap_uint<64> mTargetMac = 0xac8fa9a9ec21;
+    ap_uint<64> mTargetPort = 0x17c9;
 
     ap_uint<32> mAskPriceInt;
     ap_uint<32> mAskPriceDec;

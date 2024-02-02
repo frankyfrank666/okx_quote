@@ -8,7 +8,6 @@ extern "C" {
     void EthInTop(
         EthernetAxi64 *in,
         ap_uint<32> buffSize,
-        ap_uint<32> keep,
         hls::stream<EthernetAxi64>& ethernet_stream_out
     )
     {

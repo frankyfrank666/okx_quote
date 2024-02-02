@@ -7,7 +7,7 @@
 
 `timescale 1 ns / 1 ps 
 
-(* CORE_GENERATION_INFO="EthInTop_EthInTop,hls_ip_2020_1,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xcvu9p-flgb2104-2L-e,HLS_INPUT_CLOCK=3.333000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=2.433000,HLS_SYN_LAT=-1,HLS_SYN_TPT=none,HLS_SYN_MEM=8,HLS_SYN_DSP=0,HLS_SYN_FF=970,HLS_SYN_LUT=1549,HLS_VERSION=2020_1}" *)
+(* CORE_GENERATION_INFO="EthInTop_EthInTop,hls_ip_2020_1,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xcvu9p-flgb2104-2L-e,HLS_INPUT_CLOCK=3.333000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=2.433000,HLS_SYN_LAT=-1,HLS_SYN_TPT=none,HLS_SYN_MEM=8,HLS_SYN_DSP=0,HLS_SYN_FF=932,HLS_SYN_LUT=1485,HLS_VERSION=2020_1}" *)
 
 module EthInTop (
         ap_clk,
@@ -283,17 +283,16 @@ wire    ap_CS_fsm_state1;
 reg    ap_ready;
 wire   [63:0] in_r;
 wire   [31:0] buffSize;
-wire   [31:0] keep;
 reg    gmem_blk_n_AR;
 wire    ap_CS_fsm_state2;
 reg    gmem_blk_n_R;
 wire    ap_CS_fsm_pp0_stage0;
 reg    ap_enable_reg_pp0_iter1;
 wire    ap_block_pp0_stage0;
-reg   [0:0] icmp_ln882_reg_230;
+reg   [0:0] icmp_ln882_reg_226;
 reg    ethernet_stream_out_TDATA_blk_n;
 reg    ap_enable_reg_pp0_iter2;
-reg   [0:0] icmp_ln882_reg_230_pp0_iter1_reg;
+reg   [0:0] icmp_ln882_reg_226_pp0_iter1_reg;
 wire    gmem_AWREADY;
 wire    gmem_WREADY;
 reg    gmem_ARVALID;
@@ -309,21 +308,21 @@ wire    gmem_BVALID;
 wire   [1:0] gmem_BRESP;
 wire   [0:0] gmem_BID;
 wire   [0:0] gmem_BUSER;
-reg   [31:0] indvars_iv_reg_135;
-reg   [59:0] trunc_ln_reg_219;
-wire   [0:0] icmp_ln882_fu_166_p2;
+reg   [31:0] indvars_iv_reg_131;
+reg   [59:0] trunc_ln_reg_215;
+wire   [0:0] icmp_ln882_fu_162_p2;
 wire    ap_block_state72_pp0_stage0_iter0;
 reg    ap_block_state73_pp0_stage0_iter1;
 reg    ap_block_state73_io;
 wire    ap_block_state74_pp0_stage0_iter2;
 reg    ap_block_state74_io;
 reg    ap_block_pp0_stage0_11001;
-wire   [31:0] add_ln695_fu_171_p2;
+wire   [31:0] add_ln695_fu_167_p2;
 reg    ap_enable_reg_pp0_iter0;
 wire    ap_CS_fsm_state71;
 reg    ap_block_pp0_stage0_subdone;
 reg    ap_condition_pp0_exit_iter0_state72;
-wire   [63:0] sext_ln542_fu_156_p1;
+wire   [63:0] sext_ln542_fu_152_p1;
 reg    ap_block_pp0_stage0_01001;
 wire    ap_CS_fsm_state75;
 wire    regslice_both_ethernet_stream_out_V_data_V_U_apdone_blk;
@@ -392,7 +391,6 @@ control_s_axi_U(
     .ACLK_EN(1'b1),
     .in_r(in_r),
     .buffSize(buffSize),
-    .keep(keep),
     .ap_start(ap_start),
     .interrupt(interrupt),
     .event_start(event_start),
@@ -472,7 +470,7 @@ gmem_m_axi_U(
     .ACLK_EN(1'b1),
     .I_ARVALID(gmem_ARVALID),
     .I_ARREADY(gmem_ARREADY),
-    .I_ARADDR(sext_ln542_fu_156_p1),
+    .I_ARADDR(sext_ln542_fu_152_p1),
     .I_ARID(1'd0),
     .I_ARLEN(buffSize),
     .I_ARSIZE(3'd0),
@@ -641,27 +639,27 @@ end
 
 always @ (posedge ap_clk) begin
     if ((1'b1 == ap_CS_fsm_state71)) begin
-        indvars_iv_reg_135 <= 32'd0;
-    end else if (((ap_enable_reg_pp0_iter0 == 1'b1) & (icmp_ln882_fu_166_p2 == 1'd0) & (1'b1 == ap_CS_fsm_pp0_stage0) & (1'b0 == ap_block_pp0_stage0_11001))) begin
-        indvars_iv_reg_135 <= add_ln695_fu_171_p2;
+        indvars_iv_reg_131 <= 32'd0;
+    end else if (((ap_enable_reg_pp0_iter0 == 1'b1) & (icmp_ln882_fu_162_p2 == 1'd0) & (1'b1 == ap_CS_fsm_pp0_stage0) & (1'b0 == ap_block_pp0_stage0_11001))) begin
+        indvars_iv_reg_131 <= add_ln695_fu_167_p2;
     end
 end
 
 always @ (posedge ap_clk) begin
     if (((1'b1 == ap_CS_fsm_pp0_stage0) & (1'b0 == ap_block_pp0_stage0_11001))) begin
-        icmp_ln882_reg_230 <= icmp_ln882_fu_166_p2;
-        icmp_ln882_reg_230_pp0_iter1_reg <= icmp_ln882_reg_230;
+        icmp_ln882_reg_226 <= icmp_ln882_fu_162_p2;
+        icmp_ln882_reg_226_pp0_iter1_reg <= icmp_ln882_reg_226;
     end
 end
 
 always @ (posedge ap_clk) begin
     if (((ap_start == 1'b1) & (1'b1 == ap_CS_fsm_state1))) begin
-        trunc_ln_reg_219 <= {{in_r[63:4]}};
+        trunc_ln_reg_215 <= {{in_r[63:4]}};
     end
 end
 
 always @ (*) begin
-    if ((icmp_ln882_fu_166_p2 == 1'd1)) begin
+    if ((icmp_ln882_fu_162_p2 == 1'd1)) begin
         ap_condition_pp0_exit_iter0_state72 = 1'b1;
     end else begin
         ap_condition_pp0_exit_iter0_state72 = 1'b0;
@@ -701,7 +699,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if ((((icmp_ln882_reg_230_pp0_iter1_reg == 1'd0) & (ap_enable_reg_pp0_iter2 == 1'b1) & (1'b0 == ap_block_pp0_stage0)) | ((1'b1 == ap_CS_fsm_pp0_stage0) & (icmp_ln882_reg_230 == 1'd0) & (1'b0 == ap_block_pp0_stage0) & (ap_enable_reg_pp0_iter1 == 1'b1)))) begin
+    if ((((icmp_ln882_reg_226_pp0_iter1_reg == 1'd0) & (ap_enable_reg_pp0_iter2 == 1'b1) & (1'b0 == ap_block_pp0_stage0)) | ((1'b1 == ap_CS_fsm_pp0_stage0) & (icmp_ln882_reg_226 == 1'd0) & (1'b0 == ap_block_pp0_stage0) & (ap_enable_reg_pp0_iter1 == 1'b1)))) begin
         ethernet_stream_out_TDATA_blk_n = ethernet_stream_out_TREADY_int_regslice;
     end else begin
         ethernet_stream_out_TDATA_blk_n = 1'b1;
@@ -709,7 +707,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_pp0_stage0) & (icmp_ln882_reg_230 == 1'd0) & (1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter1 == 1'b1))) begin
+    if (((1'b1 == ap_CS_fsm_pp0_stage0) & (icmp_ln882_reg_226 == 1'd0) & (1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter1 == 1'b1))) begin
         ethernet_stream_out_TVALID_int_regslice = 1'b1;
     end else begin
         ethernet_stream_out_TVALID_int_regslice = 1'b0;
@@ -725,7 +723,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_pp0_stage0) & (icmp_ln882_reg_230 == 1'd0) & (1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter1 == 1'b1))) begin
+    if (((1'b1 == ap_CS_fsm_pp0_stage0) & (icmp_ln882_reg_226 == 1'd0) & (1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter1 == 1'b1))) begin
         gmem_RREADY = 1'b1;
     end else begin
         gmem_RREADY = 1'b0;
@@ -741,7 +739,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_pp0_stage0) & (icmp_ln882_reg_230 == 1'd0) & (1'b0 == ap_block_pp0_stage0) & (ap_enable_reg_pp0_iter1 == 1'b1))) begin
+    if (((1'b1 == ap_CS_fsm_pp0_stage0) & (icmp_ln882_reg_226 == 1'd0) & (1'b0 == ap_block_pp0_stage0) & (ap_enable_reg_pp0_iter1 == 1'b1))) begin
         gmem_blk_n_R = m_axi_gmem_RVALID;
     end else begin
         gmem_blk_n_R = 1'b1;
@@ -1020,9 +1018,9 @@ always @ (*) begin
             ap_NS_fsm = ap_ST_fsm_pp0_stage0;
         end
         ap_ST_fsm_pp0_stage0 : begin
-            if ((~((ap_enable_reg_pp0_iter0 == 1'b1) & (icmp_ln882_fu_166_p2 == 1'd1) & (1'b0 == ap_block_pp0_stage0_subdone) & (ap_enable_reg_pp0_iter1 == 1'b0)) & ~((ap_enable_reg_pp0_iter2 == 1'b1) & (1'b0 == ap_block_pp0_stage0_subdone) & (ap_enable_reg_pp0_iter1 == 1'b0)))) begin
+            if ((~((ap_enable_reg_pp0_iter0 == 1'b1) & (icmp_ln882_fu_162_p2 == 1'd1) & (1'b0 == ap_block_pp0_stage0_subdone) & (ap_enable_reg_pp0_iter1 == 1'b0)) & ~((ap_enable_reg_pp0_iter2 == 1'b1) & (1'b0 == ap_block_pp0_stage0_subdone) & (ap_enable_reg_pp0_iter1 == 1'b0)))) begin
                 ap_NS_fsm = ap_ST_fsm_pp0_stage0;
-            end else if ((((ap_enable_reg_pp0_iter0 == 1'b1) & (icmp_ln882_fu_166_p2 == 1'd1) & (1'b0 == ap_block_pp0_stage0_subdone) & (ap_enable_reg_pp0_iter1 == 1'b0)) | ((ap_enable_reg_pp0_iter2 == 1'b1) & (1'b0 == ap_block_pp0_stage0_subdone) & (ap_enable_reg_pp0_iter1 == 1'b0)))) begin
+            end else if ((((ap_enable_reg_pp0_iter0 == 1'b1) & (icmp_ln882_fu_162_p2 == 1'd1) & (1'b0 == ap_block_pp0_stage0_subdone) & (ap_enable_reg_pp0_iter1 == 1'b0)) | ((ap_enable_reg_pp0_iter2 == 1'b1) & (1'b0 == ap_block_pp0_stage0_subdone) & (ap_enable_reg_pp0_iter1 == 1'b0)))) begin
                 ap_NS_fsm = ap_ST_fsm_state75;
             end else begin
                 ap_NS_fsm = ap_ST_fsm_pp0_stage0;
@@ -1041,7 +1039,7 @@ always @ (*) begin
     endcase
 end
 
-assign add_ln695_fu_171_p2 = (indvars_iv_reg_135 + 32'd1);
+assign add_ln695_fu_167_p2 = (indvars_iv_reg_131 + 32'd1);
 
 assign ap_CS_fsm_pp0_stage0 = ap_CS_fsm[32'd71];
 
@@ -1056,29 +1054,29 @@ assign ap_CS_fsm_state75 = ap_CS_fsm[32'd72];
 assign ap_block_pp0_stage0 = ~(1'b1 == 1'b1);
 
 always @ (*) begin
-    ap_block_pp0_stage0_01001 = ((gmem_RVALID == 1'b0) & (icmp_ln882_reg_230 == 1'd0) & (ap_enable_reg_pp0_iter1 == 1'b1));
+    ap_block_pp0_stage0_01001 = ((gmem_RVALID == 1'b0) & (icmp_ln882_reg_226 == 1'd0) & (ap_enable_reg_pp0_iter1 == 1'b1));
 end
 
 always @ (*) begin
-    ap_block_pp0_stage0_11001 = (((1'b1 == ap_block_state74_io) & (ap_enable_reg_pp0_iter2 == 1'b1)) | ((ap_enable_reg_pp0_iter1 == 1'b1) & ((1'b1 == ap_block_state73_io) | ((gmem_RVALID == 1'b0) & (icmp_ln882_reg_230 == 1'd0)))));
+    ap_block_pp0_stage0_11001 = (((1'b1 == ap_block_state74_io) & (ap_enable_reg_pp0_iter2 == 1'b1)) | ((ap_enable_reg_pp0_iter1 == 1'b1) & ((1'b1 == ap_block_state73_io) | ((gmem_RVALID == 1'b0) & (icmp_ln882_reg_226 == 1'd0)))));
 end
 
 always @ (*) begin
-    ap_block_pp0_stage0_subdone = (((1'b1 == ap_block_state74_io) & (ap_enable_reg_pp0_iter2 == 1'b1)) | ((ap_enable_reg_pp0_iter1 == 1'b1) & ((1'b1 == ap_block_state73_io) | ((gmem_RVALID == 1'b0) & (icmp_ln882_reg_230 == 1'd0)))));
+    ap_block_pp0_stage0_subdone = (((1'b1 == ap_block_state74_io) & (ap_enable_reg_pp0_iter2 == 1'b1)) | ((ap_enable_reg_pp0_iter1 == 1'b1) & ((1'b1 == ap_block_state73_io) | ((gmem_RVALID == 1'b0) & (icmp_ln882_reg_226 == 1'd0)))));
 end
 
 assign ap_block_state72_pp0_stage0_iter0 = ~(1'b1 == 1'b1);
 
 always @ (*) begin
-    ap_block_state73_io = ((ethernet_stream_out_TREADY_int_regslice == 1'b0) & (icmp_ln882_reg_230 == 1'd0));
+    ap_block_state73_io = ((ethernet_stream_out_TREADY_int_regslice == 1'b0) & (icmp_ln882_reg_226 == 1'd0));
 end
 
 always @ (*) begin
-    ap_block_state73_pp0_stage0_iter1 = ((gmem_RVALID == 1'b0) & (icmp_ln882_reg_230 == 1'd0));
+    ap_block_state73_pp0_stage0_iter1 = ((gmem_RVALID == 1'b0) & (icmp_ln882_reg_226 == 1'd0));
 end
 
 always @ (*) begin
-    ap_block_state74_io = ((ethernet_stream_out_TREADY_int_regslice == 1'b0) & (icmp_ln882_reg_230_pp0_iter1_reg == 1'd0));
+    ap_block_state74_io = ((ethernet_stream_out_TREADY_int_regslice == 1'b0) & (icmp_ln882_reg_226_pp0_iter1_reg == 1'd0));
 end
 
 assign ap_block_state74_pp0_stage0_iter2 = ~(1'b1 == 1'b1);
@@ -1107,9 +1105,9 @@ assign ethernet_stream_out_TVALID = regslice_both_ethernet_stream_out_V_data_V_U
 
 assign event_done = ap_done;
 
-assign icmp_ln882_fu_166_p2 = ((indvars_iv_reg_135 == buffSize) ? 1'b1 : 1'b0);
+assign icmp_ln882_fu_162_p2 = ((indvars_iv_reg_131 == buffSize) ? 1'b1 : 1'b0);
 
-assign sext_ln542_fu_156_p1 = $signed(trunc_ln_reg_219);
+assign sext_ln542_fu_152_p1 = $signed(trunc_ln_reg_215);
 
 always @ (posedge ap_clk) begin
     ap_int_blocking_n_reg <= 1'b1;

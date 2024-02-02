@@ -6,6 +6,12 @@
 #include "hls_stream.h"
 
 using EthernetAxi64 = ap_axiu<64,0,0,0>;
+struct EthernetAxi64Host
+{
+    ap_uint<64> data;
+    ap_uint<8> keep;
+    ap_uint<1> last;
+};
 
 template <int N>
 ap_uint<N> byte_reverse(ap_uint<N> value) {

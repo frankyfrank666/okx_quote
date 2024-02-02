@@ -109,23 +109,6 @@ u32 XEthintop_Get_buffSize(XEthintop *InstancePtr) {
     return Data;
 }
 
-void XEthintop_Set_keep(XEthintop *InstancePtr, u32 Data) {
-    Xil_AssertVoid(InstancePtr != NULL);
-    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
-
-    XEthintop_WriteReg(InstancePtr->Control_BaseAddress, XETHINTOP_CONTROL_ADDR_KEEP_DATA, Data);
-}
-
-u32 XEthintop_Get_keep(XEthintop *InstancePtr) {
-    u32 Data;
-
-    Xil_AssertNonvoid(InstancePtr != NULL);
-    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
-
-    Data = XEthintop_ReadReg(InstancePtr->Control_BaseAddress, XETHINTOP_CONTROL_ADDR_KEEP_DATA);
-    return Data;
-}
-
 void XEthintop_InterruptGlobalEnable(XEthintop *InstancePtr) {
     Xil_AssertVoid(InstancePtr != NULL);
     Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);

@@ -3407,7 +3407,7 @@ window.onload = function () { addSorting(); }
 <center><h1>Design Guidance Report</h1></center><center><table class="header" border="0">
 <tr><td><b>Copyright</b></td><td>Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.</td></tr>
 <tr><td><b>Tool Version</b></td><td>xrcserver v.2020.1 (lin64) Build 0 </td></tr>
-<tr><td><b>Date</b></td><td>Fri Jan  1 00:00:51 2021</td></tr>
+<tr><td><b>Date</b></td><td>Fri Jan  1 00:00:50 2021</td></tr>
 <tr><td><b>Host</b></td><td>iz2zec7rvst3rc975nctwoz running 64-bit CentOS Linux release 7.4.1708 (Core)</td></tr>
 <tr><td><b>Command</b></td><td>v++  --platform /opt/xilinx/platforms/xilinx_aliyun-f3_dynamic_5_0/xilinx_aliyun-f3_dynamic_5_0.xpfm --target hw_emu --compile -g -s -k EthInTop -obuild/EthInTop.xo ../src/EthIn/EthInTop.cpp </td></tr>
 </table></center><br>
@@ -3433,6 +3433,17 @@ window.onload = function () { addSorting(); }
 <th align="left">Categories</th>
 <th align="left" width="350">Details</th>
 <th align="left" width="380">Resolution</th>
+</tr>
+<tr>
+<td align="left">1</td>
+<td align="left">Interface</td>
+<td align="left">advisory</td>
+<td align="left">Medium</td>
+<td align="left">HLS Interface Related</td>
+<td align="left">Accelerator.EthInTop.Interface</td>
+<td align="left">Inferring multiple bus burst read of variable length on port 'gmem'. These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+</td>
+<td align="left"></td>
 </tr>
 <tr>
 <td align="left">2</td>
@@ -3464,17 +3475,6 @@ window.onload = function () { addSorting(); }
 <td align="left">HLS Kernel Related</td>
 <td align="left">Accelerator.EthInTop.Kernel</td>
 <td align="left">**** Estimated Fmax: 411.02 MHz
-</td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left">1</td>
-<td align="left">Interface</td>
-<td align="left">advisory</td>
-<td align="left">Medium</td>
-<td align="left">HLS Interface Related</td>
-<td align="left">Accelerator.EthInTop.Interface</td>
-<td align="left">Inferring multiple bus burst read of variable length on port 'gmem'. These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
 </td>
 <td align="left"></td>
 </tr>

@@ -35,5 +35,5 @@ EthOutTop_1   EthOutTop    EthOutTop    undef           undef          undef    
 Area Information
 Compute Unit  Kernel Name  Module Name  FF    LUT   DSP  BRAM  URAM
 ------------  -----------  -----------  ----  ----  ---  ----  ----
-EthOutTop_1   EthOutTop    EthOutTop    1617  2475  0    8     0
+EthOutTop_1   EthOutTop    EthOutTop    1584  2434  0    8     0
 -------------------------------------------------------------------------------

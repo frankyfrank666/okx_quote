@@ -26,10 +26,10 @@ class TcpHeaderProcessor
 {
 public:
     ap_uint<32> mSrcIp;
-    ap_uint<48> mSrcMac;
+    ap_uint<64> mSrcMac;
 
     ap_uint<32> mDestIp;
-    ap_uint<48> mDestMac;
+    ap_uint<64> mDestMac;
 
     ap_uint<16> mType;
     ap_uint<16> mVersionAndHeaderLenDSCP;

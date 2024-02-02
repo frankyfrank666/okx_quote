@@ -6209,12 +6209,18 @@ public:
 
 
 using EthernetAxi64 = ap_axiu<64,0,0,0>;
+struct EthernetAxi64Host
+{
+    ap_uint<64> data;
+    ap_uint<8> keep;
+    ap_uint<1> last;
+};
 
 template <int N>
 ap_uint<N> byte_reverse(ap_uint<N> value) {
     constexpr int bytes = N / 8;
     ap_uint<N> result = 0;
-    VITIS_LOOP_14_1: for (int i = 0; i < bytes; ++i) {
+    VITIS_LOOP_20_1: for (int i = 0; i < bytes; ++i) {
 
         result((bytes - i) * 8 - 1, (bytes - i) * 8 - 8) = value(i * 8 + 7, i * 8);
     }
@@ -6240,7 +6246,7 @@ extern "C" {
 #pragma hls INTERFACE axis port=ethernet_stream_in
 #pragma HLS INTERFACE ap_ctrl_hs port=return
 
- VITIS_LOOP_18_1: for (ap_uint<32> i = 0; i < buffSize - 1; ++i)
+ VITIS_LOOP_18_1: for (ap_uint<32> i = 0; i < buffSize; ++i)
         {
             if(!ethernet_stream_in.empty())
             {

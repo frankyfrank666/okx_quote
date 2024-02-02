@@ -4,4 +4,187 @@ INFO: [v++ 60-897] Reading --xp value from platform: vivado_param:hd.routingCont
 INFO: [v++ 60-897] Reading --xp value from platform: vivado_param:hd.supportClockNetCrossDiffReconfigurablePartitions=1
 INFO: [v++ 60-897] Reading --xp value from platform: vivado_param:bitstream.enablePR=4123
 WARNING: [v++ 60-642] Invalid or deprecated parameter name: compiler.lockFlowCritSlackThreshold
-ERROR: [v++ 60-633] Failed to collect compute units: Kernel "VaddTop" specified in --nk option does not exist.
+INFO: [v++ 60-1306] Additional information associated with this v++ link can be found at:
+	Reports: /root/okx/build/binary_container_1.build/reports/link
+	Log files: /root/okx/build/binary_container_1.build/logs/link
+INFO: [v++ 60-1657] Initializing dispatch client.
+INFO: [v++ 60-1548] Creating build summary session with primary output /root/okx/build/x3.xclbin.link_summary, at Fri Jan  1 00:00:12 2021
+INFO: [v++ 60-1316] Initiating connection to rulecheck server, at Fri Jan  1 00:00:12 2021
+INFO: [v++ 60-1315] Creating rulecheck session with output '/root/okx/build/binary_container_1.build/reports/link/v++_link_x3_guidance.html', at Fri Jan  1 00:00:13 2021
+INFO: [v++ 60-895]   Target platform: /opt/xilinx/platforms/xilinx_aliyun-f3_dynamic_5_0/xilinx_aliyun-f3_dynamic_5_0.xpfm
+INFO: [v++ 60-1578]   This platform contains Xilinx Shell Archive '/opt/xilinx/platforms/xilinx_aliyun-f3_dynamic_5_0/hw/xilinx_aliyun-f3_dynamic_5_0.xsa'
+INFO: [v++ 60-629] Linking for hardware emulation target
+INFO: [v++ 60-423]   Target device: xilinx_aliyun-f3_dynamic_5_0
+INFO: [v++ 60-1332] Run 'run_link' status: Not started
+INFO: [v++ 60-1443] [00:00:18] Run run_link: Step system_link: Started
+INFO: [v++ 60-1453] Command Line: system_link --xo /root/okx/build/build/EthInTop.xo --xo /root/okx/build/build/EthOutTop.xo --xo /root/okx/build/build/TcpTop.xo -keep --config /root/okx/build/binary_container_1.build/link/int/syslinkConfig.ini --xpfm /opt/xilinx/platforms/xilinx_aliyun-f3_dynamic_5_0/xilinx_aliyun-f3_dynamic_5_0.xpfm --target emu --output_dir /root/okx/build/binary_container_1.build/link/int --temp_dir /root/okx/build/binary_container_1.build/link/sys_link
+INFO: [v++ 60-1454] Run Directory: /root/okx/build/binary_container_1.build/link/run_link
+INFO: [SYSTEM_LINK 60-1316] Initiating connection to rulecheck server, at Fri Jan  1 00:00:20 2021
+INFO: [SYSTEM_LINK 82-70] Extracting xo v3 file /root/okx/build/build/EthInTop.xo
+INFO: [SYSTEM_LINK 82-70] Extracting xo v3 file /root/okx/build/build/EthOutTop.xo
+INFO: [SYSTEM_LINK 82-70] Extracting xo v3 file /root/okx/build/build/TcpTop.xo
+INFO: [SYSTEM_LINK 82-53] Creating IP database /root/okx/build/binary_container_1.build/link/sys_link/_sysl/.cdb/xd_ip_db.xml
+INFO: [SYSTEM_LINK 82-38] [00:00:20] build_xd_ip_db started: /opt/Xilinx/Vitis/2020.1/bin/build_xd_ip_db -ip_search 0  -sds-pf /root/okx/build/binary_container_1.build/link/sys_link/hw_emu/pfm_dynamic_emu.hpfm -clkid 0 -ip /root/okx/build/binary_container_1.build/link/sys_link/iprepo/xilinx_com_hls_TcpTop_1_0,TcpTop -ip /root/okx/build/binary_container_1.build/link/sys_link/iprepo/xilinx_com_hls_EthOutTop_1_0,EthOutTop -ip /root/okx/build/binary_container_1.build/link/sys_link/iprepo/xilinx_com_hls_EthInTop_1_0,EthInTop -o /root/okx/build/binary_container_1.build/link/sys_link/_sysl/.cdb/xd_ip_db.xml
+INFO: [SYSTEM_LINK 82-37] [00:00:26] build_xd_ip_db finished successfully
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 1402.012 ; gain = 0.000 ; free physical = 24268 ; free virtual = 28846
+INFO: [SYSTEM_LINK 82-51] Create system connectivity graph
+INFO: [SYSTEM_LINK 82-102] Applying explicit connections to the system connectivity graph: /root/okx/build/binary_container_1.build/link/sys_link/cfgraph/cfgen_cfgraph.xml
+INFO: [SYSTEM_LINK 82-38] [00:00:27] cfgen started: /opt/Xilinx/Vitis/2020.1/bin/cfgen  -nk EthOutTop:1:EthOutTop -nk EthInTop:1:EthInTop -nk TcpTop:1:TcpTop -sc EthInTop.ethernet_stream_out:TcpTop.ethernet_stream_in:8192 -sc TcpTop.ethernet_stream_out:EthOutTop.ethernet_stream_in:8192 -dmclkid 0 -r /root/okx/build/binary_container_1.build/link/sys_link/_sysl/.cdb/xd_ip_db.xml -o /root/okx/build/binary_container_1.build/link/sys_link/cfgraph/cfgen_cfgraph.xml
+INFO: [CFGEN 83-0] Kernel Specs: 
+INFO: [CFGEN 83-0]   kernel: EthOutTop, num: 1  {EthOutTop}
+INFO: [CFGEN 83-0]   kernel: EthInTop, num: 1  {EthInTop}
+INFO: [CFGEN 83-0]   kernel: TcpTop, num: 1  {TcpTop}
+INFO: [CFGEN 83-0] Stream Specs: 
+INFO: [CFGEN 83-0]   EthInTop.ethernet_stream_out => TcpTop.ethernet_stream_in
+INFO: [CFGEN 83-0]   TcpTop.ethernet_stream_out => EthOutTop.ethernet_stream_in
+INFO: [CFGEN 83-2226] Inferring mapping for argument EthOutTop.out to DDR[1]
+INFO: [CFGEN 83-2226] Inferring mapping for argument EthInTop.in to DDR[1]
+INFO: [SYSTEM_LINK 82-37] [00:00:32] cfgen finished successfully
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1402.012 ; gain = 0.000 ; free physical = 24253 ; free virtual = 28833
+INFO: [SYSTEM_LINK 82-52] Create top-level block diagram
+INFO: [SYSTEM_LINK 82-38] [00:00:32] cf2bd started: /opt/Xilinx/Vitis/2020.1/bin/cf2bd  --linux --trace_buffer 1024 --input_file /root/okx/build/binary_container_1.build/link/sys_link/cfgraph/cfgen_cfgraph.xml --ip_db /root/okx/build/binary_container_1.build/link/sys_link/_sysl/.cdb/xd_ip_db.xml --cf_name dr --working_dir /root/okx/build/binary_container_1.build/link/sys_link/_sysl/.xsd --temp_dir /root/okx/build/binary_container_1.build/link/sys_link --output_dir /root/okx/build/binary_container_1.build/link/int --target_bd hw_emu/pfm_dynamic/pfm_dynamic.bd
+INFO: [CF2BD 82-31] Launching cf2xd: cf2xd -linux -trace-buffer 1024 -i /root/okx/build/binary_container_1.build/link/sys_link/cfgraph/cfgen_cfgraph.xml -r /root/okx/build/binary_container_1.build/link/sys_link/_sysl/.cdb/xd_ip_db.xml -o dr.xml
+INFO: [CF2BD 82-28] cf2xd finished successfully
+INFO: [CF2BD 82-31] Launching cf_xsd: cf_xsd -disable-address-gen -bd hw_emu/pfm_dynamic/pfm_dynamic.bd -dn dr -dp /root/okx/build/binary_container_1.build/link/sys_link/_sysl/.xsd
+INFO: [CF2BD 82-28] cf_xsd finished successfully
+INFO: [SYSTEM_LINK 82-37] [00:00:37] cf2bd finished successfully
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1402.012 ; gain = 0.000 ; free physical = 24241 ; free virtual = 28825
+INFO: [v++ 60-1441] [00:00:37] Run run_link: Step system_link: Completed
+Time (s): cpu = 00:00:20 ; elapsed = 00:00:19 . Memory (MB): peak = 1436.672 ; gain = 0.000 ; free physical = 24279 ; free virtual = 28863
+INFO: [v++ 60-1443] [00:00:37] Run run_link: Step cf2sw: Started
+INFO: [v++ 60-1453] Command Line: cf2sw -sdsl /root/okx/build/binary_container_1.build/link/int/sdsl.dat -rtd /root/okx/build/binary_container_1.build/link/int/cf2sw.rtd -xclbin /root/okx/build/binary_container_1.build/link/int/xclbin_orig.xml -o /root/okx/build/binary_container_1.build/link/int/xclbin_orig.1.xml
+INFO: [v++ 60-1454] Run Directory: /root/okx/build/binary_container_1.build/link/run_link
+INFO: [v++ 60-1441] [00:00:42] Run run_link: Step cf2sw: Completed
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1436.672 ; gain = 0.000 ; free physical = 24276 ; free virtual = 28863
+INFO: [v++ 60-1443] [00:00:42] Run run_link: Step rtd2_system_diagram: Started
+INFO: [v++ 60-1453] Command Line: rtd2SystemDiagram
+INFO: [v++ 60-1454] Run Directory: /root/okx/build/binary_container_1.build/link/run_link
+INFO: [v++ 60-1441] [00:00:44] Run run_link: Step rtd2_system_diagram: Completed
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:02 . Memory (MB): peak = 1436.672 ; gain = 0.000 ; free physical = 23699 ; free virtual = 28289
+INFO: [v++ 60-1443] [00:00:44] Run run_link: Step vpl: Started
+INFO: [v++ 60-1453] Command Line: vpl -t hw_emu -f /opt/xilinx/platforms/xilinx_aliyun-f3_dynamic_5_0/xilinx_aliyun-f3_dynamic_5_0.xpfm -g --remote_ip_cache /root/vitis_example/ex/ip_cache -s --output_dir /root/okx/build/binary_container_1.build/link/int --log_dir /root/okx/build/binary_container_1.build/logs/link --report_dir /root/okx/build/binary_container_1.build/reports/link --config /root/okx/build/binary_container_1.build/link/int/vplConfig.ini -k /root/okx/build/binary_container_1.build/link/int/kernel_info.dat --webtalk_flag Vitis --temp_dir /root/okx/build/binary_container_1.build/link --emulation_mode debug_waveform --no-info --iprepo /root/okx/build/binary_container_1.build/link/int/xo/ip_repo/xilinx_com_hls_TcpTop_1_0 --iprepo /root/okx/build/binary_container_1.build/link/int/xo/ip_repo/xilinx_com_hls_EthInTop_1_0 --iprepo /root/okx/build/binary_container_1.build/link/int/xo/ip_repo/xilinx_com_hls_EthOutTop_1_0 --messageDb /root/okx/build/binary_container_1.build/link/run_link/vpl.pb /root/okx/build/binary_container_1.build/link/int/dr.bd.tcl
+INFO: [v++ 60-1454] Run Directory: /root/okx/build/binary_container_1.build/link/run_link
+
+****** vpl v2020.1 (64-bit)
+  **** SW Build 2902540 on Wed May 27 19:54:35 MDT 2020
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+INFO: [VPL 60-839] Read in kernel information from file '/root/okx/build/binary_container_1.build/link/int/kernel_info.dat'.
+WARNING: [VPL 60-642] Invalid or deprecated parameter name: compiler.lockFlowCritSlackThreshold
+INFO: [VPL 60-423]   Target device: xilinx_aliyun-f3_dynamic_5_0
+INFO: [VPL 60-1032] Extracting hardware platform to /root/okx/build/binary_container_1.build/link/vivado/vpl/.local/hw_platform
+[00:01:05] Run vpl: Step create_project: Started
+Creating Vivado project.
+[00:01:07] Run vpl: Step create_project: Completed
+[00:01:07] Run vpl: Step create_bd: Started
+[00:02:23] Run vpl: Step create_bd: RUNNING...
+[00:03:38] Run vpl: Step create_bd: RUNNING...
+[00:04:20] Run vpl: Step create_bd: Completed
+[00:04:20] Run vpl: Step update_bd: Started
+[00:04:24] Run vpl: Step update_bd: Completed
+[00:04:24] Run vpl: Step generate_target: Started
+[00:05:25] Run vpl: Step generate_target: Completed
+[00:05:25] Run vpl: Step config_hw_emulation: Started
+[00:06:42] Run vpl: Step config_hw_emulation: RUNNING...
+[00:07:57] Run vpl: Step config_hw_emulation: RUNNING...
+[00:09:12] Run vpl: Step config_hw_emulation: RUNNING...
+[00:10:28] Run vpl: Step config_hw_emulation: RUNNING...
+[00:11:43] Run vpl: Step config_hw_emulation: RUNNING...
+[00:12:15] Run vpl: Step config_hw_emulation: Completed
+[00:12:15] Run vpl: FINISHED. Run Status: config_hw_emulation Complete!
+INFO: [v++ 60-1441] [00:12:16] Run run_link: Step vpl: Completed
+Time (s): cpu = 00:00:13 ; elapsed = 00:11:32 . Memory (MB): peak = 1436.672 ; gain = 0.000 ; free physical = 21436 ; free virtual = 27243
+INFO: [v++ 60-1443] [00:12:16] Run run_link: Step rtdgen: Started
+INFO: [v++ 60-1453] Command Line: rtdgen
+INFO: [v++ 60-1454] Run Directory: /root/okx/build/binary_container_1.build/link/run_link
+In file included from /root/okx/build/binary_container_1.build/link/int/xo/TcpTop/TcpTop/cpu_sources/TcpTop.cpp:1:0:
+/root/okx/build/binary_container_1.build/link/int/xo/TcpTop/TcpTop/cpu_sources/TcpTop.h:4:29: fatal error: ../common/utils.h: No such file or directory
+ #include "../common/utils.h"
+                             ^
+compilation terminated.
+ERROR: [v++ 60-398] gcc failed
+INFO: [v++ 60-1453] Command Line: cf2sw -a /root/okx/build/binary_container_1.build/link/int/address_map.xml -sdsl /root/okx/build/binary_container_1.build/link/int/sdsl.dat -xclbin /root/okx/build/binary_container_1.build/link/int/xclbin_orig.xml -rtd /root/okx/build/binary_container_1.build/link/int/x3.rtd -o /root/okx/build/binary_container_1.build/link/int/x3.xml
+INFO: [v++ 60-1652] Cf2sw returned exit code: 0
+INFO: [v++ 60-2311] HPISystemDiagram::writeSystemDiagramAfterRunningVivado, rtdInputFilePath: /root/okx/build/binary_container_1.build/link/int/x3.rtd
+INFO: [v++ 60-2312] HPISystemDiagram::writeSystemDiagramAfterRunningVivado, systemDiagramOutputFilePath: /root/okx/build/binary_container_1.build/link/int/systemDiagramModelSlrBaseAddress.json
+INFO: [v++ 60-1618] Launching 
+INFO: [v++ 60-1441] [00:12:24] Run run_link: Step rtdgen: Completed
+Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1436.672 ; gain = 0.000 ; free physical = 22882 ; free virtual = 28728
+INFO: [v++ 60-1443] [00:12:24] Run run_link: Step xclbinutil: Started
+INFO: [v++ 60-1453] Command Line: xclbinutil --add-section DEBUG_DATA:RAW:/root/okx/build/binary_container_1.build/link/int/consolidated.cf --add-section BITSTREAM:RAW:/root/okx/build/binary_container_1.build/link/int/behav.xse --force --target hw_emu --key-value SYS:dfx_enable:false --add-section :JSON:/root/okx/build/binary_container_1.build/link/int/x3.rtd --append-section :JSON:/root/okx/build/binary_container_1.build/link/int/appendSection.rtd --add-section CLOCK_FREQ_TOPOLOGY:JSON:/root/okx/build/binary_container_1.build/link/int/x3_xml.rtd --add-section BUILD_METADATA:JSON:/root/okx/build/binary_container_1.build/link/int/x3_build.rtd --add-section EMBEDDED_METADATA:RAW:/root/okx/build/binary_container_1.build/link/int/x3.xml --add-section SYSTEM_METADATA:RAW:/root/okx/build/binary_container_1.build/link/int/systemDiagramModelSlrBaseAddress.json --key-value SYS:PlatformVBNV:xilinx_aliyun-f3_dynamic_5_0 --output /root/okx/build/x3.xclbin
+INFO: [v++ 60-1454] Run Directory: /root/okx/build/binary_container_1.build/link/run_link
+XRT Build Version: 2.6.0 (2020.1)
+       Build Date: 2021-03-08 10:50:41
+          Hash ID: 80107ebc7376dafc8e1c9f5043c81c6f1dcc9dbb
+Creating a default 'in-memory' xclbin image.
+
+Section: 'DEBUG_DATA'(4) was successfully added.
+Size   : 8668 bytes
+Format : RAW
+File   : '/root/okx/build/binary_container_1.build/link/int/consolidated.cf'
+
+Section: 'BITSTREAM'(0) was successfully added.
+Size   : 38708936 bytes
+Format : RAW
+File   : '/root/okx/build/binary_container_1.build/link/int/behav.xse'
+
+Section: 'MEM_TOPOLOGY'(6) was successfully added.
+Format : JSON
+File   : 'mem_topology'
+
+Section: 'IP_LAYOUT'(8) was successfully added.
+Format : JSON
+File   : 'ip_layout'
+
+Section: 'CONNECTIVITY'(7) was successfully added.
+Format : JSON
+File   : 'connectivity'
+WARNING: Skipping CLOCK_FREQ_TOPOLOGY section for count size is zero.
+WARNING: Section 'CLOCK_FREQ_TOPOLOGY' content is empty.  No data in the given JSON file.
+
+Section: 'CLOCK_FREQ_TOPOLOGY'(11) was empty.  No action taken.
+Format : JSON
+File   : '/root/okx/build/binary_container_1.build/link/int/x3_xml.rtd'
+
+Section: 'BUILD_METADATA'(14) was successfully added.
+Size   : 6163 bytes
+Format : JSON
+File   : '/root/okx/build/binary_container_1.build/link/int/x3_build.rtd'
+
+Section: 'EMBEDDED_METADATA'(2) was successfully added.
+Size   : 9546 bytes
+Format : RAW
+File   : '/root/okx/build/binary_container_1.build/link/int/x3.xml'
+
+Section: 'SYSTEM_METADATA'(22) was successfully added.
+Size   : 13031 bytes
+Format : RAW
+File   : '/root/okx/build/binary_container_1.build/link/int/systemDiagramModelSlrBaseAddress.json'
+
+Section: 'IP_LAYOUT'(8) was successfully appended to.
+Format : JSON
+File   : 'ip_layout'
+Successfully wrote (38757955 bytes) to the output file: /root/okx/build/x3.xclbin
+Leaving xclbinutil.
+INFO: [v++ 60-1441] [00:12:24] Run run_link: Step xclbinutil: Completed
+Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.13 . Memory (MB): peak = 1436.672 ; gain = 0.000 ; free physical = 22845 ; free virtual = 28728
+INFO: [v++ 60-1443] [00:12:24] Run run_link: Step xclbinutilinfo: Started
+INFO: [v++ 60-1453] Command Line: xclbinutil --quiet --force --info /root/okx/build/x3.xclbin.info --input /root/okx/build/x3.xclbin
+INFO: [v++ 60-1454] Run Directory: /root/okx/build/binary_container_1.build/link/run_link
+INFO: [v++ 60-1441] [00:12:25] Run run_link: Step xclbinutilinfo: Completed
+Time (s): cpu = 00:00:00.31 ; elapsed = 00:00:00.37 . Memory (MB): peak = 1436.672 ; gain = 0.000 ; free physical = 22844 ; free virtual = 28728
+INFO: [v++ 60-1443] [00:12:25] Run run_link: Step generate_sc_driver: Started
+INFO: [v++ 60-1453] Command Line: 
+INFO: [v++ 60-1454] Run Directory: /root/okx/build/binary_container_1.build/link/run_link
+INFO: [v++ 60-1441] [00:12:25] Run run_link: Step generate_sc_driver: Completed
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1436.672 ; gain = 0.000 ; free physical = 22844 ; free virtual = 28728
+INFO: [v++ 60-244] Generating system estimate report...
+INFO: [v++ 60-1092] Generated system estimate report: /root/okx/build/binary_container_1.build/reports/link/system_estimate_x3.xtxt
+INFO: [v++ 60-586] Created x3.xclbin
+INFO: [v++ 60-1307] Run completed. Additional information can be found in:
+	Guidance: /root/okx/build/binary_container_1.build/reports/link/v++_link_x3_guidance.html
+	Steps Log File: /root/okx/build/binary_container_1.build/logs/link/link.steps.log
+
+INFO: [v++ 60-2343] Use the vitis_analyzer tool to visualize and navigate the relevant reports. Run the following command. 
+    vitis_analyzer /root/okx/build/x3.xclbin.link_summary 
+INFO: [v++ 60-791] Total elapsed time: 0h 12m 23s

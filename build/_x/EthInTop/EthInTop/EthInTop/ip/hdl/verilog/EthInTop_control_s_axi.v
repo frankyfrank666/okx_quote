@@ -31,7 +31,6 @@ module EthInTop_control_s_axi
     output wire                          interrupt,
     output wire [63:0]                   in_r,
     output wire [31:0]                   buffSize,
-    output wire [31:0]                   keep,
     output wire                          ap_start,
     input  wire                          ap_done,
     input  wire                          ap_ready,
@@ -65,9 +64,6 @@ module EthInTop_control_s_axi
 // 0x1c : Data signal of buffSize
 //        bit 31~0 - buffSize[31:0] (Read/Write)
 // 0x20 : reserved
-// 0x24 : Data signal of keep
-//        bit 31~0 - keep[31:0] (Read/Write)
-// 0x28 : reserved
 // (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
 //------------------------Parameter----------------------
@@ -81,8 +77,6 @@ localparam
     ADDR_IN_R_CTRL       = 6'h18,
     ADDR_BUFFSIZE_DATA_0 = 6'h1c,
     ADDR_BUFFSIZE_CTRL   = 6'h20,
-    ADDR_KEEP_DATA_0     = 6'h24,
-    ADDR_KEEP_CTRL       = 6'h28,
     WRIDLE               = 2'd0,
     WRDATA               = 2'd1,
     WRRESP               = 2'd2,
@@ -116,7 +110,6 @@ localparam
     reg  [1:0]                    int_isr = 2'b0;
     reg  [63:0]                   int_in_r = 'b0;
     reg  [31:0]                   int_buffSize = 'b0;
-    reg  [31:0]                   int_keep = 'b0;
 
 //------------------------Instantiation------------------
 
@@ -234,9 +227,6 @@ always @(posedge ACLK) begin
                 ADDR_BUFFSIZE_DATA_0: begin
                     rdata <= int_buffSize[31:0];
                 end
-                ADDR_KEEP_DATA_0: begin
-                    rdata <= int_keep[31:0];
-                end
             endcase
         end
     end
@@ -249,7 +239,6 @@ assign event_start = int_event_start;
 assign ap_start    = int_ap_start;
 assign in_r        = int_in_r;
 assign buffSize    = int_buffSize;
-assign keep        = int_keep;
 // int_event_start
 always @(posedge ACLK) begin
     if (ARESET)
@@ -385,16 +374,6 @@ always @(posedge ACLK) begin
     else if (ACLK_EN) begin
         if (w_hs && waddr == ADDR_BUFFSIZE_DATA_0)
             int_buffSize[31:0] <= (WDATA[31:0] & wmask) | (int_buffSize[31:0] & ~wmask);
-    end
-end
-
-// int_keep[31:0]
-always @(posedge ACLK) begin
-    if (ARESET)
-        int_keep[31:0] <= 0;
-    else if (ACLK_EN) begin
-        if (w_hs && waddr == ADDR_KEEP_DATA_0)
-            int_keep[31:0] <= (WDATA[31:0] & wmask) | (int_keep[31:0] & ~wmask);
     end
 end
 

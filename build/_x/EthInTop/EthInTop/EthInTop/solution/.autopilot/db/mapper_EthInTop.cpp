@@ -36,8 +36,8 @@ unsigned int ap_apatb_ethernet_stream_out_V_cap_bc;
 static AESL_RUNTIME_BC __xlx_ethernet_stream_out_V_size_Reader("../tv/stream_size/stream_size_out_ethernet_stream_out_V.dat");
 struct __cosim_s4__ { char data[4]; };
 struct __cosim_s10__ { char data[16]; };
-extern "C" void EthInTop(__cosim_s10__*, int, __cosim_s4__, __cosim_s4__, __cosim_s10__*);
-extern "C" void apatb_EthInTop_hw(volatile void * __xlx_apatb_param_in, __cosim_s4__ __xlx_apatb_param_buffSize, __cosim_s4__ __xlx_apatb_param_keep, volatile void * __xlx_apatb_param_ethernet_stream_out) {
+extern "C" void EthInTop(__cosim_s10__*, int, __cosim_s4__, __cosim_s10__*);
+extern "C" void apatb_EthInTop_hw(volatile void * __xlx_apatb_param_in, __cosim_s4__ __xlx_apatb_param_buffSize, volatile void * __xlx_apatb_param_ethernet_stream_out) {
   // Collect __xlx_in__tmp_vec
   vector<sc_bv<128> >__xlx_in__tmp_vec;
   for (int j = 0, e = 1; j != e; ++j) {
@@ -58,7 +58,7 @@ extern "C" void apatb_EthInTop_hw(volatile void * __xlx_apatb_param_in, __cosim_
   ap_apatb_ethernet_stream_out_V_cap_bc = __xlx_ethernet_stream_out_V_size_Reader.read_size();
   __cosim_s10__* __xlx_ethernet_stream_out_input_buffer= new __cosim_s10__[ap_apatb_ethernet_stream_out_V_cap_bc];
   // DUT call
-  EthInTop(__xlx_in__input_buffer, __xlx_offset_byte_param_in, __xlx_apatb_param_buffSize, __xlx_apatb_param_keep, __xlx_ethernet_stream_out_input_buffer);
+  EthInTop(__xlx_in__input_buffer, __xlx_offset_byte_param_in, __xlx_apatb_param_buffSize, __xlx_ethernet_stream_out_input_buffer);
 // print __xlx_apatb_param_in
   sc_bv<128>*__xlx_in_output_buffer = new sc_bv<128>[__xlx_size_param_in];
   for (int i = 0; i < __xlx_size_param_in; ++i) {

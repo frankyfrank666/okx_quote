@@ -8,8 +8,7 @@
         <args>
             <arg id="0" name="in" addressQualifier="1" port="M_AXI_GMEM" hostOffset="0x0" hostSize="0x8" offset="0x10" size="0x8" type="void*"/>
             <arg id="1" name="buffSize" addressQualifier="0" port="S_AXI_CONTROL" hostOffset="0x0" hostSize="0x4" offset="0x1C" size="0x4" type="unsigned int"/>
-            <arg id="2" name="keep" addressQualifier="0" port="S_AXI_CONTROL" hostOffset="0x0" hostSize="0x4" offset="0x24" size="0x4" type="unsigned int"/>
-            <arg id="3" name="ethernet_stream_out" addressQualifier="4" port="ETHERNET_STREAM_OUT" hostOffset="0x0" hostSize="0x8" offset="0x2C" size="0x8" type="stream&lt;ap_axiu&lt;64, 0, 0, 0&gt;, 0&gt;&amp;" memSize="0x10" origName="ethernet_stream_out" origUse="variable"/>
+            <arg id="2" name="ethernet_stream_out" addressQualifier="4" port="ETHERNET_STREAM_OUT" hostOffset="0x0" hostSize="0x8" offset="0x24" size="0x8" type="stream&lt;ap_axiu&lt;64, 0, 0, 0&gt;, 0&gt;&amp;" memSize="0x10" origName="ethernet_stream_out" origUse="variable"/>
         </args>
         <compileWorkGroupSize x="1" y="1" z="1"/>
         <maxWorkGroupSize x="1" y="1" z="1"/>

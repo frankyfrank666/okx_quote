@@ -22,18 +22,19 @@ VPP_LINK 	:= --platform $(PLATFORM) --target $(TARGET) --link -g -s --optimize 0
 
 
 
-TARGETS :=  EthIn EthOut 
+TARGETS :=  EthIn EthOut
 xo: $(TARGETS)
 $(TARGETS): %:
 	/root/okx/build/hls_bug_workaround.sh && $(VPP) $(VPP_COMPILE) -k $@Top -o"build/$@Top.xo" "../src/$@/$@Top.cpp"
 	/root/okx/build/hls_bug_workaround_rev.sh
 
 Tcp:
-	/root/okx/build/hls_bug_workaround.sh && $(VPP) $(VPP_COMPILE) -k $@Top -o"build/$@Top.xo" "../src/$@/$@Top.cpp" "../src/Tcp/TcpInputProcessor.cpp" "../src/Tcp/TcpPayloadParsor.cpp"
+	/root/okx/build/hls_bug_workaround.sh && $(VPP) $(VPP_COMPILE) -k $@Top -o"build/$@Top.xo" "../src/$@/$@Top.cpp" "../src/$@/Counter.cpp" "../src/$@/TcpInputProcessor.cpp" "../src/$@/TcpInputProcessor.h" "../src/$@/TcpManager.cpp" "../src/$@/TcpManager.h" "../src/$@/TcpPayloadParsor.cpp" "../src/$@/TcpPayloadParsor.h" "../src/$@/TcpSend.cpp" "../src/$@/TcpSend.h" "../src/$@/TcpTop.cpp" "../src/$@/TcpTop.h"
+
 	/root/okx/build/hls_bug_workaround_rev.sh
 
 
-kernel += EthIn EthOut 
+kernel += EthIn EthOut Tcp
 
 $(foreach kk,$(kernel),$(eval KERNELS += build/$(basename $(kk))Top.xo))
 kernel: $(kernel)

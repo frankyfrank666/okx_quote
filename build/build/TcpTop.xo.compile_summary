@@ -1,0 +1,247 @@
+<ENTRY>
+{
+ "thisFile": "/root/okx/build/build/TcpTop.xo.compile_summary",
+ "connectId": "",
+ "serverToken": "",
+ "timestamp": "0"
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "Fri Jan  1 00:00:02 2021",
+ "timestampMillis": "1609430402134",
+ "buildStep": {
+  "cmdId": "2aca36c0-2ee0-41ee-9980-781cacac5ef9",
+  "name": "v++",
+  "logFile": "/root/okx/build/_x/TcpTop/TcpTop.steps.log",
+  "commandLine": "/opt/Xilinx/Vitis/2020.1/bin/unwrapped/lnx64.o/v++  --xp \"vivado_prop:run.__KERNEL__.{STEPS.SYNTH_DESIGN.ARGS.MORE OPTIONS}={-directive sdx_optimization_effort_high}\" --xp \"misc:report=type report_timing_summary name impl_report_timing_summary_route_design_summary steps {route_design} runs {impl_1} options {-max_paths 10}\" --xp \"misc:report=type report_timing_summary name impl_report_timing_summary_post_route_phys_opt_design_summary steps {post_route_phys_opt_design} runs {impl_1} options {-max_paths 10}\" --platform /opt/xilinx/platforms/xilinx_aliyun-f3_dynamic_5_0/xilinx_aliyun-f3_dynamic_5_0.xpfm --target hw_emu --compile -g -s -k TcpTop -obuild/TcpTop.xo ../src/Tcp/TcpTop.cpp ../src/Tcp/Counter.cpp ../src/Tcp/TcpInputProcessor.cpp ../src/Tcp/TcpInputProcessor.h ../src/Tcp/TcpManager.cpp ../src/Tcp/TcpManager.h ../src/Tcp/TcpPayloadParsor.cpp ../src/Tcp/TcpPayloadParsor.h ../src/Tcp/TcpSend.cpp ../src/Tcp/TcpSend.h ../src/Tcp/TcpTop.cpp ../src/Tcp/TcpTop.h ",
+  "args": [
+   "--platform",
+   "/opt/xilinx/platforms/xilinx_aliyun-f3_dynamic_5_0/xilinx_aliyun-f3_dynamic_5_0.xpfm",
+   "--target",
+   "hw_emu",
+   "--compile",
+   "-g",
+   "-s",
+   "-k",
+   "TcpTop",
+   "-obuild/TcpTop.xo",
+   "../src/Tcp/TcpTop.cpp",
+   "../src/Tcp/Counter.cpp",
+   "../src/Tcp/TcpInputProcessor.cpp",
+   "../src/Tcp/TcpInputProcessor.h",
+   "../src/Tcp/TcpManager.cpp",
+   "../src/Tcp/TcpManager.h",
+   "../src/Tcp/TcpPayloadParsor.cpp",
+   "../src/Tcp/TcpPayloadParsor.h",
+   "../src/Tcp/TcpSend.cpp",
+   "../src/Tcp/TcpSend.h",
+   "../src/Tcp/TcpTop.cpp",
+   "../src/Tcp/TcpTop.h"
+  ],
+  "iniFiles": [],
+  "cwd": "/root/okx/build"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Jan  1 00:00:02 2021",
+ "timestampMillis": "1609430402135",
+ "status": {
+  "cmdId": "2aca36c0-2ee0-41ee-9980-781cacac5ef9",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_FlowMetaData",
+ "dateTimestamp": "Fri Jan  1 00:00:18 2021",
+ "timestampMillis": "1609430418602",
+ "buildSummary": {
+  "hardwarePlatform": "xilinx_aliyun-f3_dynamic_5_0.xpfm",
+  "hardwareDsa": "xilinx_aliyun-f3_dynamic_5_0.xsa",
+  "platformDirectory": "/opt/xilinx/platforms/xilinx_aliyun-f3_dynamic_5_0",
+  "runtime": "OpenCL",
+  "systemConfig": "Linux",
+  "flow": "BF_COMPILE",
+  "target": "TT_HW_EMU",
+  "kernels": [
+   {
+    "base": {
+     "type": "KERNEL",
+     "name": "TcpTop",
+     "file": "/root/okx/build/build/TcpTop.xo",
+     "reports": []
+    },
+    "sources": [
+     "/root/okx/src/Tcp/TcpTop.cpp",
+     "/root/okx/src/Tcp/Counter.cpp",
+     "/root/okx/src/Tcp/TcpInputProcessor.cpp",
+     "/root/okx/src/Tcp/TcpInputProcessor.h",
+     "/root/okx/src/Tcp/TcpManager.cpp",
+     "/root/okx/src/Tcp/TcpManager.h",
+     "/root/okx/src/Tcp/TcpPayloadParsor.cpp",
+     "/root/okx/src/Tcp/TcpPayloadParsor.h",
+     "/root/okx/src/Tcp/TcpSend.cpp",
+     "/root/okx/src/Tcp/TcpSend.h",
+     "/root/okx/src/Tcp/TcpTop.h"
+    ],
+    "psSources": [],
+    "cuNames": [],
+    "type": "HLS"
+   }
+  ],
+  "toolVersion": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Fri Jan  1 00:00:18 2021",
+ "timestampMillis": "1609430418606",
+ "buildStep": {
+  "cmdId": "6b0c230d-0769-4c28-818b-6ee4d1aafc01",
+  "name": "vitis_hls",
+  "logFile": "/root/okx/build/_x/TcpTop/TcpTop/vitis_hls.log",
+  "commandLine": "vitis_hls -f /root/okx/build/_x/TcpTop/TcpTop/TcpTop.tcl -messageDb vitis_hls.pb",
+  "args": [
+   "vitis_hls",
+   "-f",
+   "/root/okx/build/_x/TcpTop/TcpTop/TcpTop.tcl",
+   "-messageDb",
+   "vitis_hls.pb"
+  ],
+  "iniFiles": [],
+  "cwd": "/root/okx/build"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Jan  1 00:00:18 2021",
+ "timestampMillis": "1609430418607",
+ "status": {
+  "cmdId": "6b0c230d-0769-4c28-818b-6ee4d1aafc01",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Jan  1 00:02:17 2021",
+ "timestampMillis": "1609430537963",
+ "status": {
+  "cmdId": "6b0c230d-0769-4c28-818b-6ee4d1aafc01",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Jan  1 00:02:17 2021",
+ "timestampMillis": "1609430537972",
+ "report": {
+  "path": "/root/okx/build/_x/TcpTop/TcpTop/TcpTop/solution/.autopilot/db/TcpTop.design.xml",
+  "name": "TcpTop",
+  "fileType": "XML",
+  "reportType": "KERNEL_HLS_REPORT"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Jan  1 00:02:17 2021",
+ "timestampMillis": "1609430537973",
+ "report": {
+  "path": "/root/okx/build/_x/TcpTop/TcpTop/TcpTop/solution/.autopilot/db/.message_syn.xml",
+  "name": "TcpTop",
+  "fileType": "XML",
+  "reportType": "KERNEL_HLS_DRC_SYNTHESIS"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Jan  1 00:02:17 2021",
+ "timestampMillis": "1609430537973",
+ "report": {
+  "path": "/root/okx/build/_x/reports/TcpTop/hls_reports/TcpTop_csynth.rpt",
+  "name": "TcpTop",
+  "fileType": "TEXT",
+  "reportType": "KERNEL_HLS_CSYNTH"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Jan  1 00:02:17 2021",
+ "timestampMillis": "1609430537974",
+ "report": {
+  "path": "/root/okx/build/_x/TcpTop/TcpTop/TcpTop/solution/syn/report/TcpTop_csynth.xml",
+  "name": "TcpTop",
+  "fileType": "XML",
+  "reportType": "KERNEL_HLS_CSYNTH"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Jan  1 00:02:17 2021",
+ "timestampMillis": "1609430537979",
+ "report": {
+  "path": "/root/okx/build/_x/reports/TcpTop/system_estimate_TcpTop.xtxt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_SYSTEM_ESTIMATE"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Jan  1 00:02:18 2021",
+ "timestampMillis": "1609430538119",
+ "report": {
+  "path": "/root/okx/build/_x/reports/TcpTop/v++_compile_TcpTop_guidance.html",
+  "name": "",
+  "fileType": "HTML",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Jan  1 00:02:18 2021",
+ "timestampMillis": "1609430538119",
+ "report": {
+  "path": "/root/okx/build/_x/v++_compile_TcpTop_guidance.pb",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Jan  1 00:02:18 2021",
+ "timestampMillis": "1609430538120",
+ "status": {
+  "cmdId": "2aca36c0-2ee0-41ee-9980-781cacac5ef9",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>

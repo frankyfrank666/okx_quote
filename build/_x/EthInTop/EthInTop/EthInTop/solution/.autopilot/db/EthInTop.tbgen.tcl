@@ -15,7 +15,6 @@ set C_modelArgList {
 	{ gmem int 128 regular {axi_master 0}  }
 	{ in_r int 64 regular {axi_slave 0}  }
 	{ buffSize int 32 regular {axi_slave 0}  }
-	{ keep int 32 unused {axi_slave 0}  }
 	{ ethernet_stream_out_V_data_V int 64 regular {axi_s 1 volatile  { ethernet_stream_out Data } }  }
 	{ ethernet_stream_out_V_keep_V int 8 regular {axi_s 1 volatile  { ethernet_stream_out Keep } }  }
 	{ ethernet_stream_out_V_strb_V int 8 regular {axi_s 1 volatile  { ethernet_stream_out Strb } }  }
@@ -25,7 +24,6 @@ set C_modelArgMapList {[
 	{ "Name" : "gmem", "interface" : "axi_master", "bitwidth" : 128, "direction" : "READONLY", "bitSlice":[{"low":0,"up":127,"cElement": [{"cName": "in","cData": "int128","bit_use": { "low": 0,"up": 127},"offset": { "type": "dynamic","port_name": "in_r","bundle": "control"},"direction": "READONLY","cArray": [{"low" : 0,"up" : 0,"step" : 1}]}]}]} , 
  	{ "Name" : "in_r", "interface" : "axi_slave", "bundle":"control","type":"ap_none","bitwidth" : 64, "direction" : "READONLY", "offset" : {"in":16}, "offset_end" : {"in":27}} , 
  	{ "Name" : "buffSize", "interface" : "axi_slave", "bundle":"control","type":"ap_none","bitwidth" : 32, "direction" : "READONLY", "bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "buffSize","cData": "int","bit_use": { "low": 0,"up": 31},"cArray": [{"low" : 0,"up" : 0,"step" : 0}]}]}], "offset" : {"in":28}, "offset_end" : {"in":35}} , 
- 	{ "Name" : "keep", "interface" : "axi_slave", "bundle":"control","type":"ap_none","bitwidth" : 32, "direction" : "READONLY", "bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "keep","cData": "int","bit_use": { "low": 0,"up": 31},"cArray": [{"low" : 0,"up" : 0,"step" : 0}]}]}], "offset" : {"in":36}, "offset_end" : {"in":43}} , 
  	{ "Name" : "ethernet_stream_out_V_data_V", "interface" : "axis", "bitwidth" : 64, "direction" : "WRITEONLY", "bitSlice":[{"low":0,"up":63,"cElement": [{"cName": "ethernet_stream_out.V.data.V","cData": "long","bit_use": { "low": 0,"up": 63},"cArray": [{"low" : 0,"up" : 1,"step" : 1}]}]}]} , 
  	{ "Name" : "ethernet_stream_out_V_keep_V", "interface" : "axis", "bitwidth" : 8, "direction" : "WRITEONLY", "bitSlice":[{"low":0,"up":7,"cElement": [{"cName": "ethernet_stream_out.V.keep.V","cData": "char","bit_use": { "low": 0,"up": 7},"cArray": [{"low" : 0,"up" : 1,"step" : 1}]}]}]} , 
  	{ "Name" : "ethernet_stream_out_V_strb_V", "interface" : "axis", "bitwidth" : 8, "direction" : "WRITEONLY", "bitSlice":[{"low":0,"up":7,"cElement": [{"cName": "ethernet_stream_out.V.strb.V","cData": "char","bit_use": { "low": 0,"up": 7},"cArray": [{"low" : 0,"up" : 1,"step" : 1}]}]}]} , 
@@ -81,12 +79,12 @@ set portList {
 	{ m_axi_gmem_BRESP sc_in sc_lv 2 signal 0 } 
 	{ m_axi_gmem_BID sc_in sc_lv 1 signal 0 } 
 	{ m_axi_gmem_BUSER sc_in sc_lv 1 signal 0 } 
-	{ ethernet_stream_out_TDATA sc_out sc_lv 64 signal 4 } 
-	{ ethernet_stream_out_TVALID sc_out sc_logic 1 outvld 7 } 
-	{ ethernet_stream_out_TREADY sc_in sc_logic 1 outacc 7 } 
-	{ ethernet_stream_out_TKEEP sc_out sc_lv 8 signal 5 } 
-	{ ethernet_stream_out_TSTRB sc_out sc_lv 8 signal 6 } 
-	{ ethernet_stream_out_TLAST sc_out sc_lv 1 signal 7 } 
+	{ ethernet_stream_out_TDATA sc_out sc_lv 64 signal 3 } 
+	{ ethernet_stream_out_TVALID sc_out sc_logic 1 outvld 6 } 
+	{ ethernet_stream_out_TREADY sc_in sc_logic 1 outacc 6 } 
+	{ ethernet_stream_out_TKEEP sc_out sc_lv 8 signal 4 } 
+	{ ethernet_stream_out_TSTRB sc_out sc_lv 8 signal 5 } 
+	{ ethernet_stream_out_TLAST sc_out sc_lv 1 signal 6 } 
 	{ s_axi_control_AWVALID sc_in sc_logic 1 signal -1 } 
 	{ s_axi_control_AWREADY sc_out sc_logic 1 signal -1 } 
 	{ s_axi_control_AWADDR sc_in sc_lv 6 signal -1 } 
@@ -114,7 +112,7 @@ set portList {
 	{ stall_done_int sc_out sc_logic 1 signal -1 } 
 }
 set NewPortList {[ 
-	{ "name": "s_axi_control_AWADDR", "direction": "in", "datatype": "sc_lv", "bitwidth":6, "type": "signal", "bundle":{"name": "control", "role": "AWADDR" },"address":[{"name":"EthInTop","role":"start","value":"0","valid_bit":"0"},{"name":"EthInTop","role":"continue","value":"0","valid_bit":"4"},{"name":"EthInTop","role":"auto_start","value":"0","valid_bit":"7"},{"name":"in_r","role":"data","value":"16"},{"name":"buffSize","role":"data","value":"28"},{"name":"keep","role":"data","value":"36"}] },
+	{ "name": "s_axi_control_AWADDR", "direction": "in", "datatype": "sc_lv", "bitwidth":6, "type": "signal", "bundle":{"name": "control", "role": "AWADDR" },"address":[{"name":"EthInTop","role":"start","value":"0","valid_bit":"0"},{"name":"EthInTop","role":"continue","value":"0","valid_bit":"4"},{"name":"EthInTop","role":"auto_start","value":"0","valid_bit":"7"},{"name":"in_r","role":"data","value":"16"},{"name":"buffSize","role":"data","value":"28"}] },
 	{ "name": "s_axi_control_AWVALID", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "control", "role": "AWVALID" } },
 	{ "name": "s_axi_control_AWREADY", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "control", "role": "AWREADY" } },
 	{ "name": "s_axi_control_WVALID", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "control", "role": "WVALID" } },
@@ -215,7 +213,6 @@ set RtlHierarchyInfo {[
 					{"Name" : "gmem_blk_n_R", "Type" : "RtlSignal"}]},
 			{"Name" : "in_r", "Type" : "None", "Direction" : "I"},
 			{"Name" : "buffSize", "Type" : "None", "Direction" : "I"},
-			{"Name" : "keep", "Type" : "None", "Direction" : "I"},
 			{"Name" : "ethernet_stream_out_V_data_V", "Type" : "Axis", "Direction" : "O",
 				"BlockSignal" : [
 					{"Name" : "ethernet_stream_out_TDATA_blk_n", "Type" : "RtlSignal"}]},
@@ -235,7 +232,6 @@ set ArgLastReadFirstWriteLatency {
 		gmem {Type I LastRead 72 FirstWrite -1}
 		in_r {Type I LastRead 0 FirstWrite -1}
 		buffSize {Type I LastRead 0 FirstWrite -1}
-		keep {Type I LastRead -1 FirstWrite -1}
 		ethernet_stream_out_V_data_V {Type O LastRead -1 FirstWrite 72}
 		ethernet_stream_out_V_keep_V {Type O LastRead -1 FirstWrite 72}
 		ethernet_stream_out_V_strb_V {Type O LastRead -1 FirstWrite 72}

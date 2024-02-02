@@ -91,8 +91,6 @@ void XEthintop_Set_in_r(XEthintop *InstancePtr, u64 Data);
 u64 XEthintop_Get_in_r(XEthintop *InstancePtr);
 void XEthintop_Set_buffSize(XEthintop *InstancePtr, u32 Data);
 u32 XEthintop_Get_buffSize(XEthintop *InstancePtr);
-void XEthintop_Set_keep(XEthintop *InstancePtr, u32 Data);
-u32 XEthintop_Get_keep(XEthintop *InstancePtr);
 
 void XEthintop_InterruptGlobalEnable(XEthintop *InstancePtr);
 void XEthintop_InterruptGlobalDisable(XEthintop *InstancePtr);

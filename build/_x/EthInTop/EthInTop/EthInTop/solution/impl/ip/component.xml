@@ -1097,29 +1097,6 @@
             <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
           </spirit:field>
         </spirit:register>
-        <spirit:register>
-          <spirit:name>keep</spirit:name>
-          <spirit:displayName>keep</spirit:displayName>
-          <spirit:description>Data signal of keep</spirit:description>
-          <spirit:addressOffset>36</spirit:addressOffset>
-          <spirit:size spirit:format="long">32</spirit:size>
-          <spirit:access>write-only</spirit:access>
-          <spirit:reset>
-            <spirit:value spirit:format="long">0</spirit:value>
-          </spirit:reset>
-          <spirit:field>
-            <spirit:name>keep</spirit:name>
-            <spirit:description>Bit 31 to 0 of keep</spirit:description>
-            <spirit:bitOffset>0</spirit:bitOffset>
-            <spirit:bitWidth spirit:format="long">32</spirit:bitWidth>
-            <spirit:access>write-only</spirit:access>
-            <spirit:writeValueConstraint>
-              <spirit:minimum>0</spirit:minimum>
-              <spirit:maximum>0</spirit:maximum>
-            </spirit:writeValueConstraint>
-            <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
-          </spirit:field>
-        </spirit:register>
       </spirit:addressBlock>
     </spirit:memoryMap>
   </spirit:memoryMaps>
@@ -1137,7 +1114,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>83251120</spirit:value>
+            <spirit:value>2001428b</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1153,7 +1130,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>6b91e393</spirit:value>
+            <spirit:value>2834434f</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1169,7 +1146,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>d96e3ce5</spirit:value>
+            <spirit:value>cb06ba94</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1185,7 +1162,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>e12a6cf5</spirit:value>
+            <spirit:value>2e1b58ea</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1199,7 +1176,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>e48899ad</spirit:value>
+            <spirit:value>730fe142</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -2734,7 +2711,7 @@
       <spirit:file>
         <spirit:name>hdl/vhdl/EthInTop.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_eeaaa340</spirit:userFileType>
+        <spirit:userFileType>CHECKSUM_ee95d9a4</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
@@ -2981,7 +2958,7 @@
       <xilinx:displayName>Ethintop</xilinx:displayName>
       <xilinx:definitionSource>HLS</xilinx:definitionSource>
       <xilinx:coreRevision>2101010000</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2020-12-31T16:00:48Z</xilinx:coreCreationDateTime>
+      <xilinx:coreCreationDateTime>2020-12-31T16:00:47Z</xilinx:coreCreationDateTime>
       <xilinx:sdxKernelAttributes>
         <xilinx:sdx_kernel>true</xilinx:sdx_kernel>
         <xilinx:sdx_kernel_type>hls</xilinx:sdx_kernel_type>
@@ -2991,8 +2968,8 @@
       <xilinx:xilinxVersion>2020.1</xilinx:xilinxVersion>
       <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="9586572f"/>
       <xilinx:checksum xilinx:scope="addressSpaces" xilinx:value="5791c22f"/>
-      <xilinx:checksum xilinx:scope="memoryMaps" xilinx:value="3a866029"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="a8e60f24"/>
+      <xilinx:checksum xilinx:scope="memoryMaps" xilinx:value="4f027d3f"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="c451c334"/>
       <xilinx:checksum xilinx:scope="ports" xilinx:value="0215403f"/>
       <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="56128e89"/>
       <xilinx:checksum xilinx:scope="parameters" xilinx:value="483a7b5d"/>
